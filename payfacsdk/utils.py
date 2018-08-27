@@ -1,70 +1,70 @@
-# import os
-# import json
-# import pyxb
+import os
+import json
+import pyxb
 # import xmltodict
-#
-# class Configuration(object):
-#     """Setup Configuration variables.
-#
-#     Attributes:
-#         user (Str): authentication.user
-#         password (Str): authentication.password
-#         merchant_id (Str): The unique string to identify the merchant within the system.
-#         url (Str): Url for server.
-#         proxy (Str): Https proxy server address. Must start with "https://"
-#         print_xml (Str): Whether print request and response xml
-#     """
-#
-#     _CONFIG_FILE_PATH = os.path.join(os.environ['PAYFAC_MP_SDK_CONFIG'], ".payfac_mp_sdk.conf") \
-#         if 'PAYFAC_MP_SDK_CONFIG' in os.environ else os.path.join(os.path.expanduser("~"), ".payfac_mp_sdk.conf")
-#
-#     def __init__(self, conf_dict=dict()):
-#         attr_dict = {
-#             'username': '',
-#             'password': '',
-#             'merchant_id': '',
-#             'url': '',
-#             'proxy': '',
-#             'print_xml': False,
-#             'neuter_xml': False,
-#         }
-#
-#         # set default values
-#         for k in attr_dict:
-#             setattr(self, k, attr_dict[k])
-#
-#         # override values by loading saved conf
-#         try:
-#             with open(self._CONFIG_FILE_PATH, 'r') as config_file:
-#                 config_json = json.load(config_file)
-#                 for k in attr_dict:
-#                     if k in config_json and config_json[k]:
-#                         setattr(self, k, config_json[k])
-#         except:
-#             # If get any exception just pass.
-#             pass
-#
-#         # override values by args
-#         if conf_dict:
-#             for k in conf_dict:
-#                 if k in attr_dict:
-#                     setattr(self, k, conf_dict[k])
-#                 # else:
-#                 #     raise ChargebackError('"%s" is NOT an attribute of conf' % k)
-#
-#     def save(self):
-#         """Save Class Attributes to .payfac_mp_sdk.conf
-#
-#         Returns:
-#             full path for configuration file.
-#
-#         Raises:
-#             IOError: An error occurred
-#         """
-#         with open(self._CONFIG_FILE_PATH, 'w') as config_file:
-#             json.dump(vars(self), config_file)
-#         return self._CONFIG_FILE_PATH
-#
+
+class Configuration(object):
+    """Setup Configuration variables.
+
+    Attributes:
+        user (Str): authentication.user
+        password (Str): authentication.password
+        merchant_id (Str): The unique string to identify the merchant within the system.
+        url (Str): Url for server.
+        proxy (Str): Https proxy server address. Must start with "https://"
+        print_xml (Str): Whether print request and response xml
+    """
+
+    _CONFIG_FILE_PATH = os.path.join(os.environ['PAYFAC_MP_SDK_CONFIG'], ".payfac_mp_sdk.conf") \
+        if 'PAYFAC_MP_SDK_CONFIG' in os.environ else os.path.join(os.path.expanduser("~"), ".payfac_mp_sdk.conf")
+
+    def __init__(self, conf_dict=dict()):
+        attr_dict = {
+            'username': '',
+            'password': '',
+            'merchant_id': '',
+            'url': '',
+            'proxy': '',
+            'print_xml': False,
+            'neuter_xml': False,
+        }
+
+        # set default values
+        for k in attr_dict:
+            setattr(self, k, attr_dict[k])
+
+        # override values by loading saved conf
+        try:
+            with open(self._CONFIG_FILE_PATH, 'r') as config_file:
+                config_json = json.load(config_file)
+                for k in attr_dict:
+                    if k in config_json and config_json[k]:
+                        setattr(self, k, config_json[k])
+        except:
+            # If get any exception just pass.
+            pass
+
+        # override values by args
+        if conf_dict:
+            for k in conf_dict:
+                if k in attr_dict:
+                    setattr(self, k, conf_dict[k])
+                # else:
+                #     raise ChargebackError('"%s" is NOT an attribute of conf' % k)
+
+    def save(self):
+        """Save Class Attributes to .payfac_mp_sdk.conf
+
+        Returns:
+            full path for configuration file.
+
+        Raises:
+            IOError: An error occurred
+        """
+        with open(self._CONFIG_FILE_PATH, 'w') as config_file:
+            json.dump(vars(self), config_file)
+        return self._CONFIG_FILE_PATH
+
 # def obj_to_xml(obj):
 #     """Convert object to xml string without namespaces
 #
