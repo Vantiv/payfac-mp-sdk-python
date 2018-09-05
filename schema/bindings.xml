@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               jaxb:version="2.0">
+
+    <jaxb:globalBindings generateElementProperty="false">
+        <jaxb:javaType name="java.util.Calendar" xmlType="xs:date"
+                       parseMethod="com.mp.sdk.JAXBConverters.parseDate" printMethod="com.mp.sdk.JAXBConverters.printDate" />
+        <jaxb:javaType name="java.lang.Long" xmlType="xs:long"
+                       parseMethod="com.mp.sdk.JAXBConverters.parseLong" printMethod="com.mp.sdk.JAXBConverters.printLong" />
+        <jaxb:javaType name="java.lang.String" xmlType="xs:string"
+                       parseMethod="com.mp.sdk.JAXBConverters.parseString" printMethod="com.mp.sdk.JAXBConverters.printString" />
+        <xjc:simple />
+    </jaxb:globalBindings>
+
+</jaxb:bindings>

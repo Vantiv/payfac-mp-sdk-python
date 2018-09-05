@@ -1,0 +1,224 @@
+<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://payfac.vantivcnp.com/api/merchant/onboard" xmlns:tns="http://payfac.vantivcnp.com/api/merchant/onboard" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="legalEntityType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="INDIVIDUAL_SOLE_PROPRIETORSHIP"/>
+            <xs:enumeration value="CORPORATION"/>
+            <xs:enumeration value="LIMITED_LIABILITY_COMPANY"/>
+            <xs:enumeration value="PARTNERSHIP"/>
+            <xs:enumeration value="LIMITED_PARTNERSHIP"/>
+            <xs:enumeration value="GENERAL_PARTNERSHIP"/>
+            <xs:enumeration value="TAX_EXEMPT_ORGANIZATION"/>
+            <xs:enumeration value="GOVERNMENT_AGENCY"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="businessOverallScore">
+        <xs:restriction base="xs:int">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="10"/>
+            <xs:enumeration value="20"/>
+            <xs:enumeration value="30"/>
+            <xs:enumeration value="40"/>
+            <xs:enumeration value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="nameAddressTaxIdAssociationCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NOT_VERIFIED"/>
+            <xs:enumeration value="WRONG_TAX_ID"/>
+            <xs:enumeration value="NAME_OR_ADDRESS"/>
+            <xs:enumeration value="BAD_NAME"/>
+            <xs:enumeration value="BAD_ADDRESS"/>
+            <xs:enumeration value="MISSING_ADDRESS"/>
+            <xs:enumeration value="NAME_AND_ADDRESS_BAD_TAX_ID"/>
+            <xs:enumeration value="NAME_AND_ADDRESS_NO_TAX_ID"/>
+            <xs:enumeration value="NAME_ADDRESS_TAX_ID"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="businessNameAddressPhoneAssociationCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NOT_VERIFIED"/>
+            <xs:enumeration value="WRONG_PHONE"/>
+            <xs:enumeration value="NAME_OR_ADDRESS"/>
+            <xs:enumeration value="BAD_NAME"/>
+            <xs:enumeration value="BAD_ADDRESS"/>
+            <xs:enumeration value="MISSING_ADDRESS"/>
+            <xs:enumeration value="NAME_AND_ADDRESS_BAD_PHONE"/>
+            <xs:enumeration value="NAME_AND_ADDRESS_NO_PHONE"/>
+            <xs:enumeration value="NAME_ADDRESS_PHONE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="riskIndicatorCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="UNKNOWN"/>
+            <xs:enumeration value="SSN_DECEASED"/>
+            <xs:enumeration value="SSN_PRIOR_TO_DOB"/>
+            <xs:enumeration value="SSN_ADDRESS_PHONE_NOT_MATCH"/>
+            <xs:enumeration value="SSN_INVALID"/>
+            <xs:enumeration value="PHONE_NUMBER_DISCONNECTED"/>
+            <xs:enumeration value="PHONE_NUMBER_INVALID"/>
+            <xs:enumeration value="PHONE_NUMBER_PAGER"/>
+            <xs:enumeration value="PHONE_NUMBER_MOBILE"/>
+            <xs:enumeration value="ADDRESS_INVALID"/>
+            <xs:enumeration value="ZIP_BELONGS_POST_OFFICE"/>
+            <xs:enumeration value="ADDRESS_INVALID_APARTMENT_DESIGNATION"/>
+            <xs:enumeration value="ADDRESS_COMMERCIAL"/>
+            <xs:enumeration value="PHONE_NUMBER_COMMERCIAL"/>
+            <xs:enumeration value="PHONE_NUMBER_ZIP_INVALID"/>
+            <xs:enumeration value="UNABLE_TO_VERIFY_NAS"/>
+            <xs:enumeration value="UNABLE_TO_VERIFY_ADDRESS"/>
+            <xs:enumeration value="UNABLE_TO_VERIFY_SSN"/>
+            <xs:enumeration value="UNABLE_TO_VERIFY_PHONE"/>
+            <xs:enumeration value="UNABLE_TO_VERIFY_DOB"/>
+            <xs:enumeration value="SSN_MISKEYED"/>
+            <xs:enumeration value="ADDRESS_MISKEYED"/>
+            <xs:enumeration value="PHONE_NUMBER_MISKEYED"/>
+            <xs:enumeration value="NAME_MATCHES_OFAC"/>
+            <xs:enumeration value="UNABLE_TO_VERIFY_NAME"/>
+            <xs:enumeration value="SSN_MATCHES_MULTI_NAMES"/>
+            <xs:enumeration value="SSN_RECENTLY_ISSUED"/>
+            <xs:enumeration value="ZIP_CORPORATE_MILITARY"/>
+            <xs:enumeration value="DLL_INVALID"/>
+            <xs:enumeration value="NAME_ADDRESS_MATCH_BANKRUPTCY"/>
+            <xs:enumeration value="PHONE_AREA_CODE_CHANGING"/>
+            <xs:enumeration value="WORK_PHONE_PAGER"/>
+            <xs:enumeration value="UNABLE_TO_VERIFY_FIRST_NAME"/>
+            <xs:enumeration value="PHONE_ADDRESS_DISTANT"/>
+            <xs:enumeration value="ADDRESS_MATCHES_PRISON"/>
+            <xs:enumeration value="SSN_LAST_NAME_NO_MATCH"/>
+            <xs:enumeration value="SSN_FIRST_NAME_NO_MATCH"/>
+            <xs:enumeration value="WORK_HOME_PHONE_DISTANT"/>
+            <xs:enumeration value="NAME_ADDRESS_TIN_MISMATCH"/>
+            <xs:enumeration value="WORK_PHONE_INVALID"/>
+            <xs:enumeration value="WORK_PHONE_DISCONNECTED"/>
+            <xs:enumeration value="WORK_PHONE_MOBILE"/>
+            <xs:enumeration value="ADDRESS_RETURNS_DIFF_PHONE"/>
+            <xs:enumeration value="SSN_LNAME_NOT_MATCHED_FNAME_MATCHED"/>
+            <xs:enumeration value="PHONE_RESIDENTIAL_LISTING"/>
+            <xs:enumeration value="SINGLE_FAMILY_DWELLING"/>
+            <xs:enumeration value="SSN_NOT_FOUND"/>
+            <xs:enumeration value="SSN_BELONGS_TO_DIFF_NAME_ADDRESS"/>
+            <xs:enumeration value="PHONE_BELONGS_TO_DIFF_NAME_ADDRESS"/>
+            <xs:enumeration value="NAME_ADDRESS_UNLISTED"/>
+            <xs:enumeration value="NAME_MISKEYED"/>
+            <xs:enumeration value="NAME_MISSING"/>
+            <xs:enumeration value="ADDRESS_MISSING"/>
+            <xs:enumeration value="SSN_MISSING"/>
+            <xs:enumeration value="PHONE_NUMBER_MISSING"/>
+            <xs:enumeration value="DOB_MISSING"/>
+            <xs:enumeration value="NAME_ADDRESS_RETURN_DIFF_PHONE"/>
+            <xs:enumeration value="DOB_MISKEYED"/>
+            <xs:enumeration value="SSN_NON_US_CITIZEN"/>
+            <xs:enumeration value="ALTERNATE_BUSINESS_NAME_FOUND"/>
+            <xs:enumeration value="DBA_MATCH_PUBLIC_RECORDS"/>
+            <xs:enumeration value="SSN_RECENT"/>
+            <xs:enumeration value="SSN_TOO_OLD"/>
+            <xs:enumeration value="TIN_NAME_ADDRESS_MISMATCH"/>
+            <xs:enumeration value="BUSINESS_NOT_IN_GOOD_STANDING"/>
+            <xs:enumeration value="NAME_ADDRESS_MATCH_JUDGMENT"/>
+            <xs:enumeration value="BUSINESS_INACTIVE"/>
+            <xs:enumeration value="NO_UPDATE_IN_LAST_THREE_YEARS"/>
+            <xs:enumeration value="SSN_NOT_PRIMARY"/>
+            <xs:enumeration value="ZIP_CORP_ONLY"/>
+            <xs:enumeration value="ADDRESS_MISMATCH"/>
+            <xs:enumeration value="DL_DIFFERENT"/>
+            <xs:enumeration value="DL_NOT_FOUND"/>
+            <xs:enumeration value="DL_MISKEYED"/>
+            <xs:enumeration value="UNABLE_TO_VERIFY_DL"/>
+            <xs:enumeration value="SSN_INVALID_SSA"/>
+            <xs:enumeration value="SSN_IS_ITIN"/>
+            <xs:enumeration value="SSN_MULTI_IDENTITY"/>
+            <xs:enumeration value="ZIP_MILITARY"/>
+            <xs:enumeration value="MULTIPLE_SSN_FOUND"/>
+            <xs:enumeration value="ADDRESS_DISCREPANCY"/>
+            <xs:enumeration value="ADDRESS_PO_BOX"/>
+            <xs:enumeration value="SSN_RANDOM_SSA"/>
+            <xs:enumeration value="ADDRESS_MISMATCH_SECONDARY"/>
+            <xs:enumeration value="NAME_MATCHES_NON_OFAC"/>
+            <xs:enumeration value="UNABLE_TO_VERIFY_ZIP_CODE"/>
+            <xs:enumeration value="IP_ADDRESS_UNKNOWN"/>
+            <xs:enumeration value="IP_ADDRESS_DIFFERENT_STATE"/>
+            <xs:enumeration value="IP_ADDRESS_DIFFERENT_ZIP"/>
+            <xs:enumeration value="IP_ADDRESS_DIFFERENT_PHONE"/>
+            <xs:enumeration value="IP_ADDRESS_DOMAIN_UNKNOWN"/>
+            <xs:enumeration value="IP_ADDRESS_NOT_ASSIGNED_TO_USA"/>
+            <xs:enumeration value="IP_ADDRESS_NON_ROUTABLE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="principalOverallScore">
+        <xs:restriction base="xs:int">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="10"/>
+            <xs:enumeration value="20"/>
+            <xs:enumeration value="30"/>
+            <xs:enumeration value="40"/>
+            <xs:enumeration value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="nameAddressSsnAssociationCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NOTHING"/>
+            <xs:enumeration value="WRONG_SSN"/>
+            <xs:enumeration value="FIRST_LAST"/>
+            <xs:enumeration value="FIRST_ADDRESS"/>
+            <xs:enumeration value="FIRST_SSN"/>
+            <xs:enumeration value="LAST_ADDRESS"/>
+            <xs:enumeration value="ADDRESS_SSN"/>
+            <xs:enumeration value="LAST_SSN"/>
+            <xs:enumeration value="FIRST_LAST_ADDRESS"/>
+            <xs:enumeration value="FIRST_LAST_SSN"/>
+            <xs:enumeration value="FIRST_ADDRESS_SSN"/>
+            <xs:enumeration value="LAST_ADDRESS_SSN"/>
+            <xs:enumeration value="FIRST_LAST_ADDRESS_SSN"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="principalNameAddressPhoneAssociationCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NOTHING"/>
+            <xs:enumeration value="WRONG_PHONE"/>
+            <xs:enumeration value="FIRST_LAST"/>
+            <xs:enumeration value="FIRST_ADDRESS"/>
+            <xs:enumeration value="FIRST_PHONE"/>
+            <xs:enumeration value="LAST_ADDRESS"/>
+            <xs:enumeration value="ADDRESS_PHONE"/>
+            <xs:enumeration value="LAST_PHONE"/>
+            <xs:enumeration value="FIRST_LAST_ADDRESS"/>
+            <xs:enumeration value="FIRST_LAST_PHONE"/>
+            <xs:enumeration value="FIRST_ADDRESS_PHONE"/>
+            <xs:enumeration value="LAST_ADDRESS_PHONE"/>
+            <xs:enumeration value="FIRST_LAST_ADDRESS_PHONE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="businessToPrincipalScore">
+        <xs:restriction base="xs:int">
+            <xs:enumeration value="0"/>
+            <xs:enumeration value="10"/>
+            <xs:enumeration value="20"/>
+            <xs:enumeration value="30"/>
+            <xs:enumeration value="40"/>
+            <xs:enumeration value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="legalEntityAgreementType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MERCHANT_AGREEMENT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="legalEntityOwnershipType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PUBLIC"/>
+            <xs:enumeration value="PRIVATE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
