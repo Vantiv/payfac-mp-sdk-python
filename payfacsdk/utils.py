@@ -51,7 +51,7 @@ class Configuration(object):
                 if k in attr_dict:
                     setattr(self, k, conf_dict[k])
                 # else:
-                #     raise ChargebackError('"%s" is NOT an attribute of conf' % k)
+                #     raise payfacError('"%s" is NOT an attribute of conf' % k)
 
     def save(self):
         """Save Class Attributes to .payfac_mp_sdk.conf
@@ -137,8 +137,17 @@ def _create_list(element_key, container):
         container[element_key] = [element_value]
 
 
+def generate_error_response(http_response, return_format='dict'):
+    return convert_to_format(http_response.text, "errorResponse", return_format)
 
 class PayfacError(Exception):
 
     def __init__(self, message):
         self.message = message
+
+class PayfacWebError(Exception):
+
+    def __init__(self, message, code, error_list=None):
+        self.message = message
+        self.code = code
+        self.error_list = error_list

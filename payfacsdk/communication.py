@@ -1,7 +1,6 @@
-#
+from __future__ import absolute_import, print_function, unicode_literals
 from __future__ import absolute_import, print_function, unicode_literals
 
-import mimetypes
 import re
 
 import requests
@@ -59,7 +58,7 @@ def http_put_request(url_suffix, request_xml, response_type, config=conf):
                                      auth=HTTPBasicAuth(config.username, config.password),
                                      data=request_xml)
     except requests.RequestException:
-        raise utils.ChargebackError(HTTP_ERROR_MESSAGE)
+        raise utils.PayfacError(HTTP_ERROR_MESSAGE)
 
     print_to_console("\nPUT request to:", request_url, config)
     print_to_console("\nRequest :", request_xml, config)
@@ -75,7 +74,7 @@ def http_delete_request(url_suffix,response_type,config=conf):
         http_response = requests.delete(request_url, headers=PAYFAC_API_HEADERS,auth=HTTPBasicAuth(config.username, config.password))
 
     except requests.RequestException:
-        raise utils.ChargebackError(HTTP_ERROR_MESSAGE)
+        raise utils.PayfacError(HTTP_ERROR_MESSAGE)
 
     print_to_console("\nDELETE request to:", request_url, config)
     validate_response(http_response)
@@ -103,7 +102,7 @@ def validate_response(http_response, config=conf):
     """
     # Check empty response
     if http_response is None:
-        raise utils.ChargebackError("There was an exception while fetching the response")
+        raise utils.PayfacError("There was an exception while fetching the response")
 
     content_type = http_response.headers._store['content-type'][1]
     if (http_response.status_code != 200) & (http_response.status_code !=201):
@@ -111,8 +110,8 @@ def validate_response(http_response, config=conf):
             error_response = utils.generate_error_response(http_response)
             print_to_console("\nResponse :", http_response.text, config)
             error_list, error_message = _generate_error_data(error_response)
-            raise utils.ChargebackWebError(error_message, str(http_response.status_code), error_list)
-        raise utils.ChargebackWebError(http_response, str(http_response.status_code))
+            raise utils.PayfacWebError(error_message, str(http_response.status_code), error_list)
+        raise utils.PayfacWebError(http_response, str(http_response.status_code))
 
 
 

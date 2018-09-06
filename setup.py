@@ -55,24 +55,24 @@ setup(
     long_description='''Worldpay Python Payfac SDK
 =====================================================
 
-.. _`Vantiv eCommerce`: https://developer.vantiv.com/community/ecommerce
+.. _`WorldPay eCommerce`: https://developer.vantiv.com/community/ecommerce
 
-About Vantiv eCommerce
+About WorldPay eCommerce
 ----------------------
-`Vantiv eCommerce`_ powers the payment processing engines for leading companies that sell directly to consumers through  internet retail, direct response marketing (TV, radio and telephone), and online services. Vantiv eCommerce is the leading authority in card-not-present (CNP) commerce, transaction processing and merchant services.
+`WorldPay eCommerce`_ powers the payment processing engines for leading companies that sell directly to consumers through  internet retail, direct response marketing (TV, radio and telephone), and online services. WorldPay eCommerce is the leading authority in card-not-present (CNP) commerce, transaction processing and merchant services.
 
 
 About this SDK
 --------------
-The Vantiv eCommerce Python Chargeback SDK is a Python implementation of the `Vantiv eCommerce`_ Chargeback API. This SDK was created to make it as easy as possible to manage your chargebacks using Vantiv eCommerce API. This SDK utilizes the HTTPS protocol to securely connect to Vantiv eCommerce. Using the SDK requires coordination with the Vantiv eCommerce team in order to be provided with credentials for accessing our systems.
+The WorldPay Python PayFac SDK is a Python implementation of the `WorldPay eCommerce`_ PayFac API. This SDK was created to make it as easy as possible to manage your PayFac using WorldPay eCommerce API. This SDK utilizes the HTTPS protocol to securely connect to WorldPay eCommerce. Using the SDK requires coordination with the WorldPay eCommerce team in order to be provided with credentials for accessing our systems.
 
-Each Python SDK release supports all of the functionality present in the associated Vantiv eCommerce Chargeback API version (e.g., SDK v2.1.0 supports Vantiv eCommerce Chargeback API v2.1). Please see the Chargeback API reference guide to get more details on what the Vantiv eCommerce chargeback engine supports.
+Each Python SDK release supports all of the functionality present in the associated WorldPay eCommerce PayFac API version (e.g., SDK v2.1.0 supports WorldPay eCommerce PayFac API v2.1). Please see the PayFac API reference guide to get more details on what the WorldPay eCommerce PayFac engine supports.
 
-This SDK was implemented to support the Python programming language and was created by Vantiv eCommerce. Its intended use is for online and batch transaction processing utilizing your account on the Vantiv eCommerce payments engine.
+This SDK was implemented to support the Python programming language and was created by WorldPay eCommerce. Its intended use is for online and batch transaction processing utilizing your account on the WorldPay eCommerce payments engine.
 
 See LICENSE file for details on using this software.
 
-Please contact `Vantiv eCommerce`_ to receive valid merchant credentials in order to run test successfully or if you require assistance in any way.  We are reachable at sdksupport@Vantiv.com
+Please contact `WorldPay eCommerce`_ to receive valid merchant credentials in order to run test successfully or if you require assistance in any way.  We are reachable at sdksupport@Vantiv.com
 
 Dependencies
 ------------
@@ -84,11 +84,11 @@ Dependencies
 
 Setup
 -----
-* Run cnp_chargeback_sdk_setup and answer the questions.
+* Run payfac_mp_sdk_setup and answer the questions.
 
 .. code:: bash
 
-   cnp_chargeback_sdk_setup
+   payfac_mp_sdk_setup
 
 EXAMPLE
 -------
@@ -96,33 +96,32 @@ Using dict
 ..........
 .. code-block:: python
 
-    #Example for Chargeback SDK
+    #Example for PayFac SDK
     from __future__ import print_function, unicode_literals
 
     from cnpsdk import *
 
-    # Initial Configuration object. If you have saved configuration in '.vantiv_chargeback_sdk.conf' at system environment
-    # variable: CHARGEBACK_SDK_CONFIG or user home directory, the saved configuration will be automatically load.
+    # Initial Configuration object. If you have saved configuration in '.payfac_mp_sdk.conf' at system environment
+    # variable: PAYFAC_SDK_CONFIG or user home directory, the saved configuration will be automatically load.
     conf = utils.Configuration()
 
-    # Configuration need following attributes for chargeback requests:
+    # Configuration need following attributes for PayFac requests:
     # user = ''
     # password = ''
     # merchantId = ''
     # url = 'https://www.testvantivcnp.com/sandbox/communicator/online'
     # proxy = ''
 
-    # Retrieving information about a chargeback by caseId:
-    response = chargeback_retrieval.get_chargeback_by_case_id(xxxx)
-    response = chargeback_retrieval.get_chargebacks_by_date("2018-01-01)
+    # Retrieving information about a LegalEntity by legalentityID:
+    response = payfac_legalEntity.get_by_legalEntityId(legalentityId)
 
-    # Update chargeback case
-    chargeback_update.represent_case(xxxx, "Note on activity: represented case!")
-    chargeback_update.assign_case_to_user(xxxx, "userId", "Note on activity: assigned case to user!")
+    # Update a LegalEntity
+    request = "......(some request)"
+    response = payfac_legalEntity.put_by_legalEntityId(legalentityId, request)
 
-    # Upload and manage documents to support chargeback case
-    chargeback_docuemnt.upload_document(xxxx, "invoice.pdf")
-    response = chargeback_docuemnt.list_documents(xxxx)
+    # Create a LegalEntity
+    request = "......(some request)"
+    response = payfac_legalEntity.post_by_legalEntity(request)
 
 ''',
 )
