@@ -88,12 +88,9 @@ def obj_to_xml(obj):
     return xml
 
 
-def generate_retrieval_response(http_response, return_format='dict'):
+def generate_response(http_response, response_type, return_format='dict'):
     print(http_response.text)
-    # return convert_to_format(http_response.text, "legalEntityAgreementRetrievalResponse", return_format)
-    return convert_to_format(http_response.text, "legalEntityRetrievalResponse", return_format)
-    # return convert_to_format(http_response.text, "subMerchantRetrievalResponse", return_format)
-    # return convert_to_format(http_response.text, "approvedMccResponse", return_format)
+    return convert_to_format(http_response.text, response_type, return_format)
 
 
 def convert_to_format(http_response, response_type, return_format='dict'):

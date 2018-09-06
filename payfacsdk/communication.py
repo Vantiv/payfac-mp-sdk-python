@@ -14,28 +14,60 @@ conf = utils.Configuration()
 
 PAYFAC_CONTENT_TYPE = "application/com.vantivcnp.payfac-v13+xml"
 
-CHARGEBACK_API_HEADERS = {"Accept": PAYFAC_CONTENT_TYPE,
+PAYFAC_API_HEADERS = {"Accept": PAYFAC_CONTENT_TYPE,
                           "Content-Type": PAYFAC_CONTENT_TYPE}
 
 HTTP_ERROR_MESSAGE = "Error with Https Request, Please Check Proxy and Url configuration"
 
 
-def http_get_retrieval_request(url_suffix, config=conf):
+def http_get_retrieval_request(url_suffix, response_type, config=conf):
     request_url = config.url + url_suffix
 
     try:
-        http_response = requests.get(request_url, headers=CHARGEBACK_API_HEADERS,
+        http_response = requests.get(request_url, headers=PAYFAC_API_HEADERS,
                                      auth=HTTPBasicAuth(config.username, config.password))
 
     except requests.RequestException:
+        #TODO change name
         raise utils.ChargebackError(HTTP_ERROR_MESSAGE)
 
     print_to_console("\nGET request to:", request_url, config)
     validate_response(http_response)
     print_to_console("\nResponse :", http_response.text, config)
-    return utils.generate_retrieval_response(http_response)
+    return utils.generate_response(http_response,response_type)
 
 
+def http_post_request(url_suffix, request_xml, response_type, config=conf):
+    request_url = config.url + url_suffix
+    try:
+        http_response = requests.post(request_url,
+                                      headers=PAYFAC_API_HEADERS,
+                                      auth=HTTPBasicAuth(config.username, config.password),
+                                      data=request_xml)
+    except requests.RequestException:
+        # TODO change name
+        raise utils.ChargebackError(HTTP_ERROR_MESSAGE)
+
+    print_to_console("\nPOST request to:", request_url, config)
+    validate_response(http_response)
+    print_to_console("\nResponse :", http_response.text, config)
+    return utils.generate_response(http_response,response_type)
+
+
+def http_put_request(url_suffix, request_xml, response_type, config=conf):
+    request_url = config.url + url_suffix;
+    try:
+        http_response = requests.put(request_url, headers=PAYFAC_API_HEADERS,
+                                     auth=HTTPBasicAuth(config.username, config.password),
+                                     data=request_xml)
+    except requests.RequestException:
+        raise utils.ChargebackError(HTTP_ERROR_MESSAGE)
+
+    print_to_console("\nPUT request to:", request_url, config)
+    print_to_console("\nRequest :", request_xml, config)
+    validate_response(http_response)
+    print_to_console("\nResponse :", http_response.text, config)
+    return utils.generate_response(http_response, response_type)
 
 
 def _generate_error_data(error_response):
@@ -58,8 +90,7 @@ def validate_response(http_response, config=conf):
         raise utils.ChargebackError("There was an exception while fetching the response")
 
     content_type = http_response.headers._store['content-type'][1]
-
-    if http_response.status_code != 200:
+    if (http_response.status_code != 200) & (http_response.status_code !=201):
         if PAYFAC_CONTENT_TYPE in content_type:
             error_response = utils.generate_error_response(http_response)
             print_to_console("\nResponse :", http_response.text, config)
