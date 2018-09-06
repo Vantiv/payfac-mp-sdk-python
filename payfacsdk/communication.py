@@ -28,8 +28,7 @@ def http_get_retrieval_request(url_suffix, response_type, config=conf):
                                      auth=HTTPBasicAuth(config.username, config.password))
 
     except requests.RequestException:
-        #TODO change name
-        raise utils.ChargebackError(HTTP_ERROR_MESSAGE)
+        raise utils.PayfacError(HTTP_ERROR_MESSAGE)
 
     print_to_console("\nGET request to:", request_url, config)
     validate_response(http_response)
@@ -45,8 +44,7 @@ def http_post_request(url_suffix, request_xml, response_type, config=conf):
                                       auth=HTTPBasicAuth(config.username, config.password),
                                       data=request_xml)
     except requests.RequestException:
-        # TODO change name
-        raise utils.ChargebackError(HTTP_ERROR_MESSAGE)
+        raise utils.PayfacError(HTTP_ERROR_MESSAGE)
 
     print_to_console("\nPOST request to:", request_url, config)
     validate_response(http_response)

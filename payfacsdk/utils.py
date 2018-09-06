@@ -100,7 +100,7 @@ def convert_to_format(http_response, response_type, return_format='dict'):
         response_xml = http_response.text
         return response_xml
     elif return_format == 'object':
-        return convert_to_obj(http_response.text)
+        return convert_to_obj(http_response)
     else:
         return convert_to_dict(http_response, response_type)
 
