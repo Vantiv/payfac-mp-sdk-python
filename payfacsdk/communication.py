@@ -70,6 +70,24 @@ def http_put_request(url_suffix, request_xml, response_type, config=conf):
     return utils.generate_response(http_response, response_type)
 
 
+def http_delete_request(url_suffix,response_type,config=conf):
+    request_url = config.url + url_suffix
+
+    try:
+        http_response = requests.delete(request_url, headers=PAYFAC_API_HEADERS,auth=HTTPBasicAuth(config.username, config.password))
+
+    except requests.RequestException:
+        raise utils.ChargebackError(HTTP_ERROR_MESSAGE)
+
+    print_to_console("\nDELETE request to:", request_url, config)
+    validate_response(http_response)
+    print_to_console("\nResponse :", http_response.text, config)
+    return utils.generate_response(http_response,response_type)
+
+
+
+
+
 def _generate_error_data(error_response):
     error_list = error_response['errors']['error']
     error_message = ""

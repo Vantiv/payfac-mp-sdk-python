@@ -2,6 +2,7 @@ import os
 import json
 import pyxb
 import xmltodict
+from payfacsdk import fields_payfac
 
 class Configuration(object):
     """Setup Configuration variables.
@@ -82,7 +83,7 @@ def obj_to_xml(obj):
 
         xml = obj.toxml('utf-8')
     except pyxb.ValidationError as e:
-        raise ChargebackError(e.details())
+        raise PayfacError(e.details())
     xml = xml.replace(b'ns1:', b'')
     xml = xml.replace(b':ns1', b'')
     return xml
@@ -98,14 +99,14 @@ def convert_to_format(http_response, response_type, return_format='dict'):
     if return_format == 'xml':
         response_xml = http_response.text
         return response_xml
-    # elif return_format == 'object':
-    #     return convert_to_obj(http_response.text)
+    elif return_format == 'object':
+        return convert_to_obj(http_response.text)
     else:
         return convert_to_dict(http_response, response_type)
 
 
-# def convert_to_obj(xml_response):
-#     return fields_payfac.CreateFromDocument(xml_response)
+def convert_to_obj(xml_response):
+    return fields_payfac.CreateFromDocument(xml_response)
 
 
 def convert_to_dict(xml_response, response_type):
@@ -114,16 +115,14 @@ def convert_to_dict(xml_response, response_type):
         _create_lists(response_dict)
         return response_dict
     else:
-        raise ChargebackError("Invalid Format")
-
-
+        raise PayfacError("Invalid Format")
 
 
 def _create_lists(response_dict):
-    if "chargebackCase" in response_dict:
-        _create_list("chargebackCase", response_dict)
+    if "payfacCase" in response_dict:
+        _create_list("payfacCase", response_dict)
 
-        for case in response_dict["chargebackCase"]:
+        for case in response_dict["payfacCase"]:
             if "activity" in case:
                 _create_list("activity", case)
 
@@ -139,17 +138,7 @@ def _create_list(element_key, container):
 
 
 
-
-
-
-
-
-
-
-
-
-
-class ChargebackError(Exception):
+class PayfacError(Exception):
 
     def __init__(self, message):
         self.message = message

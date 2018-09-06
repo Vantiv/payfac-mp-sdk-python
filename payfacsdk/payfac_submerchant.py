@@ -14,4 +14,12 @@ SERVICE_ROUTE2 = "/submerchant"
 
 def get_by_subMerchantId(legalEntityId, subMerchantId):
     url_suffix = SERVICE_ROUTE1  + legalEntityId + SERVICE_ROUTE2 +"/"+ subMerchantId
-    return communication.http_get_retrieval_request(url_suffix, "subMerchantRetrievalResponse", config)
+    return communication.http_get_retrieval_request(url_suffix, "subMerchantRetrievalResponse")
+
+def post_by_legalEntity(legalEntityId,request):
+    url_suffix = SERVICE_ROUTE1 + legalEntityId + SERVICE_ROUTE2
+    return communication.http_post_request(url_suffix, request,"subMerchantCreateResponse")
+
+def put_by_subMerchantId(legalEntityId,subMerchantId, request):
+    url_suffix = SERVICE_ROUTE1 + legalEntityId + SERVICE_ROUTE2 + "/" + subMerchantId
+    return communication.http_put_request(url_suffix, request,"response")
