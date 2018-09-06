@@ -13,7 +13,7 @@ if (sys.version_info[:3] < (2, 7, 9)) or ((sys.version_info[0] == 3) and sys.ver
 
 setup(
     name='PayfacMpSDK',
-    version='13',
+    version='13.0.0',
     description='Worldpay payfac SDK',
     author='Worldpay',
     author_email='SDKSupport@vantiv.com',
@@ -72,7 +72,7 @@ This SDK was implemented to support the Python programming language and was crea
 
 See LICENSE file for details on using this software.
 
-Please contact `Vantiv eCommerce`_ to receive valid merchant credentials in order to run tests successfully or if you require assistance in any way.  We are reachable at sdksupport@Vantiv.com
+Please contact `Vantiv eCommerce`_ to receive valid merchant credentials in order to run test successfully or if you require assistance in any way.  We are reachable at sdksupport@Vantiv.com
 
 Dependencies
 ------------

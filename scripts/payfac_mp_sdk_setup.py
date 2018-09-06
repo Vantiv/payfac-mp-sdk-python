@@ -51,7 +51,7 @@ def ask_user():
         'print_xml': 'Do you want to print xml in console? y for Yes, n for No.',
         'neuter_xml': 'Do you want to hide sensitive data in printed xml? y for Yes, n for No.'
     }
-    print(CC.bpurple('"Welcome to the Merchant Provisioner PayFac Java SDK"'))
+    print(CC.bpurple('"Welcome to the Merchant Provisioner PayFac Python SDK"'))
     print('''    Please enter values for the following settings
     (just press Enter to accept a default value, if one is given in brackets).''')
 
@@ -90,19 +90,20 @@ def environmentConfig(attr_dict):
     }
     badInput = False
     continueTakeInput = True
+
     while continueTakeInput:
         if badInput: print("====== Invalid choice enetered ==========")
         print("Please choose an environment from the following list (example: 'prelive'): ");
         for env in Environment:
             print(env, Environment[env])
-        userInput = input('')
+        userInput = raw_input('')
         if (userInput in Environment) and (userInput != 'OTHER'):
             attr_dict['url'] = Environment[userInput]
             continueTakeInput = False
         elif (userInput == 'OTHER'):
             print(
                 "Please input the URL for online transactions (ex: https://www.testvantivcnp.com/sandbox/communicator/online): ");
-            userInput = input('')
+            userInput = raw_input('')
             attr_dict['url'] = userInput
             continueTakeInput = False
         else:

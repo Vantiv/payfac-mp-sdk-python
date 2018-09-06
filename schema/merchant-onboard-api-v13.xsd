@@ -222,7 +222,7 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:include schemaLocation="merchant-onboard-api-enum-v13.xsd" />
+   <!-- <xs:include schemaLocation="merchant-onboard-api-enum-v13.xsd" />-->
 
     <xs:element name="approvedMccResponse" type="tns:approvedMccResponse"/>
 
@@ -1908,5 +1908,3 @@
     </xs:complexType>
 
 </xs:schema>
-
-

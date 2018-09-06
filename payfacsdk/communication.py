@@ -5,6 +5,7 @@ import mimetypes
 import re
 
 import requests
+
 from requests.auth import HTTPBasicAuth
 
 from payfacsdk import (utils)

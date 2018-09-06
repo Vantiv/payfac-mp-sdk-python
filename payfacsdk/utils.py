@@ -90,7 +90,10 @@ def obj_to_xml(obj):
 
 def generate_retrieval_response(http_response, return_format='dict'):
     print(http_response.text)
-    return convert_to_format(http_response.text, "LegalEntityRetrievalResponse", return_format)
+    # return convert_to_format(http_response.text, "legalEntityAgreementRetrievalResponse", return_format)
+    return convert_to_format(http_response.text, "legalEntityRetrievalResponse", return_format)
+    # return convert_to_format(http_response.text, "subMerchantRetrievalResponse", return_format)
+    # return convert_to_format(http_response.text, "approvedMccResponse", return_format)
 
 
 def convert_to_format(http_response, response_type, return_format='dict'):
@@ -105,7 +108,7 @@ def convert_to_format(http_response, response_type, return_format='dict'):
 
 
 # def convert_to_obj(xml_response):
-#     return fields_chargeback.CreateFromDocument(xml_response)
+#     return fields_payfac.CreateFromDocument(xml_response)
 
 
 def convert_to_dict(xml_response, response_type):
