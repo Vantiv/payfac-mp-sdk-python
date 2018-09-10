@@ -23,11 +23,12 @@ env:
 script:
  - echo $BUILD_DIR
  - echo $PAYFAC_CONFIG_FILE
- - echo 'username=USERNAME'>$PAYFAC_CONFIG_FILE
- - echo 'password=PASSWORD'>>$PAYFAC_CONFIG_FILE
- - echo 'url=https://www.testvantivcnp.com/sandbox/payfac'>>$PAYFAC_CONFIG_FILE
- - echo 'timeout=50000'>>$PAYFAC_CONFIG_FILE
- - echo 'printxml=true'>>$PAYFAC_CONFIG_FILE
+ - echo "username":"USERNAME">$PAYFAC_CONFIG_FILE
+ - echo "password":"PASSWORD">>$PAYFAC_CONFIG_FILE
+ - echo "url":"https://www.testvantivcnp.com/sandbox/payfac">>$PAYFAC_CONFIG_FILE
+ - echo "proxy":"https://websenseproxy:8080">>$PAYFAC_CONFIG_FILE
+ - echo "timeout":"50000">>$PAYFAC_CONFIG_FILE
+ - echo "neuter_xml":"false">>$PAYFAC_CONFIG_FILE
  - cat $PAYFAC_CONFIG_FILE
  - python setup.py install
  - python $BUILD_DIR/tools/generate.py
