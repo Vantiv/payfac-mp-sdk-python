@@ -22,8 +22,8 @@ def test_get_retrieval_request():
 
         # payfac_legalEntity.get_by_legalEntityId("1000293")
 
-        principalPostRequest = '<legalEntityPrincipalCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><principal><title>Mr.</title><firstName>First</firstName><lastName>Last</lastName><emailAddress>abc@gmail.com</emailAddress><ssn>123450015</ssn><dateOfBirth>1980-10-12</dateOfBirth><address><streetAddress1>p2 street address 1</streetAddress1><streetAddress2>p2 street address 2</streetAddress2><city>Boston2</city><stateProvince>MA</stateProvince><postalCode>01892</postalCode><countryCode>USA</countryCode></address><stakePercent>31</stakePercent></principal></legalEntityPrincipalCreateRequest>'
-        print payfac_principal.post_by_legalEntity("2018",principalPostRequest)
+        # principalPostRequest = '<legalEntityPrincipalCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><principal><title>Mr.</title><firstName>First</firstName><lastName>Last</lastName><emailAddress>abc@gmail.com</emailAddress><ssn>123450015</ssn><dateOfBirth>1980-10-12</dateOfBirth><address><streetAddress1>p2 street address 1</streetAddress1><streetAddress2>p2 street address 2</streetAddress2><city>Boston2</city><stateProvince>MA</stateProvince><postalCode>01892</postalCode><countryCode>USA</countryCode></address><stakePercent>31</stakePercent></principal></legalEntityPrincipalCreateRequest>'
+        # print payfac_principal.post_by_legalEntity("2018",principalPostRequest)
 
         # payfac_principal.delete_by_legalEntityId("2018","9")
 
@@ -35,7 +35,7 @@ def test_get_retrieval_request():
 
         # payfac_submerchant.get_by_subMerchantId("2018","123456")
 
-        # payfac_mcc.get_mcc()
+        payfac_mcc.get_mcc()
 
 
 
