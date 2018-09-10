@@ -45,26 +45,3 @@ script:
  #  - codecov
  - bash <(curl -s https://codecov.io/bash)
 
-
-
- - echo "neuter_xml":"false">>$PAYFAC_MP_SDK_CONFIG
- - cat $PAYFAC_MP_SDK_CONFIG
- - python setup.py install
- - python $BUILD_DIR/tools/generate.py
- - coverage run testsimple.py
-
-# deploy:
-#   provider: releases
-#   api_key: $GITHUB_TOKEN
-#   file_glob: true
-#   file: build/kit/dist/*
-#   skip_cleanup: true
-#   on:
-#     tags: true
-
-
-after_success:
-#  - codecov
- - bash <(curl -s https://codecov.io/bash)
-
-
