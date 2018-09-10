@@ -1,4 +1,6 @@
 language: python
+python:
+  - 2.7
 notifications:
   email:
     recipients:
@@ -19,13 +21,23 @@ script:
  - echo 'timeout=50000'>>$PAYFAC_CONFIG_FILE
  - echo 'printxml=true'>>$PAYFAC_CONFIG_FILE
  - cat $PAYFAC_CONFIG_FILE
-deploy:
-  provider: releases
-  api_key: $GITHUB_TOKEN
-  file_glob: true
-  file: build/kit/dist/*
-  skip_cleanup: true
-  on:
-    tags: true
+ - coverage run tests.py
+ 
+  
+install:
+  - pip install codecov
+  
+  
+# deploy:
+#   provider: releases
+#   api_key: $GITHUB_TOKEN
+#   file_glob: true
+#   file: build/kit/dist/*
+#   skip_cleanup: true
+#   on:
+#     tags: true
 after_success:
+ - codecov
  - bash <(curl -s https://codecov.io/bash)
+
+
