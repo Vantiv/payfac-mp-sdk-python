@@ -30,7 +30,7 @@ script:
  - cat $PAYFAC_MP_SDK_CONFIG
  - python setup.py install
  - python $BUILD_DIR/tools/generate.py
- - coverage run test/unit/*
+ - coverage run testsimple.py
 
 # deploy:
 #   provider: releases
