@@ -12,6 +12,10 @@ env:
   - BUILD_DIR=`pwd`
   - MP_CONFIG_DIR=$BUILD_DIR
   - PAYFAC_CONFIG_FILE=$BUILD_DIR/.payfac_mp_sdk.conf
+    
+install:
+  - pip install codecov
+  
 script:
  - echo $BUILD_DIR
  - echo $PAYFAC_CONFIG_FILE
@@ -23,9 +27,7 @@ script:
  - cat $PAYFAC_CONFIG_FILE
  - coverage run tests.py
  
-  
-install:
-  - pip install codecov
+
   
   
 # deploy:
