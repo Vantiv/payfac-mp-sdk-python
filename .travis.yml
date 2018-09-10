@@ -7,14 +7,18 @@ notifications:
       - sdksupport@vantiv.com
     on_success: always
     on_failure: always
+    
+install:
+  - pip install codecov
+  
+  
 env:
  global:
   - BUILD_DIR=`pwd`
   - MP_CONFIG_DIR=$BUILD_DIR
   - PAYFAC_CONFIG_FILE=$BUILD_DIR/.payfac_mp_sdk.conf
     
-install:
-  - pip install codecov
+
   
 script:
  - echo $BUILD_DIR
@@ -25,10 +29,9 @@ script:
  - echo 'timeout=50000'>>$PAYFAC_CONFIG_FILE
  - echo 'printxml=true'>>$PAYFAC_CONFIG_FILE
  - cat $PAYFAC_CONFIG_FILE
- - coverage run /test
+ - echo pwd
+#  - coverage run /test
 
-  
-  
 # deploy:
 #   provider: releases
 #   api_key: $GITHUB_TOKEN
@@ -37,8 +40,10 @@ script:
 #   skip_cleanup: true
 #   on:
 #     tags: true
+
+
 after_success:
  - codecov
- - bash <(curl -s https://codecov.io/bash)
+#  - bash <(curl -s https://codecov.io/bash)
 
 
