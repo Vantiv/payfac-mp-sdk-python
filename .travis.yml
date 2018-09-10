@@ -29,7 +29,7 @@ script:
  - echo 'timeout=50000'>>$PAYFAC_CONFIG_FILE
  - echo 'printxml=true'>>$PAYFAC_CONFIG_FILE
  - cat $PAYFAC_CONFIG_FILE
- - cat pwd
+ - python setup.py install
  - coverage run testsimple.py
 
 # deploy:
