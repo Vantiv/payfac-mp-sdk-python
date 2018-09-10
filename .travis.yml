@@ -19,8 +19,6 @@ script:
  - echo 'timeout=50000'>>$PAYFAC_CONFIG_FILE
  - echo 'printxml=true'>>$PAYFAC_CONFIG_FILE
  - cat $PAYFAC_CONFIG_FILE
- - python setup.py install
- - python /tools/generate.py
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
