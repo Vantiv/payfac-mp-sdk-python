@@ -1,0 +1,32 @@
+language: python
+notifications:
+  email:
+    recipients:
+      - sdksupport@vantiv.com
+    on_success: always
+    on_failure: always
+env:
+ global:
+  - BUILD_DIR=`pwd`
+  - MP_CONFIG_DIR=$BUILD_DIR
+  - PAYFAC_CONFIG_FILE=$BUILD_DIR/.payfac_mp_sdk.conf
+script:
+ - echo $BUILD_DIR
+ - echo $PAYFAC_CONFIG_FILE
+ - echo 'username=USERNAME'>$PAYFAC_CONFIG_FILE
+ - echo 'password=PASSWORD'>>$PAYFAC_CONFIG_FILE
+ - echo 'url=https://www.testvantivcnp.com/sandbox/payfac'>>$PAYFAC_CONFIG_FILE
+ - echo 'timeout=50000'>>$PAYFAC_CONFIG_FILE
+ - echo 'printxml=true'>>$PAYFAC_CONFIG_FILE
+ - cat $PAYFAC_CONFIG_FILE
+ - gradle build jacocoTestReport kit
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file_glob: true
+  file: build/kit/dist/*
+  skip_cleanup: true
+  on:
+    tags: true
+after_success:
+ - bash <(curl -s https://codecov.io/bash)
