@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/Vantiv/payfac-mp-sdk-python.svg?branch=13.x)](https://travis-ci.org/Vantiv/payfac-mp-sdk-python)
+[![codecov](https://codecov.io/gh/Vantiv/payfac-mp-sdk-python/branch/13.x/graph/badge.svg)](https://codecov.io/gh/Vantiv/payfac-mp-sdk-python)
 ![Github All Releases](https://img.shields.io/github/downloads/vantiv/payfac-mp-sdk-python/total.svg)
-[![GitHub](https://img.shields.io/github/license/vantiv/payfac-mp-sdk-python.svg)](https://github.com/Vantiv/payfac-mp-sdk-python/13.x/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/vantiv/payfac-mp-sdk-python.svg)](https://github.com/Vantiv/payfac-mp-sdk-python/issues)
+[![GitHub](https://img.shields.io/github/license/vantiv/payfac-mp-sdk-python.svg)](https://github.com/Vantiv/payfac-mp-sdk-python/13.x/LICENSE) 
+[![GitHub issues](https://img.shields.io/github/issues/vantiv/payfac-mp-sdk-python.svg)](https://github.com/Vantiv/payfac-mp-sdk-python/issues)
 
 # payfac-mp-sdk-python
 
