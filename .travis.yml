@@ -30,7 +30,7 @@ script:
  - echo 'printxml=true'>>$PAYFAC_CONFIG_FILE
  - cat $PAYFAC_CONFIG_FILE
  - cat pwd
- - coverage run test
+ - coverage run testsimple.py
 
 # deploy:
 #   provider: releases
