@@ -4,6 +4,7 @@ from __future__ import absolute_import, print_function, unicode_literals
 import re
 
 import requests
+import traceback
 
 from requests.auth import HTTPBasicAuth
 
@@ -27,6 +28,7 @@ def http_get_retrieval_request(url_suffix, response_type, config=conf):
                                      auth=HTTPBasicAuth(config.username, config.password))
 
     except requests.RequestException:
+        traceback.print_exc()
         raise utils.PayfacError(HTTP_ERROR_MESSAGE)
 
     print_to_console("\nGET request to:", request_url, config)
