@@ -30,7 +30,7 @@ script:
  - echo 'printxml=true'>>$PAYFAC_CONFIG_FILE
  - cat $PAYFAC_CONFIG_FILE
  - python setup.py install
- - python $BUILD_DIR/../tools/generate.py
+ - python $BUILD_DIR/tools/generate.py
  - coverage run testsimple.py
 
 # deploy:
