@@ -29,8 +29,8 @@ script:
  - echo 'timeout=50000'>>$PAYFAC_CONFIG_FILE
  - echo 'printxml=true'>>$PAYFAC_CONFIG_FILE
  - cat $PAYFAC_CONFIG_FILE
- - echo pwd
-#  - coverage run /test
+ - cat pwd
+ - coverage run test
 
 # deploy:
 #   provider: releases
