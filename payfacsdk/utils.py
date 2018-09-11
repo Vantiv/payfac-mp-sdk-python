@@ -16,18 +16,23 @@ class Configuration(object):
         print_xml (Str): Whether print request and response xml
     """
     VERSION = u'13'
-    _CONFIG_FILE_PATH = os.path.join(os.environ['PAYFAC_MP_SDK_CONFIG'], ".payfac_mp_sdk.conf") \
-        if 'PAYFAC_MP_SDK_CONFIG' in os.environ else os.path.join(os.path.expanduser("~"), ".payfac_mp_sdk.conf")
+    if 'PAYFAC_MP_SDK_CONFIG' in os.environ:
+        _CONFIG_FILE_PATH = os.path.join(os.environ['PAYFAC_MP_SDK_CONFIG'])
+    else:
+        _CONFIG_FILE_PATH = os.path.join(os.path.expanduser("~"), ".payfac_mp_sdk.conf")
 
     def __init__(self, conf_dict=dict()):
-        print("config file path ->"+self._CONFIG_FILE_PATH)
+
+        print("config file path -> "+self._CONFIG_FILE_PATH)
+
         attr_dict = {
             'merchant_id': '',
             'neuter_xml': False,
             'password': '',
             'print_xml': False,
             'proxy': '',
-            'url': 'https://www.testvantivcnp.com/sandbox/payfac',
+            #'url': 'https://www.testvantivcnp.com/sandbox/payfac',
+            'url': '',
             'username': ''
         }
 
