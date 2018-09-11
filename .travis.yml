@@ -16,14 +16,13 @@ env:
  global:
   - BUILD_DIR=`pwd`
   - MP_CONFIG_DIR=$BUILD_DIR
-  - PAYFAC_MP_SDK_CONFIG=$BUILD_DIR/.payfac_mp_sdk.conf
+  - PAYFAC_MP_SDK_CONFIG=$MP_CONFIG_DIR/.payfac_mp_sdk.conf
     
 
   
 script:
  - echo $BUILD_DIR
  - echo $PAYFAC_MP_SDK_CONFIG
- - echo "{"url": "https://www.testvantivcnp.com/sandbox/payfac", "merchant_id": "1288791", "username": "user", "password": "pass", "neuter_xml": false}" >> $PAYFAC_MP_SDK_CONFIG
  - cat $PAYFAC_MP_SDK_CONFIG
  - python setup.py install
  - python $BUILD_DIR/tools/generate.py
