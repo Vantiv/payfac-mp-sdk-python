@@ -22,7 +22,7 @@ HTTP_ERROR_MESSAGE = "Error with Https Request, Please Check Proxy and Url confi
 
 def http_get_retrieval_request(url_suffix, response_type, config=conf):
     # request_url = config.__getattribute__('url') + url_suffix
-    request_url = ("https://www.testvantivcnp.com/sandbox/payfac" + url_suffix).encode('utf-8').strip()
+    request_url = "https://www.testvantivcnp.com/sandbox/payfac" + url_suffix
 
     try:
         http_response = requests.get(request_url, headers=PAYFAC_API_HEADERS,

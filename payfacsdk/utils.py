@@ -90,7 +90,7 @@ def obj_to_xml(obj):
 
 
 def generate_response(http_response, response_type, return_format='dict'):
-    print(http_response.text)
+    print((http_response.text).encode('utf-8').strip())
     return convert_to_format(http_response.text, response_type, return_format)
 
 
