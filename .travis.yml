@@ -24,18 +24,17 @@ script:
   - echo $BUILD_DIR
   - echo $PAYFAC_MP_SDK_CONFIG
   - cat $PAYFAC_MP_SDK_CONFIG
-#   - nosetests --with-coverage --with-xunit --verbosity=3 $BUILD_DIR/test/unit $BUILD_DIR/test/functional
-  - nosetests $BUILD_DIR/test/unit $BUILD_DIR/test/functional -v — with-coverage
+  - nosetests --with-coverage --with-xunit --verbosity=3 $BUILD_DIR/test/unit $BUILD_DIR/test/functional
 
 
-  # deploy:
-  #   provider: releases
-  #   api_key: $GITHUB_TOKEN
-  #   file_glob: true
-  #   file: build/kit/dist/*
-  #   skip_cleanup: true
-  #   on:
-  #     tags: true
+  deploy:
+    provider: releases
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file: build/kit/dist/*
+    skip_cleanup: true
+    on:
+      tags: true
 
 
 after_success:
