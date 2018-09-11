@@ -35,7 +35,7 @@ def test_get_retrieval_request():
 
         # payfac_submerchant.get_by_subMerchantId("2018","123456")
 
-        payfac_mcc.get_mcc()
+        # payfac_mcc.get_mcc()
 
 
 
