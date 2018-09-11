@@ -1,7 +1,7 @@
 # ./fields_payfac.py
 # -*- coding: utf-8 -*-
 # PyXB bindings for NM:9608c9518b2c1add1a25370ac040759fdf43082e
-# Generated 2018-09-06 11:59:21.929318 by PyXB version 1.2.5 using Python 2.7.14.final.0
+# Generated 2018-09-11 11:44:24.700777 by PyXB version 1.2.5 using Python 2.7.14.final.0
 # Namespace http://payfac.vantivcnp.com/api/merchant/onboard
 
 from __future__ import unicode_literals
@@ -14,7 +14,7 @@ import pyxb.utils.domutils
 import sys
 import pyxb.utils.six as _six
 # Unique identifier for bindings created at the same time
-_GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:d1413bd2-b1ed-11e8-bb8c-001a4a0106a3')
+_GenerationUID = pyxb.utils.utility.UniqueIdentifier('urn:uuid:8ea69070-b5d9-11e8-8a19-001a4a0106a3')
 
 # Version of PyXB used to generate the bindings
 _PyXBVersion = '1.2.5'
@@ -393,13 +393,13 @@ class STD_ANON (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 281, 16)
     _Documentation = None
-STD_ANON._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
-STD_ANON._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
 STD_ANON._CF_pattern = pyxb.binding.facets.CF_pattern()
 STD_ANON._CF_pattern.addPattern(pattern='\\p{IsBasicLatin}*')
-STD_ANON._InitializeFacetMap(STD_ANON._CF_minLength,
+STD_ANON._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
+STD_ANON._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON._InitializeFacetMap(STD_ANON._CF_pattern,
    STD_ANON._CF_maxLength,
-   STD_ANON._CF_pattern)
+   STD_ANON._CF_minLength)
 _module_typeBindings.STD_ANON = STD_ANON
 
 # Atomic simple type: [anonymous]
@@ -410,10 +410,10 @@ class STD_ANON_ (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 292, 16)
     _Documentation = None
-STD_ANON_._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_._InitializeFacetMap(STD_ANON_._CF_minLength,
-   STD_ANON_._CF_maxLength)
+STD_ANON_._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_._InitializeFacetMap(STD_ANON_._CF_maxLength,
+   STD_ANON_._CF_minLength)
 _module_typeBindings.STD_ANON_ = STD_ANON_
 
 # Atomic simple type: [anonymous]
@@ -424,10 +424,10 @@ class STD_ANON_2 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 300, 16)
     _Documentation = None
-STD_ANON_2._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(9))
 STD_ANON_2._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(25))
-STD_ANON_2._InitializeFacetMap(STD_ANON_2._CF_minLength,
-   STD_ANON_2._CF_maxLength)
+STD_ANON_2._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(9))
+STD_ANON_2._InitializeFacetMap(STD_ANON_2._CF_maxLength,
+   STD_ANON_2._CF_minLength)
 _module_typeBindings.STD_ANON_2 = STD_ANON_2
 
 # Atomic simple type: [anonymous]
@@ -438,10 +438,10 @@ class STD_ANON_3 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 308, 16)
     _Documentation = None
-STD_ANON_3._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_3._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(10))
-STD_ANON_3._InitializeFacetMap(STD_ANON_3._CF_minLength,
-   STD_ANON_3._CF_maxLength)
+STD_ANON_3._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_3._InitializeFacetMap(STD_ANON_3._CF_maxLength,
+   STD_ANON_3._CF_minLength)
 _module_typeBindings.STD_ANON_3 = STD_ANON_3
 
 # Atomic simple type: [anonymous]
@@ -452,13 +452,13 @@ class STD_ANON_4 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 320, 16)
     _Documentation = None
-STD_ANON_4._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(0))
-STD_ANON_4._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
 STD_ANON_4._CF_pattern = pyxb.binding.facets.CF_pattern()
 STD_ANON_4._CF_pattern.addPattern(pattern='[0-9]{0,3}')
-STD_ANON_4._InitializeFacetMap(STD_ANON_4._CF_minLength,
+STD_ANON_4._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
+STD_ANON_4._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(0))
+STD_ANON_4._InitializeFacetMap(STD_ANON_4._CF_pattern,
    STD_ANON_4._CF_maxLength,
-   STD_ANON_4._CF_pattern)
+   STD_ANON_4._CF_minLength)
 _module_typeBindings.STD_ANON_4 = STD_ANON_4
 
 # Atomic simple type: [anonymous]
@@ -469,10 +469,10 @@ class STD_ANON_5 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 336, 16)
     _Documentation = None
-STD_ANON_5._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_5._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_5._InitializeFacetMap(STD_ANON_5._CF_minLength,
-   STD_ANON_5._CF_maxLength)
+STD_ANON_5._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_5._InitializeFacetMap(STD_ANON_5._CF_maxLength,
+   STD_ANON_5._CF_minLength)
 _module_typeBindings.STD_ANON_5 = STD_ANON_5
 
 # Atomic simple type: [anonymous]
@@ -483,10 +483,10 @@ class STD_ANON_6 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 344, 16)
     _Documentation = None
-STD_ANON_6._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_6._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_6._InitializeFacetMap(STD_ANON_6._CF_minLength,
-   STD_ANON_6._CF_maxLength)
+STD_ANON_6._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_6._InitializeFacetMap(STD_ANON_6._CF_maxLength,
+   STD_ANON_6._CF_minLength)
 _module_typeBindings.STD_ANON_6 = STD_ANON_6
 
 # Atomic simple type: [anonymous]
@@ -497,10 +497,10 @@ class STD_ANON_7 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 352, 16)
     _Documentation = None
-STD_ANON_7._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_7._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_7._InitializeFacetMap(STD_ANON_7._CF_minLength,
-   STD_ANON_7._CF_maxLength)
+STD_ANON_7._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_7._InitializeFacetMap(STD_ANON_7._CF_maxLength,
+   STD_ANON_7._CF_minLength)
 _module_typeBindings.STD_ANON_7 = STD_ANON_7
 
 # Atomic simple type: [anonymous]
@@ -511,10 +511,10 @@ class STD_ANON_8 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 360, 16)
     _Documentation = None
-STD_ANON_8._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_8._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
-STD_ANON_8._InitializeFacetMap(STD_ANON_8._CF_minLength,
-   STD_ANON_8._CF_maxLength)
+STD_ANON_8._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_8._InitializeFacetMap(STD_ANON_8._CF_maxLength,
+   STD_ANON_8._CF_minLength)
 _module_typeBindings.STD_ANON_8 = STD_ANON_8
 
 # Atomic simple type: [anonymous]
@@ -525,10 +525,10 @@ class STD_ANON_9 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 368, 16)
     _Documentation = None
-STD_ANON_9._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_9._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(7))
-STD_ANON_9._InitializeFacetMap(STD_ANON_9._CF_minLength,
-   STD_ANON_9._CF_maxLength)
+STD_ANON_9._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_9._InitializeFacetMap(STD_ANON_9._CF_maxLength,
+   STD_ANON_9._CF_minLength)
 _module_typeBindings.STD_ANON_9 = STD_ANON_9
 
 # Atomic simple type: [anonymous]
@@ -539,10 +539,10 @@ class STD_ANON_10 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 376, 16)
     _Documentation = None
-STD_ANON_10._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
 STD_ANON_10._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
-STD_ANON_10._InitializeFacetMap(STD_ANON_10._CF_minLength,
-   STD_ANON_10._CF_maxLength)
+STD_ANON_10._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
+STD_ANON_10._InitializeFacetMap(STD_ANON_10._CF_maxLength,
+   STD_ANON_10._CF_minLength)
 _module_typeBindings.STD_ANON_10 = STD_ANON_10
 
 # Atomic simple type: [anonymous]
@@ -553,10 +553,10 @@ class STD_ANON_11 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 390, 16)
     _Documentation = None
-STD_ANON_11._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(0))
 STD_ANON_11._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_11._InitializeFacetMap(STD_ANON_11._CF_minLength,
-   STD_ANON_11._CF_maxLength)
+STD_ANON_11._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(0))
+STD_ANON_11._InitializeFacetMap(STD_ANON_11._CF_maxLength,
+   STD_ANON_11._CF_minLength)
 _module_typeBindings.STD_ANON_11 = STD_ANON_11
 
 # Atomic simple type: [anonymous]
@@ -567,10 +567,10 @@ class STD_ANON_12 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 398, 16)
     _Documentation = None
-STD_ANON_12._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_12._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_12._InitializeFacetMap(STD_ANON_12._CF_minLength,
-   STD_ANON_12._CF_maxLength)
+STD_ANON_12._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_12._InitializeFacetMap(STD_ANON_12._CF_maxLength,
+   STD_ANON_12._CF_minLength)
 _module_typeBindings.STD_ANON_12 = STD_ANON_12
 
 # Atomic simple type: [anonymous]
@@ -581,10 +581,10 @@ class STD_ANON_13 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 406, 16)
     _Documentation = None
-STD_ANON_13._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_13._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_13._InitializeFacetMap(STD_ANON_13._CF_minLength,
-   STD_ANON_13._CF_maxLength)
+STD_ANON_13._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_13._InitializeFacetMap(STD_ANON_13._CF_maxLength,
+   STD_ANON_13._CF_minLength)
 _module_typeBindings.STD_ANON_13 = STD_ANON_13
 
 # Atomic simple type: [anonymous]
@@ -595,10 +595,10 @@ class STD_ANON_14 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 414, 16)
     _Documentation = None
-STD_ANON_14._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_14._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_14._InitializeFacetMap(STD_ANON_14._CF_minLength,
-   STD_ANON_14._CF_maxLength)
+STD_ANON_14._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_14._InitializeFacetMap(STD_ANON_14._CF_maxLength,
+   STD_ANON_14._CF_minLength)
 _module_typeBindings.STD_ANON_14 = STD_ANON_14
 
 # Atomic simple type: [anonymous]
@@ -609,10 +609,10 @@ class STD_ANON_15 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 422, 16)
     _Documentation = None
-STD_ANON_15._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(9))
 STD_ANON_15._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(25))
-STD_ANON_15._InitializeFacetMap(STD_ANON_15._CF_minLength,
-   STD_ANON_15._CF_maxLength)
+STD_ANON_15._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(9))
+STD_ANON_15._InitializeFacetMap(STD_ANON_15._CF_maxLength,
+   STD_ANON_15._CF_minLength)
 _module_typeBindings.STD_ANON_15 = STD_ANON_15
 
 # Atomic simple type: [anonymous]
@@ -623,10 +623,10 @@ class STD_ANON_16 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 430, 16)
     _Documentation = None
-STD_ANON_16._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_16._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(10))
-STD_ANON_16._InitializeFacetMap(STD_ANON_16._CF_minLength,
-   STD_ANON_16._CF_maxLength)
+STD_ANON_16._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_16._InitializeFacetMap(STD_ANON_16._CF_maxLength,
+   STD_ANON_16._CF_minLength)
 _module_typeBindings.STD_ANON_16 = STD_ANON_16
 
 # Atomic simple type: [anonymous]
@@ -637,10 +637,10 @@ class STD_ANON_17 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 439, 16)
     _Documentation = None
-STD_ANON_17._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_17._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(25))
-STD_ANON_17._InitializeFacetMap(STD_ANON_17._CF_minLength,
-   STD_ANON_17._CF_maxLength)
+STD_ANON_17._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_17._InitializeFacetMap(STD_ANON_17._CF_maxLength,
+   STD_ANON_17._CF_minLength)
 _module_typeBindings.STD_ANON_17 = STD_ANON_17
 
 # Atomic simple type: [anonymous]
@@ -651,10 +651,10 @@ class STD_ANON_18 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 447, 16)
     _Documentation = None
-STD_ANON_18._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_18._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
-STD_ANON_18._InitializeFacetMap(STD_ANON_18._CF_minLength,
-   STD_ANON_18._CF_maxLength)
+STD_ANON_18._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_18._InitializeFacetMap(STD_ANON_18._CF_maxLength,
+   STD_ANON_18._CF_minLength)
 _module_typeBindings.STD_ANON_18 = STD_ANON_18
 
 # Atomic simple type: [anonymous]
@@ -665,10 +665,10 @@ class STD_ANON_19 (pyxb.binding.datatypes.int):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 456, 16)
     _Documentation = None
-STD_ANON_19._CF_maxInclusive = pyxb.binding.facets.CF_maxInclusive(value_datatype=STD_ANON_19, value=pyxb.binding.datatypes.int(100))
 STD_ANON_19._CF_minInclusive = pyxb.binding.facets.CF_minInclusive(value_datatype=STD_ANON_19, value=pyxb.binding.datatypes.int(0))
-STD_ANON_19._InitializeFacetMap(STD_ANON_19._CF_maxInclusive,
-   STD_ANON_19._CF_minInclusive)
+STD_ANON_19._CF_maxInclusive = pyxb.binding.facets.CF_maxInclusive(value_datatype=STD_ANON_19, value=pyxb.binding.datatypes.int(100))
+STD_ANON_19._InitializeFacetMap(STD_ANON_19._CF_minInclusive,
+   STD_ANON_19._CF_maxInclusive)
 _module_typeBindings.STD_ANON_19 = STD_ANON_19
 
 # Atomic simple type: [anonymous]
@@ -679,10 +679,10 @@ class STD_ANON_20 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 470, 16)
     _Documentation = None
-STD_ANON_20._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_20._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_20._InitializeFacetMap(STD_ANON_20._CF_minLength,
-   STD_ANON_20._CF_maxLength)
+STD_ANON_20._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_20._InitializeFacetMap(STD_ANON_20._CF_maxLength,
+   STD_ANON_20._CF_minLength)
 _module_typeBindings.STD_ANON_20 = STD_ANON_20
 
 # Atomic simple type: [anonymous]
@@ -693,10 +693,10 @@ class STD_ANON_21 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 478, 16)
     _Documentation = None
-STD_ANON_21._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_21._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_21._InitializeFacetMap(STD_ANON_21._CF_minLength,
-   STD_ANON_21._CF_maxLength)
+STD_ANON_21._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_21._InitializeFacetMap(STD_ANON_21._CF_maxLength,
+   STD_ANON_21._CF_minLength)
 _module_typeBindings.STD_ANON_21 = STD_ANON_21
 
 # Atomic simple type: [anonymous]
@@ -707,10 +707,10 @@ class STD_ANON_22 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 486, 16)
     _Documentation = None
-STD_ANON_22._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_22._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_22._InitializeFacetMap(STD_ANON_22._CF_minLength,
-   STD_ANON_22._CF_maxLength)
+STD_ANON_22._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_22._InitializeFacetMap(STD_ANON_22._CF_maxLength,
+   STD_ANON_22._CF_minLength)
 _module_typeBindings.STD_ANON_22 = STD_ANON_22
 
 # Atomic simple type: [anonymous]
@@ -721,10 +721,10 @@ class STD_ANON_23 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 494, 16)
     _Documentation = None
-STD_ANON_23._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_23._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
-STD_ANON_23._InitializeFacetMap(STD_ANON_23._CF_minLength,
-   STD_ANON_23._CF_maxLength)
+STD_ANON_23._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_23._InitializeFacetMap(STD_ANON_23._CF_maxLength,
+   STD_ANON_23._CF_minLength)
 _module_typeBindings.STD_ANON_23 = STD_ANON_23
 
 # Atomic simple type: [anonymous]
@@ -735,10 +735,10 @@ class STD_ANON_24 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 502, 16)
     _Documentation = None
-STD_ANON_24._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_24._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(7))
-STD_ANON_24._InitializeFacetMap(STD_ANON_24._CF_minLength,
-   STD_ANON_24._CF_maxLength)
+STD_ANON_24._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_24._InitializeFacetMap(STD_ANON_24._CF_maxLength,
+   STD_ANON_24._CF_minLength)
 _module_typeBindings.STD_ANON_24 = STD_ANON_24
 
 # Atomic simple type: [anonymous]
@@ -749,10 +749,10 @@ class STD_ANON_25 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 510, 16)
     _Documentation = None
-STD_ANON_25._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
 STD_ANON_25._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
-STD_ANON_25._InitializeFacetMap(STD_ANON_25._CF_minLength,
-   STD_ANON_25._CF_maxLength)
+STD_ANON_25._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
+STD_ANON_25._InitializeFacetMap(STD_ANON_25._CF_maxLength,
+   STD_ANON_25._CF_minLength)
 _module_typeBindings.STD_ANON_25 = STD_ANON_25
 
 # Atomic simple type: [anonymous]
@@ -763,10 +763,10 @@ class STD_ANON_26 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 537, 24)
     _Documentation = None
-STD_ANON_26._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_26._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_26._InitializeFacetMap(STD_ANON_26._CF_minLength,
-   STD_ANON_26._CF_maxLength)
+STD_ANON_26._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_26._InitializeFacetMap(STD_ANON_26._CF_maxLength,
+   STD_ANON_26._CF_minLength)
 _module_typeBindings.STD_ANON_26 = STD_ANON_26
 
 # Atomic simple type: [anonymous]
@@ -777,10 +777,10 @@ class STD_ANON_27 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 546, 24)
     _Documentation = None
-STD_ANON_27._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_27._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_27._InitializeFacetMap(STD_ANON_27._CF_minLength,
-   STD_ANON_27._CF_maxLength)
+STD_ANON_27._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_27._InitializeFacetMap(STD_ANON_27._CF_maxLength,
+   STD_ANON_27._CF_minLength)
 _module_typeBindings.STD_ANON_27 = STD_ANON_27
 
 # Atomic simple type: [anonymous]
@@ -791,10 +791,10 @@ class STD_ANON_28 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 554, 24)
     _Documentation = None
-STD_ANON_28._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_28._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_28._InitializeFacetMap(STD_ANON_28._CF_minLength,
-   STD_ANON_28._CF_maxLength)
+STD_ANON_28._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_28._InitializeFacetMap(STD_ANON_28._CF_maxLength,
+   STD_ANON_28._CF_minLength)
 _module_typeBindings.STD_ANON_28 = STD_ANON_28
 
 # Atomic simple type: [anonymous]
@@ -805,10 +805,10 @@ class STD_ANON_29 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 562, 24)
     _Documentation = None
-STD_ANON_29._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_29._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_29._InitializeFacetMap(STD_ANON_29._CF_minLength,
-   STD_ANON_29._CF_maxLength)
+STD_ANON_29._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_29._InitializeFacetMap(STD_ANON_29._CF_maxLength,
+   STD_ANON_29._CF_minLength)
 _module_typeBindings.STD_ANON_29 = STD_ANON_29
 
 # Atomic simple type: [anonymous]
@@ -819,10 +819,10 @@ class STD_ANON_30 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 597, 24)
     _Documentation = None
-STD_ANON_30._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_30._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_30._InitializeFacetMap(STD_ANON_30._CF_minLength,
-   STD_ANON_30._CF_maxLength)
+STD_ANON_30._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_30._InitializeFacetMap(STD_ANON_30._CF_maxLength,
+   STD_ANON_30._CF_minLength)
 _module_typeBindings.STD_ANON_30 = STD_ANON_30
 
 # Atomic simple type: [anonymous]
@@ -833,10 +833,10 @@ class STD_ANON_31 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 605, 24)
     _Documentation = None
-STD_ANON_31._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_31._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_31._InitializeFacetMap(STD_ANON_31._CF_minLength,
-   STD_ANON_31._CF_maxLength)
+STD_ANON_31._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_31._InitializeFacetMap(STD_ANON_31._CF_maxLength,
+   STD_ANON_31._CF_minLength)
 _module_typeBindings.STD_ANON_31 = STD_ANON_31
 
 # Atomic simple type: [anonymous]
@@ -847,10 +847,10 @@ class STD_ANON_32 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 623, 24)
     _Documentation = None
-STD_ANON_32._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_32._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_32._InitializeFacetMap(STD_ANON_32._CF_minLength,
-   STD_ANON_32._CF_maxLength)
+STD_ANON_32._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_32._InitializeFacetMap(STD_ANON_32._CF_maxLength,
+   STD_ANON_32._CF_minLength)
 _module_typeBindings.STD_ANON_32 = STD_ANON_32
 
 # Atomic simple type: [anonymous]
@@ -861,10 +861,10 @@ class STD_ANON_33 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 632, 24)
     _Documentation = None
-STD_ANON_33._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_33._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_33._InitializeFacetMap(STD_ANON_33._CF_minLength,
-   STD_ANON_33._CF_maxLength)
+STD_ANON_33._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_33._InitializeFacetMap(STD_ANON_33._CF_maxLength,
+   STD_ANON_33._CF_minLength)
 _module_typeBindings.STD_ANON_33 = STD_ANON_33
 
 # Atomic simple type: [anonymous]
@@ -875,10 +875,10 @@ class STD_ANON_34 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 641, 24)
     _Documentation = None
-STD_ANON_34._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_34._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_34._InitializeFacetMap(STD_ANON_34._CF_minLength,
-   STD_ANON_34._CF_maxLength)
+STD_ANON_34._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_34._InitializeFacetMap(STD_ANON_34._CF_maxLength,
+   STD_ANON_34._CF_minLength)
 _module_typeBindings.STD_ANON_34 = STD_ANON_34
 
 # Atomic simple type: [anonymous]
@@ -889,10 +889,10 @@ class STD_ANON_35 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 651, 24)
     _Documentation = None
-STD_ANON_35._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_35._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_35._InitializeFacetMap(STD_ANON_35._CF_minLength,
-   STD_ANON_35._CF_maxLength)
+STD_ANON_35._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_35._InitializeFacetMap(STD_ANON_35._CF_maxLength,
+   STD_ANON_35._CF_minLength)
 _module_typeBindings.STD_ANON_35 = STD_ANON_35
 
 # Atomic simple type: [anonymous]
@@ -903,10 +903,10 @@ class STD_ANON_36 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 661, 20)
     _Documentation = None
-STD_ANON_36._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_36._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_36._InitializeFacetMap(STD_ANON_36._CF_minLength,
-   STD_ANON_36._CF_maxLength)
+STD_ANON_36._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_36._InitializeFacetMap(STD_ANON_36._CF_maxLength,
+   STD_ANON_36._CF_minLength)
 _module_typeBindings.STD_ANON_36 = STD_ANON_36
 
 # Atomic simple type: [anonymous]
@@ -917,10 +917,10 @@ class STD_ANON_37 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 678, 16)
     _Documentation = None
-STD_ANON_37._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_37._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(2000))
-STD_ANON_37._InitializeFacetMap(STD_ANON_37._CF_minLength,
-   STD_ANON_37._CF_maxLength)
+STD_ANON_37._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_37._InitializeFacetMap(STD_ANON_37._CF_maxLength,
+   STD_ANON_37._CF_minLength)
 _module_typeBindings.STD_ANON_37 = STD_ANON_37
 
 # Atomic simple type: [anonymous]
@@ -931,10 +931,10 @@ class STD_ANON_38 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 716, 16)
     _Documentation = None
-STD_ANON_38._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_38._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(110))
-STD_ANON_38._InitializeFacetMap(STD_ANON_38._CF_minLength,
-   STD_ANON_38._CF_maxLength)
+STD_ANON_38._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_38._InitializeFacetMap(STD_ANON_38._CF_maxLength,
+   STD_ANON_38._CF_minLength)
 _module_typeBindings.STD_ANON_38 = STD_ANON_38
 
 # Atomic simple type: [anonymous]
@@ -945,10 +945,10 @@ class STD_ANON_39 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 730, 16)
     _Documentation = None
-STD_ANON_39._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_39._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(120))
-STD_ANON_39._InitializeFacetMap(STD_ANON_39._CF_minLength,
-   STD_ANON_39._CF_maxLength)
+STD_ANON_39._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_39._InitializeFacetMap(STD_ANON_39._CF_maxLength,
+   STD_ANON_39._CF_minLength)
 _module_typeBindings.STD_ANON_39 = STD_ANON_39
 
 # Atomic simple type: [anonymous]
@@ -959,10 +959,10 @@ class STD_ANON_40 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 744, 16)
     _Documentation = None
-STD_ANON_40._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_40._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(120))
-STD_ANON_40._InitializeFacetMap(STD_ANON_40._CF_minLength,
-   STD_ANON_40._CF_maxLength)
+STD_ANON_40._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_40._InitializeFacetMap(STD_ANON_40._CF_maxLength,
+   STD_ANON_40._CF_minLength)
 _module_typeBindings.STD_ANON_40 = STD_ANON_40
 
 # Atomic simple type: [anonymous]
@@ -973,10 +973,10 @@ class STD_ANON_41 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 770, 16)
     _Documentation = None
-STD_ANON_41._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_41._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(120))
-STD_ANON_41._InitializeFacetMap(STD_ANON_41._CF_minLength,
-   STD_ANON_41._CF_maxLength)
+STD_ANON_41._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_41._InitializeFacetMap(STD_ANON_41._CF_maxLength,
+   STD_ANON_41._CF_minLength)
 _module_typeBindings.STD_ANON_41 = STD_ANON_41
 
 # Atomic simple type: [anonymous]
@@ -987,10 +987,10 @@ class STD_ANON_42 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 784, 16)
     _Documentation = None
-STD_ANON_42._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_42._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(2000))
-STD_ANON_42._InitializeFacetMap(STD_ANON_42._CF_minLength,
-   STD_ANON_42._CF_maxLength)
+STD_ANON_42._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_42._InitializeFacetMap(STD_ANON_42._CF_maxLength,
+   STD_ANON_42._CF_minLength)
 _module_typeBindings.STD_ANON_42 = STD_ANON_42
 
 # Atomic simple type: [anonymous]
@@ -1001,10 +1001,10 @@ class STD_ANON_43 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 814, 16)
     _Documentation = None
-STD_ANON_43._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_43._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(200))
-STD_ANON_43._InitializeFacetMap(STD_ANON_43._CF_minLength,
-   STD_ANON_43._CF_maxLength)
+STD_ANON_43._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_43._InitializeFacetMap(STD_ANON_43._CF_maxLength,
+   STD_ANON_43._CF_minLength)
 _module_typeBindings.STD_ANON_43 = STD_ANON_43
 
 # Atomic simple type: [anonymous]
@@ -1015,10 +1015,10 @@ class STD_ANON_44 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 828, 16)
     _Documentation = None
-STD_ANON_44._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_44._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_44._InitializeFacetMap(STD_ANON_44._CF_minLength,
-   STD_ANON_44._CF_maxLength)
+STD_ANON_44._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_44._InitializeFacetMap(STD_ANON_44._CF_maxLength,
+   STD_ANON_44._CF_minLength)
 _module_typeBindings.STD_ANON_44 = STD_ANON_44
 
 # Atomic simple type: [anonymous]
@@ -1029,10 +1029,10 @@ class STD_ANON_45 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 842, 16)
     _Documentation = None
-STD_ANON_45._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_45._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_45._InitializeFacetMap(STD_ANON_45._CF_minLength,
-   STD_ANON_45._CF_maxLength)
+STD_ANON_45._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_45._InitializeFacetMap(STD_ANON_45._CF_maxLength,
+   STD_ANON_45._CF_minLength)
 _module_typeBindings.STD_ANON_45 = STD_ANON_45
 
 # Atomic simple type: [anonymous]
@@ -1043,10 +1043,10 @@ class STD_ANON_46 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 866, 16)
     _Documentation = None
-STD_ANON_46._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_46._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(95))
-STD_ANON_46._InitializeFacetMap(STD_ANON_46._CF_minLength,
-   STD_ANON_46._CF_maxLength)
+STD_ANON_46._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_46._InitializeFacetMap(STD_ANON_46._CF_maxLength,
+   STD_ANON_46._CF_minLength)
 _module_typeBindings.STD_ANON_46 = STD_ANON_46
 
 # Atomic simple type: [anonymous]
@@ -1057,10 +1057,10 @@ class STD_ANON_47 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 879, 16)
     _Documentation = None
-STD_ANON_47._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_47._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(5))
-STD_ANON_47._InitializeFacetMap(STD_ANON_47._CF_minLength,
-   STD_ANON_47._CF_maxLength)
+STD_ANON_47._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_47._InitializeFacetMap(STD_ANON_47._CF_maxLength,
+   STD_ANON_47._CF_minLength)
 _module_typeBindings.STD_ANON_47 = STD_ANON_47
 
 # Atomic simple type: [anonymous]
@@ -1071,10 +1071,10 @@ class STD_ANON_48 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 888, 16)
     _Documentation = None
-STD_ANON_48._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_48._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(120))
-STD_ANON_48._InitializeFacetMap(STD_ANON_48._CF_minLength,
-   STD_ANON_48._CF_maxLength)
+STD_ANON_48._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_48._InitializeFacetMap(STD_ANON_48._CF_maxLength,
+   STD_ANON_48._CF_minLength)
 _module_typeBindings.STD_ANON_48 = STD_ANON_48
 
 # Atomic simple type: [anonymous]
@@ -1085,10 +1085,10 @@ class STD_ANON_49 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 896, 16)
     _Documentation = None
-STD_ANON_49._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_49._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_49._InitializeFacetMap(STD_ANON_49._CF_minLength,
-   STD_ANON_49._CF_maxLength)
+STD_ANON_49._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_49._InitializeFacetMap(STD_ANON_49._CF_maxLength,
+   STD_ANON_49._CF_minLength)
 _module_typeBindings.STD_ANON_49 = STD_ANON_49
 
 # Atomic simple type: [anonymous]
@@ -1099,10 +1099,10 @@ class STD_ANON_50 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 904, 16)
     _Documentation = None
-STD_ANON_50._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_50._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_50._InitializeFacetMap(STD_ANON_50._CF_minLength,
-   STD_ANON_50._CF_maxLength)
+STD_ANON_50._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_50._InitializeFacetMap(STD_ANON_50._CF_maxLength,
+   STD_ANON_50._CF_minLength)
 _module_typeBindings.STD_ANON_50 = STD_ANON_50
 
 # Atomic simple type: [anonymous]
@@ -1113,10 +1113,10 @@ class STD_ANON_51 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 912, 16)
     _Documentation = None
-STD_ANON_51._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_51._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(30))
-STD_ANON_51._InitializeFacetMap(STD_ANON_51._CF_minLength,
-   STD_ANON_51._CF_maxLength)
+STD_ANON_51._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_51._InitializeFacetMap(STD_ANON_51._CF_maxLength,
+   STD_ANON_51._CF_minLength)
 _module_typeBindings.STD_ANON_51 = STD_ANON_51
 
 # Atomic simple type: [anonymous]
@@ -1127,10 +1127,10 @@ class STD_ANON_52 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 920, 16)
     _Documentation = None
-STD_ANON_52._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_52._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
-STD_ANON_52._InitializeFacetMap(STD_ANON_52._CF_minLength,
-   STD_ANON_52._CF_maxLength)
+STD_ANON_52._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_52._InitializeFacetMap(STD_ANON_52._CF_maxLength,
+   STD_ANON_52._CF_minLength)
 _module_typeBindings.STD_ANON_52 = STD_ANON_52
 
 # Atomic simple type: [anonymous]
@@ -1141,10 +1141,10 @@ class STD_ANON_53 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 928, 16)
     _Documentation = None
-STD_ANON_53._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_53._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(5))
-STD_ANON_53._InitializeFacetMap(STD_ANON_53._CF_minLength,
-   STD_ANON_53._CF_maxLength)
+STD_ANON_53._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_53._InitializeFacetMap(STD_ANON_53._CF_maxLength,
+   STD_ANON_53._CF_minLength)
 _module_typeBindings.STD_ANON_53 = STD_ANON_53
 
 # Atomic simple type: [anonymous]
@@ -1155,10 +1155,10 @@ class STD_ANON_54 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 936, 16)
     _Documentation = None
-STD_ANON_54._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_54._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(4))
-STD_ANON_54._InitializeFacetMap(STD_ANON_54._CF_minLength,
-   STD_ANON_54._CF_maxLength)
+STD_ANON_54._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_54._InitializeFacetMap(STD_ANON_54._CF_maxLength,
+   STD_ANON_54._CF_minLength)
 _module_typeBindings.STD_ANON_54 = STD_ANON_54
 
 # Atomic simple type: [anonymous]
@@ -1169,10 +1169,10 @@ class STD_ANON_55 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 950, 16)
     _Documentation = None
-STD_ANON_55._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_55._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_55._InitializeFacetMap(STD_ANON_55._CF_minLength,
-   STD_ANON_55._CF_maxLength)
+STD_ANON_55._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_55._InitializeFacetMap(STD_ANON_55._CF_maxLength,
+   STD_ANON_55._CF_minLength)
 _module_typeBindings.STD_ANON_55 = STD_ANON_55
 
 # Atomic simple type: [anonymous]
@@ -1183,10 +1183,10 @@ class STD_ANON_56 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 960, 16)
     _Documentation = None
-STD_ANON_56._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_56._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(120))
-STD_ANON_56._InitializeFacetMap(STD_ANON_56._CF_minLength,
-   STD_ANON_56._CF_maxLength)
+STD_ANON_56._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_56._InitializeFacetMap(STD_ANON_56._CF_maxLength,
+   STD_ANON_56._CF_minLength)
 _module_typeBindings.STD_ANON_56 = STD_ANON_56
 
 # Atomic simple type: [anonymous]
@@ -1197,10 +1197,10 @@ class STD_ANON_57 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 968, 16)
     _Documentation = None
-STD_ANON_57._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_57._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_57._InitializeFacetMap(STD_ANON_57._CF_minLength,
-   STD_ANON_57._CF_maxLength)
+STD_ANON_57._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_57._InitializeFacetMap(STD_ANON_57._CF_maxLength,
+   STD_ANON_57._CF_minLength)
 _module_typeBindings.STD_ANON_57 = STD_ANON_57
 
 # Atomic simple type: [anonymous]
@@ -1211,10 +1211,10 @@ class STD_ANON_58 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 976, 16)
     _Documentation = None
-STD_ANON_58._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_58._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_58._InitializeFacetMap(STD_ANON_58._CF_minLength,
-   STD_ANON_58._CF_maxLength)
+STD_ANON_58._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_58._InitializeFacetMap(STD_ANON_58._CF_maxLength,
+   STD_ANON_58._CF_minLength)
 _module_typeBindings.STD_ANON_58 = STD_ANON_58
 
 # Atomic simple type: [anonymous]
@@ -1225,10 +1225,10 @@ class STD_ANON_59 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 984, 16)
     _Documentation = None
-STD_ANON_59._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_59._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(30))
-STD_ANON_59._InitializeFacetMap(STD_ANON_59._CF_minLength,
-   STD_ANON_59._CF_maxLength)
+STD_ANON_59._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_59._InitializeFacetMap(STD_ANON_59._CF_maxLength,
+   STD_ANON_59._CF_minLength)
 _module_typeBindings.STD_ANON_59 = STD_ANON_59
 
 # Atomic simple type: [anonymous]
@@ -1239,10 +1239,10 @@ class STD_ANON_60 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 992, 16)
     _Documentation = None
-STD_ANON_60._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_60._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
-STD_ANON_60._InitializeFacetMap(STD_ANON_60._CF_minLength,
-   STD_ANON_60._CF_maxLength)
+STD_ANON_60._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_60._InitializeFacetMap(STD_ANON_60._CF_maxLength,
+   STD_ANON_60._CF_minLength)
 _module_typeBindings.STD_ANON_60 = STD_ANON_60
 
 # Atomic simple type: [anonymous]
@@ -1253,10 +1253,10 @@ class STD_ANON_61 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1000, 16)
     _Documentation = None
-STD_ANON_61._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_61._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(5))
-STD_ANON_61._InitializeFacetMap(STD_ANON_61._CF_minLength,
-   STD_ANON_61._CF_maxLength)
+STD_ANON_61._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_61._InitializeFacetMap(STD_ANON_61._CF_maxLength,
+   STD_ANON_61._CF_minLength)
 _module_typeBindings.STD_ANON_61 = STD_ANON_61
 
 # Atomic simple type: [anonymous]
@@ -1267,10 +1267,10 @@ class STD_ANON_62 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1008, 16)
     _Documentation = None
-STD_ANON_62._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_62._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(4))
-STD_ANON_62._InitializeFacetMap(STD_ANON_62._CF_minLength,
-   STD_ANON_62._CF_maxLength)
+STD_ANON_62._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_62._InitializeFacetMap(STD_ANON_62._CF_maxLength,
+   STD_ANON_62._CF_minLength)
 _module_typeBindings.STD_ANON_62 = STD_ANON_62
 
 # Atomic simple type: [anonymous]
@@ -1281,10 +1281,10 @@ class STD_ANON_63 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1023, 16)
     _Documentation = None
-STD_ANON_63._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_63._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(10))
-STD_ANON_63._InitializeFacetMap(STD_ANON_63._CF_minLength,
-   STD_ANON_63._CF_maxLength)
+STD_ANON_63._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_63._InitializeFacetMap(STD_ANON_63._CF_maxLength,
+   STD_ANON_63._CF_minLength)
 _module_typeBindings.STD_ANON_63 = STD_ANON_63
 
 # Atomic simple type: [anonymous]
@@ -1295,10 +1295,10 @@ class STD_ANON_64 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1031, 16)
     _Documentation = None
-STD_ANON_64._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_64._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_64._InitializeFacetMap(STD_ANON_64._CF_minLength,
-   STD_ANON_64._CF_maxLength)
+STD_ANON_64._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_64._InitializeFacetMap(STD_ANON_64._CF_maxLength,
+   STD_ANON_64._CF_minLength)
 _module_typeBindings.STD_ANON_64 = STD_ANON_64
 
 # Atomic simple type: [anonymous]
@@ -1309,13 +1309,13 @@ class STD_ANON_65 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1044, 16)
     _Documentation = None
-STD_ANON_65._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(0))
-STD_ANON_65._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
 STD_ANON_65._CF_pattern = pyxb.binding.facets.CF_pattern()
 STD_ANON_65._CF_pattern.addPattern(pattern='[0-9]{0,3}')
-STD_ANON_65._InitializeFacetMap(STD_ANON_65._CF_minLength,
+STD_ANON_65._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
+STD_ANON_65._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(0))
+STD_ANON_65._InitializeFacetMap(STD_ANON_65._CF_pattern,
    STD_ANON_65._CF_maxLength,
-   STD_ANON_65._CF_pattern)
+   STD_ANON_65._CF_minLength)
 _module_typeBindings.STD_ANON_65 = STD_ANON_65
 
 # Atomic simple type: [anonymous]
@@ -1326,10 +1326,10 @@ class STD_ANON_66 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1058, 16)
     _Documentation = None
-STD_ANON_66._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_66._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_66._InitializeFacetMap(STD_ANON_66._CF_minLength,
-   STD_ANON_66._CF_maxLength)
+STD_ANON_66._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_66._InitializeFacetMap(STD_ANON_66._CF_maxLength,
+   STD_ANON_66._CF_minLength)
 _module_typeBindings.STD_ANON_66 = STD_ANON_66
 
 # Atomic simple type: [anonymous]
@@ -1340,10 +1340,10 @@ class STD_ANON_67 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1066, 16)
     _Documentation = None
-STD_ANON_67._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_67._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_67._InitializeFacetMap(STD_ANON_67._CF_minLength,
-   STD_ANON_67._CF_maxLength)
+STD_ANON_67._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_67._InitializeFacetMap(STD_ANON_67._CF_maxLength,
+   STD_ANON_67._CF_minLength)
 _module_typeBindings.STD_ANON_67 = STD_ANON_67
 
 # Atomic simple type: [anonymous]
@@ -1354,10 +1354,10 @@ class STD_ANON_68 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1074, 16)
     _Documentation = None
-STD_ANON_68._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_68._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_68._InitializeFacetMap(STD_ANON_68._CF_minLength,
-   STD_ANON_68._CF_maxLength)
+STD_ANON_68._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_68._InitializeFacetMap(STD_ANON_68._CF_maxLength,
+   STD_ANON_68._CF_minLength)
 _module_typeBindings.STD_ANON_68 = STD_ANON_68
 
 # Atomic simple type: [anonymous]
@@ -1368,10 +1368,10 @@ class STD_ANON_69 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1082, 16)
     _Documentation = None
-STD_ANON_69._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_69._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
-STD_ANON_69._InitializeFacetMap(STD_ANON_69._CF_minLength,
-   STD_ANON_69._CF_maxLength)
+STD_ANON_69._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_69._InitializeFacetMap(STD_ANON_69._CF_maxLength,
+   STD_ANON_69._CF_minLength)
 _module_typeBindings.STD_ANON_69 = STD_ANON_69
 
 # Atomic simple type: [anonymous]
@@ -1382,10 +1382,10 @@ class STD_ANON_70 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1090, 16)
     _Documentation = None
-STD_ANON_70._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_70._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(7))
-STD_ANON_70._InitializeFacetMap(STD_ANON_70._CF_minLength,
-   STD_ANON_70._CF_maxLength)
+STD_ANON_70._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_70._InitializeFacetMap(STD_ANON_70._CF_maxLength,
+   STD_ANON_70._CF_minLength)
 _module_typeBindings.STD_ANON_70 = STD_ANON_70
 
 # Atomic simple type: [anonymous]
@@ -1396,10 +1396,10 @@ class STD_ANON_71 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1098, 16)
     _Documentation = None
-STD_ANON_71._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
 STD_ANON_71._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
-STD_ANON_71._InitializeFacetMap(STD_ANON_71._CF_minLength,
-   STD_ANON_71._CF_maxLength)
+STD_ANON_71._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
+STD_ANON_71._InitializeFacetMap(STD_ANON_71._CF_maxLength,
+   STD_ANON_71._CF_minLength)
 _module_typeBindings.STD_ANON_71 = STD_ANON_71
 
 # Atomic simple type: [anonymous]
@@ -1410,10 +1410,10 @@ class STD_ANON_72 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1112, 16)
     _Documentation = None
-STD_ANON_72._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(0))
 STD_ANON_72._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
-STD_ANON_72._InitializeFacetMap(STD_ANON_72._CF_minLength,
-   STD_ANON_72._CF_maxLength)
+STD_ANON_72._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(0))
+STD_ANON_72._InitializeFacetMap(STD_ANON_72._CF_maxLength,
+   STD_ANON_72._CF_minLength)
 _module_typeBindings.STD_ANON_72 = STD_ANON_72
 
 # Atomic simple type: [anonymous]
@@ -1424,10 +1424,10 @@ class STD_ANON_73 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1120, 16)
     _Documentation = None
-STD_ANON_73._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_73._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_73._InitializeFacetMap(STD_ANON_73._CF_minLength,
-   STD_ANON_73._CF_maxLength)
+STD_ANON_73._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_73._InitializeFacetMap(STD_ANON_73._CF_maxLength,
+   STD_ANON_73._CF_minLength)
 _module_typeBindings.STD_ANON_73 = STD_ANON_73
 
 # Atomic simple type: [anonymous]
@@ -1438,10 +1438,10 @@ class STD_ANON_74 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1128, 16)
     _Documentation = None
-STD_ANON_74._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_74._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(13))
-STD_ANON_74._InitializeFacetMap(STD_ANON_74._CF_minLength,
-   STD_ANON_74._CF_maxLength)
+STD_ANON_74._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_74._InitializeFacetMap(STD_ANON_74._CF_maxLength,
+   STD_ANON_74._CF_minLength)
 _module_typeBindings.STD_ANON_74 = STD_ANON_74
 
 # Atomic simple type: [anonymous]
@@ -1452,10 +1452,10 @@ class STD_ANON_75 (pyxb.binding.datatypes.int):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1137, 16)
     _Documentation = None
-STD_ANON_75._CF_maxInclusive = pyxb.binding.facets.CF_maxInclusive(value_datatype=STD_ANON_75, value=pyxb.binding.datatypes.int(100))
 STD_ANON_75._CF_minInclusive = pyxb.binding.facets.CF_minInclusive(value_datatype=STD_ANON_75, value=pyxb.binding.datatypes.int(0))
-STD_ANON_75._InitializeFacetMap(STD_ANON_75._CF_maxInclusive,
-   STD_ANON_75._CF_minInclusive)
+STD_ANON_75._CF_maxInclusive = pyxb.binding.facets.CF_maxInclusive(value_datatype=STD_ANON_75, value=pyxb.binding.datatypes.int(100))
+STD_ANON_75._InitializeFacetMap(STD_ANON_75._CF_minInclusive,
+   STD_ANON_75._CF_maxInclusive)
 _module_typeBindings.STD_ANON_75 = STD_ANON_75
 
 # Atomic simple type: [anonymous]
@@ -1466,10 +1466,10 @@ class STD_ANON_76 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1151, 16)
     _Documentation = None
-STD_ANON_76._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_76._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_76._InitializeFacetMap(STD_ANON_76._CF_minLength,
-   STD_ANON_76._CF_maxLength)
+STD_ANON_76._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_76._InitializeFacetMap(STD_ANON_76._CF_maxLength,
+   STD_ANON_76._CF_minLength)
 _module_typeBindings.STD_ANON_76 = STD_ANON_76
 
 # Atomic simple type: [anonymous]
@@ -1480,10 +1480,10 @@ class STD_ANON_77 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1159, 16)
     _Documentation = None
-STD_ANON_77._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_77._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_77._InitializeFacetMap(STD_ANON_77._CF_minLength,
-   STD_ANON_77._CF_maxLength)
+STD_ANON_77._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_77._InitializeFacetMap(STD_ANON_77._CF_maxLength,
+   STD_ANON_77._CF_minLength)
 _module_typeBindings.STD_ANON_77 = STD_ANON_77
 
 # Atomic simple type: [anonymous]
@@ -1494,10 +1494,10 @@ class STD_ANON_78 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1167, 16)
     _Documentation = None
-STD_ANON_78._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(9))
 STD_ANON_78._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(25))
-STD_ANON_78._InitializeFacetMap(STD_ANON_78._CF_minLength,
-   STD_ANON_78._CF_maxLength)
+STD_ANON_78._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(9))
+STD_ANON_78._InitializeFacetMap(STD_ANON_78._CF_maxLength,
+   STD_ANON_78._CF_minLength)
 _module_typeBindings.STD_ANON_78 = STD_ANON_78
 
 # Atomic simple type: [anonymous]
@@ -1508,10 +1508,10 @@ class STD_ANON_79 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1176, 16)
     _Documentation = None
-STD_ANON_79._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_79._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(25))
-STD_ANON_79._InitializeFacetMap(STD_ANON_79._CF_minLength,
-   STD_ANON_79._CF_maxLength)
+STD_ANON_79._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_79._InitializeFacetMap(STD_ANON_79._CF_maxLength,
+   STD_ANON_79._CF_minLength)
 _module_typeBindings.STD_ANON_79 = STD_ANON_79
 
 # Atomic simple type: [anonymous]
@@ -1522,10 +1522,10 @@ class STD_ANON_80 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1184, 16)
     _Documentation = None
-STD_ANON_80._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_80._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(2))
-STD_ANON_80._InitializeFacetMap(STD_ANON_80._CF_minLength,
-   STD_ANON_80._CF_maxLength)
+STD_ANON_80._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_80._InitializeFacetMap(STD_ANON_80._CF_maxLength,
+   STD_ANON_80._CF_minLength)
 _module_typeBindings.STD_ANON_80 = STD_ANON_80
 
 # Atomic simple type: [anonymous]
@@ -1536,13 +1536,13 @@ class STD_ANON_81 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1197, 16)
     _Documentation = None
-STD_ANON_81._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
-STD_ANON_81._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
 STD_ANON_81._CF_pattern = pyxb.binding.facets.CF_pattern()
 STD_ANON_81._CF_pattern.addPattern(pattern='\\p{IsBasicLatin}*')
-STD_ANON_81._InitializeFacetMap(STD_ANON_81._CF_minLength,
+STD_ANON_81._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(60))
+STD_ANON_81._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_81._InitializeFacetMap(STD_ANON_81._CF_pattern,
    STD_ANON_81._CF_maxLength,
-   STD_ANON_81._CF_pattern)
+   STD_ANON_81._CF_minLength)
 _module_typeBindings.STD_ANON_81 = STD_ANON_81
 
 # Atomic simple type: [anonymous]
@@ -1553,10 +1553,10 @@ class STD_ANON_82 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1207, 16)
     _Documentation = None
-STD_ANON_82._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(9))
 STD_ANON_82._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(25))
-STD_ANON_82._InitializeFacetMap(STD_ANON_82._CF_minLength,
-   STD_ANON_82._CF_maxLength)
+STD_ANON_82._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(9))
+STD_ANON_82._InitializeFacetMap(STD_ANON_82._CF_maxLength,
+   STD_ANON_82._CF_minLength)
 _module_typeBindings.STD_ANON_82 = STD_ANON_82
 
 # Atomic simple type: [anonymous]
@@ -1567,10 +1567,10 @@ class STD_ANON_83 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1220, 16)
     _Documentation = None
-STD_ANON_83._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_83._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_83._InitializeFacetMap(STD_ANON_83._CF_minLength,
-   STD_ANON_83._CF_maxLength)
+STD_ANON_83._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_83._InitializeFacetMap(STD_ANON_83._CF_maxLength,
+   STD_ANON_83._CF_minLength)
 _module_typeBindings.STD_ANON_83 = STD_ANON_83
 
 # Atomic simple type: [anonymous]
@@ -1581,10 +1581,10 @@ class STD_ANON_84 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1228, 16)
     _Documentation = None
-STD_ANON_84._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_84._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(15))
-STD_ANON_84._InitializeFacetMap(STD_ANON_84._CF_minLength,
-   STD_ANON_84._CF_maxLength)
+STD_ANON_84._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_84._InitializeFacetMap(STD_ANON_84._CF_maxLength,
+   STD_ANON_84._CF_minLength)
 _module_typeBindings.STD_ANON_84 = STD_ANON_84
 
 # Atomic simple type: [anonymous]
@@ -1595,10 +1595,10 @@ class STD_ANON_85 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1236, 16)
     _Documentation = None
-STD_ANON_85._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_85._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(15))
-STD_ANON_85._InitializeFacetMap(STD_ANON_85._CF_minLength,
-   STD_ANON_85._CF_maxLength)
+STD_ANON_85._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_85._InitializeFacetMap(STD_ANON_85._CF_maxLength,
+   STD_ANON_85._CF_minLength)
 _module_typeBindings.STD_ANON_85 = STD_ANON_85
 
 # Atomic simple type: [anonymous]
@@ -1609,10 +1609,10 @@ class STD_ANON_86 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1244, 16)
     _Documentation = None
-STD_ANON_86._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_86._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(120))
-STD_ANON_86._InitializeFacetMap(STD_ANON_86._CF_minLength,
-   STD_ANON_86._CF_maxLength)
+STD_ANON_86._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_86._InitializeFacetMap(STD_ANON_86._CF_maxLength,
+   STD_ANON_86._CF_minLength)
 _module_typeBindings.STD_ANON_86 = STD_ANON_86
 
 # Atomic simple type: [anonymous]
@@ -1623,10 +1623,10 @@ class STD_ANON_87 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1252, 16)
     _Documentation = None
-STD_ANON_87._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_87._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(13))
-STD_ANON_87._InitializeFacetMap(STD_ANON_87._CF_minLength,
-   STD_ANON_87._CF_maxLength)
+STD_ANON_87._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_87._InitializeFacetMap(STD_ANON_87._CF_maxLength,
+   STD_ANON_87._CF_minLength)
 _module_typeBindings.STD_ANON_87 = STD_ANON_87
 
 # Atomic simple type: [anonymous]
@@ -1637,10 +1637,10 @@ class STD_ANON_88 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1260, 16)
     _Documentation = None
-STD_ANON_88._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_88._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(25))
-STD_ANON_88._InitializeFacetMap(STD_ANON_88._CF_minLength,
-   STD_ANON_88._CF_maxLength)
+STD_ANON_88._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_88._InitializeFacetMap(STD_ANON_88._CF_maxLength,
+   STD_ANON_88._CF_minLength)
 _module_typeBindings.STD_ANON_88 = STD_ANON_88
 
 # Atomic simple type: [anonymous]
@@ -1663,10 +1663,10 @@ class STD_ANON_90 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1275, 16)
     _Documentation = None
-STD_ANON_90._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
 STD_ANON_90._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
-STD_ANON_90._InitializeFacetMap(STD_ANON_90._CF_minLength,
-   STD_ANON_90._CF_maxLength)
+STD_ANON_90._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
+STD_ANON_90._InitializeFacetMap(STD_ANON_90._CF_maxLength,
+   STD_ANON_90._CF_minLength)
 _module_typeBindings.STD_ANON_90 = STD_ANON_90
 
 # Atomic simple type: [anonymous]
@@ -1677,10 +1677,10 @@ class STD_ANON_91 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1283, 16)
     _Documentation = None
-STD_ANON_91._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_91._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(4))
-STD_ANON_91._InitializeFacetMap(STD_ANON_91._CF_minLength,
-   STD_ANON_91._CF_maxLength)
+STD_ANON_91._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_91._InitializeFacetMap(STD_ANON_91._CF_maxLength,
+   STD_ANON_91._CF_minLength)
 _module_typeBindings.STD_ANON_91 = STD_ANON_91
 
 # Atomic simple type: [anonymous]
@@ -1691,10 +1691,10 @@ class STD_ANON_92 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1293, 16)
     _Documentation = None
-STD_ANON_92._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_92._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_92._InitializeFacetMap(STD_ANON_92._CF_minLength,
-   STD_ANON_92._CF_maxLength)
+STD_ANON_92._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_92._InitializeFacetMap(STD_ANON_92._CF_maxLength,
+   STD_ANON_92._CF_minLength)
 _module_typeBindings.STD_ANON_92 = STD_ANON_92
 
 # Atomic simple type: [anonymous]
@@ -1705,10 +1705,10 @@ class STD_ANON_93 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1301, 16)
     _Documentation = None
-STD_ANON_93._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_93._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_93._InitializeFacetMap(STD_ANON_93._CF_minLength,
-   STD_ANON_93._CF_maxLength)
+STD_ANON_93._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_93._InitializeFacetMap(STD_ANON_93._CF_maxLength,
+   STD_ANON_93._CF_minLength)
 _module_typeBindings.STD_ANON_93 = STD_ANON_93
 
 # Atomic simple type: [anonymous]
@@ -1719,10 +1719,10 @@ class STD_ANON_94 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1309, 16)
     _Documentation = None
-STD_ANON_94._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_94._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(32))
-STD_ANON_94._InitializeFacetMap(STD_ANON_94._CF_minLength,
-   STD_ANON_94._CF_maxLength)
+STD_ANON_94._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_94._InitializeFacetMap(STD_ANON_94._CF_maxLength,
+   STD_ANON_94._CF_minLength)
 _module_typeBindings.STD_ANON_94 = STD_ANON_94
 
 # Atomic simple type: [anonymous]
@@ -1733,10 +1733,10 @@ class STD_ANON_95 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1324, 16)
     _Documentation = None
-STD_ANON_95._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
 STD_ANON_95._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
-STD_ANON_95._InitializeFacetMap(STD_ANON_95._CF_minLength,
-   STD_ANON_95._CF_maxLength)
+STD_ANON_95._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
+STD_ANON_95._InitializeFacetMap(STD_ANON_95._CF_maxLength,
+   STD_ANON_95._CF_minLength)
 _module_typeBindings.STD_ANON_95 = STD_ANON_95
 
 # Atomic simple type: [anonymous]
@@ -1747,10 +1747,10 @@ class STD_ANON_96 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1347, 16)
     _Documentation = None
-STD_ANON_96._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_96._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_96._InitializeFacetMap(STD_ANON_96._CF_minLength,
-   STD_ANON_96._CF_maxLength)
+STD_ANON_96._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_96._InitializeFacetMap(STD_ANON_96._CF_maxLength,
+   STD_ANON_96._CF_minLength)
 _module_typeBindings.STD_ANON_96 = STD_ANON_96
 
 # Atomic simple type: [anonymous]
@@ -1761,10 +1761,10 @@ class STD_ANON_97 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1355, 16)
     _Documentation = None
-STD_ANON_97._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_97._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_97._InitializeFacetMap(STD_ANON_97._CF_minLength,
-   STD_ANON_97._CF_maxLength)
+STD_ANON_97._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_97._InitializeFacetMap(STD_ANON_97._CF_maxLength,
+   STD_ANON_97._CF_minLength)
 _module_typeBindings.STD_ANON_97 = STD_ANON_97
 
 # Atomic simple type: [anonymous]
@@ -1775,10 +1775,10 @@ class STD_ANON_98 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1363, 16)
     _Documentation = None
-STD_ANON_98._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_98._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_98._InitializeFacetMap(STD_ANON_98._CF_minLength,
-   STD_ANON_98._CF_maxLength)
+STD_ANON_98._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_98._InitializeFacetMap(STD_ANON_98._CF_maxLength,
+   STD_ANON_98._CF_minLength)
 _module_typeBindings.STD_ANON_98 = STD_ANON_98
 
 # Atomic simple type: [anonymous]
@@ -1789,10 +1789,10 @@ class STD_ANON_99 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1371, 16)
     _Documentation = None
-STD_ANON_99._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_99._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(13))
-STD_ANON_99._InitializeFacetMap(STD_ANON_99._CF_minLength,
-   STD_ANON_99._CF_maxLength)
+STD_ANON_99._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_99._InitializeFacetMap(STD_ANON_99._CF_maxLength,
+   STD_ANON_99._CF_minLength)
 _module_typeBindings.STD_ANON_99 = STD_ANON_99
 
 # Atomic simple type: [anonymous]
@@ -1803,10 +1803,10 @@ class STD_ANON_100 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1384, 16)
     _Documentation = None
-STD_ANON_100._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_100._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(16))
-STD_ANON_100._InitializeFacetMap(STD_ANON_100._CF_minLength,
-   STD_ANON_100._CF_maxLength)
+STD_ANON_100._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_100._InitializeFacetMap(STD_ANON_100._CF_maxLength,
+   STD_ANON_100._CF_minLength)
 _module_typeBindings.STD_ANON_100 = STD_ANON_100
 
 # Atomic simple type: [anonymous]
@@ -1817,10 +1817,10 @@ class STD_ANON_101 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1392, 16)
     _Documentation = None
-STD_ANON_101._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_101._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(10))
-STD_ANON_101._InitializeFacetMap(STD_ANON_101._CF_minLength,
-   STD_ANON_101._CF_maxLength)
+STD_ANON_101._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_101._InitializeFacetMap(STD_ANON_101._CF_maxLength,
+   STD_ANON_101._CF_minLength)
 _module_typeBindings.STD_ANON_101 = STD_ANON_101
 
 # Atomic simple type: [anonymous]
@@ -1831,10 +1831,10 @@ class STD_ANON_102 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1406, 16)
     _Documentation = None
-STD_ANON_102._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_102._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(150))
-STD_ANON_102._InitializeFacetMap(STD_ANON_102._CF_minLength,
-   STD_ANON_102._CF_maxLength)
+STD_ANON_102._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_102._InitializeFacetMap(STD_ANON_102._CF_maxLength,
+   STD_ANON_102._CF_minLength)
 _module_typeBindings.STD_ANON_102 = STD_ANON_102
 
 # Atomic simple type: [anonymous]
@@ -1845,10 +1845,10 @@ class STD_ANON_103 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1414, 16)
     _Documentation = None
-STD_ANON_103._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_103._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(32))
-STD_ANON_103._InitializeFacetMap(STD_ANON_103._CF_minLength,
-   STD_ANON_103._CF_maxLength)
+STD_ANON_103._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_103._InitializeFacetMap(STD_ANON_103._CF_maxLength,
+   STD_ANON_103._CF_minLength)
 _module_typeBindings.STD_ANON_103 = STD_ANON_103
 
 # Atomic simple type: [anonymous]
@@ -1859,10 +1859,10 @@ class STD_ANON_104 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1430, 24)
     _Documentation = None
-STD_ANON_104._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_104._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_104._InitializeFacetMap(STD_ANON_104._CF_minLength,
-   STD_ANON_104._CF_maxLength)
+STD_ANON_104._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_104._InitializeFacetMap(STD_ANON_104._CF_maxLength,
+   STD_ANON_104._CF_minLength)
 _module_typeBindings.STD_ANON_104 = STD_ANON_104
 
 # Atomic simple type: [anonymous]
@@ -1873,10 +1873,10 @@ class STD_ANON_105 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1438, 24)
     _Documentation = None
-STD_ANON_105._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_105._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_105._InitializeFacetMap(STD_ANON_105._CF_minLength,
-   STD_ANON_105._CF_maxLength)
+STD_ANON_105._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_105._InitializeFacetMap(STD_ANON_105._CF_maxLength,
+   STD_ANON_105._CF_minLength)
 _module_typeBindings.STD_ANON_105 = STD_ANON_105
 
 # Atomic simple type: [anonymous]
@@ -1887,10 +1887,10 @@ class STD_ANON_106 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1455, 24)
     _Documentation = None
-STD_ANON_106._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_106._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(32))
-STD_ANON_106._InitializeFacetMap(STD_ANON_106._CF_minLength,
-   STD_ANON_106._CF_maxLength)
+STD_ANON_106._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_106._InitializeFacetMap(STD_ANON_106._CF_maxLength,
+   STD_ANON_106._CF_minLength)
 _module_typeBindings.STD_ANON_106 = STD_ANON_106
 
 # Atomic simple type: [anonymous]
@@ -1901,10 +1901,10 @@ class STD_ANON_107 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1473, 24)
     _Documentation = None
-STD_ANON_107._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_107._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_107._InitializeFacetMap(STD_ANON_107._CF_minLength,
-   STD_ANON_107._CF_maxLength)
+STD_ANON_107._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_107._InitializeFacetMap(STD_ANON_107._CF_maxLength,
+   STD_ANON_107._CF_minLength)
 _module_typeBindings.STD_ANON_107 = STD_ANON_107
 
 # Atomic simple type: [anonymous]
@@ -1915,10 +1915,10 @@ class STD_ANON_108 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1481, 24)
     _Documentation = None
-STD_ANON_108._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_108._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(32))
-STD_ANON_108._InitializeFacetMap(STD_ANON_108._CF_minLength,
-   STD_ANON_108._CF_maxLength)
+STD_ANON_108._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_108._InitializeFacetMap(STD_ANON_108._CF_maxLength,
+   STD_ANON_108._CF_minLength)
 _module_typeBindings.STD_ANON_108 = STD_ANON_108
 
 # Atomic simple type: [anonymous]
@@ -1929,10 +1929,10 @@ class STD_ANON_109 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1490, 24)
     _Documentation = None
-STD_ANON_109._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_109._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_109._InitializeFacetMap(STD_ANON_109._CF_minLength,
-   STD_ANON_109._CF_maxLength)
+STD_ANON_109._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_109._InitializeFacetMap(STD_ANON_109._CF_maxLength,
+   STD_ANON_109._CF_minLength)
 _module_typeBindings.STD_ANON_109 = STD_ANON_109
 
 # Atomic simple type: [anonymous]
@@ -1943,10 +1943,10 @@ class STD_ANON_110 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1498, 24)
     _Documentation = None
-STD_ANON_110._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_110._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_110._InitializeFacetMap(STD_ANON_110._CF_minLength,
-   STD_ANON_110._CF_maxLength)
+STD_ANON_110._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_110._InitializeFacetMap(STD_ANON_110._CF_maxLength,
+   STD_ANON_110._CF_minLength)
 _module_typeBindings.STD_ANON_110 = STD_ANON_110
 
 # Atomic simple type: [anonymous]
@@ -1957,10 +1957,10 @@ class STD_ANON_111 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1522, 16)
     _Documentation = None
-STD_ANON_111._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_111._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(72))
-STD_ANON_111._InitializeFacetMap(STD_ANON_111._CF_minLength,
-   STD_ANON_111._CF_maxLength)
+STD_ANON_111._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_111._InitializeFacetMap(STD_ANON_111._CF_maxLength,
+   STD_ANON_111._CF_minLength)
 _module_typeBindings.STD_ANON_111 = STD_ANON_111
 
 # Atomic simple type: [anonymous]
@@ -1971,10 +1971,10 @@ class STD_ANON_112 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1530, 16)
     _Documentation = None
-STD_ANON_112._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_112._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(72))
-STD_ANON_112._InitializeFacetMap(STD_ANON_112._CF_minLength,
-   STD_ANON_112._CF_maxLength)
+STD_ANON_112._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_112._InitializeFacetMap(STD_ANON_112._CF_maxLength,
+   STD_ANON_112._CF_minLength)
 _module_typeBindings.STD_ANON_112 = STD_ANON_112
 
 # Atomic simple type: [anonymous]
@@ -1985,10 +1985,10 @@ class STD_ANON_113 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1544, 16)
     _Documentation = None
-STD_ANON_113._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_113._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(72))
-STD_ANON_113._InitializeFacetMap(STD_ANON_113._CF_minLength,
-   STD_ANON_113._CF_maxLength)
+STD_ANON_113._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_113._InitializeFacetMap(STD_ANON_113._CF_maxLength,
+   STD_ANON_113._CF_minLength)
 _module_typeBindings.STD_ANON_113 = STD_ANON_113
 
 # Atomic simple type: [anonymous]
@@ -1999,10 +1999,10 @@ class STD_ANON_114 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1552, 16)
     _Documentation = None
-STD_ANON_114._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_114._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_114._InitializeFacetMap(STD_ANON_114._CF_minLength,
-   STD_ANON_114._CF_maxLength)
+STD_ANON_114._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_114._InitializeFacetMap(STD_ANON_114._CF_maxLength,
+   STD_ANON_114._CF_minLength)
 _module_typeBindings.STD_ANON_114 = STD_ANON_114
 
 # Atomic simple type: [anonymous]
@@ -2013,10 +2013,10 @@ class STD_ANON_115 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1565, 16)
     _Documentation = None
-STD_ANON_115._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_115._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_115._InitializeFacetMap(STD_ANON_115._CF_minLength,
-   STD_ANON_115._CF_maxLength)
+STD_ANON_115._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_115._InitializeFacetMap(STD_ANON_115._CF_maxLength,
+   STD_ANON_115._CF_minLength)
 _module_typeBindings.STD_ANON_115 = STD_ANON_115
 
 # Atomic simple type: [anonymous]
@@ -2027,10 +2027,10 @@ class STD_ANON_116 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1573, 16)
     _Documentation = None
-STD_ANON_116._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_116._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(15))
-STD_ANON_116._InitializeFacetMap(STD_ANON_116._CF_minLength,
-   STD_ANON_116._CF_maxLength)
+STD_ANON_116._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_116._InitializeFacetMap(STD_ANON_116._CF_maxLength,
+   STD_ANON_116._CF_minLength)
 _module_typeBindings.STD_ANON_116 = STD_ANON_116
 
 # Atomic simple type: [anonymous]
@@ -2041,10 +2041,10 @@ class STD_ANON_117 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1581, 16)
     _Documentation = None
-STD_ANON_117._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_117._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(15))
-STD_ANON_117._InitializeFacetMap(STD_ANON_117._CF_minLength,
-   STD_ANON_117._CF_maxLength)
+STD_ANON_117._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_117._InitializeFacetMap(STD_ANON_117._CF_maxLength,
+   STD_ANON_117._CF_minLength)
 _module_typeBindings.STD_ANON_117 = STD_ANON_117
 
 # Atomic simple type: [anonymous]
@@ -2055,10 +2055,10 @@ class STD_ANON_118 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1589, 16)
     _Documentation = None
-STD_ANON_118._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_118._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(120))
-STD_ANON_118._InitializeFacetMap(STD_ANON_118._CF_minLength,
-   STD_ANON_118._CF_maxLength)
+STD_ANON_118._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_118._InitializeFacetMap(STD_ANON_118._CF_maxLength,
+   STD_ANON_118._CF_minLength)
 _module_typeBindings.STD_ANON_118 = STD_ANON_118
 
 # Atomic simple type: [anonymous]
@@ -2069,10 +2069,10 @@ class STD_ANON_119 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1597, 16)
     _Documentation = None
-STD_ANON_119._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_119._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(13))
-STD_ANON_119._InitializeFacetMap(STD_ANON_119._CF_minLength,
-   STD_ANON_119._CF_maxLength)
+STD_ANON_119._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_119._InitializeFacetMap(STD_ANON_119._CF_maxLength,
+   STD_ANON_119._CF_minLength)
 _module_typeBindings.STD_ANON_119 = STD_ANON_119
 
 # Atomic simple type: [anonymous]
@@ -2083,10 +2083,10 @@ class STD_ANON_120 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1605, 16)
     _Documentation = None
-STD_ANON_120._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_120._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(25))
-STD_ANON_120._InitializeFacetMap(STD_ANON_120._CF_minLength,
-   STD_ANON_120._CF_maxLength)
+STD_ANON_120._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_120._InitializeFacetMap(STD_ANON_120._CF_maxLength,
+   STD_ANON_120._CF_minLength)
 _module_typeBindings.STD_ANON_120 = STD_ANON_120
 
 # Atomic simple type: [anonymous]
@@ -2109,10 +2109,10 @@ class STD_ANON_122 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1620, 16)
     _Documentation = None
-STD_ANON_122._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_122._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_122._InitializeFacetMap(STD_ANON_122._CF_minLength,
-   STD_ANON_122._CF_maxLength)
+STD_ANON_122._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_122._InitializeFacetMap(STD_ANON_122._CF_maxLength,
+   STD_ANON_122._CF_minLength)
 _module_typeBindings.STD_ANON_122 = STD_ANON_122
 
 # Atomic simple type: [anonymous]
@@ -2123,10 +2123,10 @@ class STD_ANON_123 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1628, 16)
     _Documentation = None
-STD_ANON_123._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_123._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_123._InitializeFacetMap(STD_ANON_123._CF_minLength,
-   STD_ANON_123._CF_maxLength)
+STD_ANON_123._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_123._InitializeFacetMap(STD_ANON_123._CF_maxLength,
+   STD_ANON_123._CF_minLength)
 _module_typeBindings.STD_ANON_123 = STD_ANON_123
 
 # Atomic simple type: [anonymous]
@@ -2137,10 +2137,10 @@ class STD_ANON_124 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1636, 16)
     _Documentation = None
-STD_ANON_124._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_124._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(32))
-STD_ANON_124._InitializeFacetMap(STD_ANON_124._CF_minLength,
-   STD_ANON_124._CF_maxLength)
+STD_ANON_124._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_124._InitializeFacetMap(STD_ANON_124._CF_maxLength,
+   STD_ANON_124._CF_minLength)
 _module_typeBindings.STD_ANON_124 = STD_ANON_124
 
 # Atomic simple type: [anonymous]
@@ -2151,10 +2151,10 @@ class STD_ANON_125 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1644, 16)
     _Documentation = None
-STD_ANON_125._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
 STD_ANON_125._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
-STD_ANON_125._InitializeFacetMap(STD_ANON_125._CF_minLength,
-   STD_ANON_125._CF_maxLength)
+STD_ANON_125._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(3))
+STD_ANON_125._InitializeFacetMap(STD_ANON_125._CF_maxLength,
+   STD_ANON_125._CF_minLength)
 _module_typeBindings.STD_ANON_125 = STD_ANON_125
 
 # Atomic simple type: [anonymous]
@@ -2165,10 +2165,10 @@ class STD_ANON_126 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1666, 16)
     _Documentation = None
-STD_ANON_126._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_126._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_126._InitializeFacetMap(STD_ANON_126._CF_minLength,
-   STD_ANON_126._CF_maxLength)
+STD_ANON_126._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_126._InitializeFacetMap(STD_ANON_126._CF_maxLength,
+   STD_ANON_126._CF_minLength)
 _module_typeBindings.STD_ANON_126 = STD_ANON_126
 
 # Atomic simple type: [anonymous]
@@ -2179,10 +2179,10 @@ class STD_ANON_127 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1674, 16)
     _Documentation = None
-STD_ANON_127._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_127._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_127._InitializeFacetMap(STD_ANON_127._CF_minLength,
-   STD_ANON_127._CF_maxLength)
+STD_ANON_127._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_127._InitializeFacetMap(STD_ANON_127._CF_maxLength,
+   STD_ANON_127._CF_minLength)
 _module_typeBindings.STD_ANON_127 = STD_ANON_127
 
 # Atomic simple type: [anonymous]
@@ -2193,10 +2193,10 @@ class STD_ANON_128 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1682, 16)
     _Documentation = None
-STD_ANON_128._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_128._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_128._InitializeFacetMap(STD_ANON_128._CF_minLength,
-   STD_ANON_128._CF_maxLength)
+STD_ANON_128._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_128._InitializeFacetMap(STD_ANON_128._CF_maxLength,
+   STD_ANON_128._CF_minLength)
 _module_typeBindings.STD_ANON_128 = STD_ANON_128
 
 # Atomic simple type: [anonymous]
@@ -2207,10 +2207,10 @@ class STD_ANON_129 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1690, 16)
     _Documentation = None
-STD_ANON_129._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_129._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(13))
-STD_ANON_129._InitializeFacetMap(STD_ANON_129._CF_minLength,
-   STD_ANON_129._CF_maxLength)
+STD_ANON_129._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_129._InitializeFacetMap(STD_ANON_129._CF_maxLength,
+   STD_ANON_129._CF_minLength)
 _module_typeBindings.STD_ANON_129 = STD_ANON_129
 
 # Atomic simple type: [anonymous]
@@ -2221,10 +2221,10 @@ class STD_ANON_130 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1743, 16)
     _Documentation = None
-STD_ANON_130._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_130._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_130._InitializeFacetMap(STD_ANON_130._CF_minLength,
-   STD_ANON_130._CF_maxLength)
+STD_ANON_130._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_130._InitializeFacetMap(STD_ANON_130._CF_maxLength,
+   STD_ANON_130._CF_minLength)
 _module_typeBindings.STD_ANON_130 = STD_ANON_130
 
 # Atomic simple type: [anonymous]
@@ -2235,10 +2235,10 @@ class STD_ANON_131 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1751, 16)
     _Documentation = None
-STD_ANON_131._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_131._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_131._InitializeFacetMap(STD_ANON_131._CF_minLength,
-   STD_ANON_131._CF_maxLength)
+STD_ANON_131._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_131._InitializeFacetMap(STD_ANON_131._CF_maxLength,
+   STD_ANON_131._CF_minLength)
 _module_typeBindings.STD_ANON_131 = STD_ANON_131
 
 # Atomic simple type: [anonymous]
@@ -2249,10 +2249,10 @@ class STD_ANON_132 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1759, 16)
     _Documentation = None
-STD_ANON_132._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_132._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(50))
-STD_ANON_132._InitializeFacetMap(STD_ANON_132._CF_minLength,
-   STD_ANON_132._CF_maxLength)
+STD_ANON_132._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_132._InitializeFacetMap(STD_ANON_132._CF_maxLength,
+   STD_ANON_132._CF_minLength)
 _module_typeBindings.STD_ANON_132 = STD_ANON_132
 
 # Atomic simple type: [anonymous]
@@ -2263,13 +2263,13 @@ class STD_ANON_133 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1767, 16)
     _Documentation = None
-STD_ANON_133._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
-STD_ANON_133._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(40))
 STD_ANON_133._CF_pattern = pyxb.binding.facets.CF_pattern()
 STD_ANON_133._CF_pattern.addPattern(pattern='([a-zA-Z0-9.:])*')
-STD_ANON_133._InitializeFacetMap(STD_ANON_133._CF_minLength,
+STD_ANON_133._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(40))
+STD_ANON_133._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_133._InitializeFacetMap(STD_ANON_133._CF_pattern,
    STD_ANON_133._CF_maxLength,
-   STD_ANON_133._CF_pattern)
+   STD_ANON_133._CF_minLength)
 _module_typeBindings.STD_ANON_133 = STD_ANON_133
 
 # Atomic simple type: [anonymous]
@@ -2280,10 +2280,10 @@ class STD_ANON_134 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1791, 16)
     _Documentation = None
-STD_ANON_134._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_134._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_134._InitializeFacetMap(STD_ANON_134._CF_minLength,
-   STD_ANON_134._CF_maxLength)
+STD_ANON_134._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_134._InitializeFacetMap(STD_ANON_134._CF_maxLength,
+   STD_ANON_134._CF_minLength)
 _module_typeBindings.STD_ANON_134 = STD_ANON_134
 
 # Atomic simple type: [anonymous]
@@ -2294,10 +2294,10 @@ class STD_ANON_135 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1815, 24)
     _Documentation = None
-STD_ANON_135._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_135._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_135._InitializeFacetMap(STD_ANON_135._CF_minLength,
-   STD_ANON_135._CF_maxLength)
+STD_ANON_135._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_135._InitializeFacetMap(STD_ANON_135._CF_maxLength,
+   STD_ANON_135._CF_minLength)
 _module_typeBindings.STD_ANON_135 = STD_ANON_135
 
 # Atomic simple type: [anonymous]
@@ -2308,10 +2308,10 @@ class STD_ANON_136 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1824, 24)
     _Documentation = None
-STD_ANON_136._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_136._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_136._InitializeFacetMap(STD_ANON_136._CF_minLength,
-   STD_ANON_136._CF_maxLength)
+STD_ANON_136._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_136._InitializeFacetMap(STD_ANON_136._CF_maxLength,
+   STD_ANON_136._CF_minLength)
 _module_typeBindings.STD_ANON_136 = STD_ANON_136
 
 # Atomic simple type: [anonymous]
@@ -2322,10 +2322,10 @@ class STD_ANON_137 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1842, 16)
     _Documentation = None
-STD_ANON_137._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_137._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_137._InitializeFacetMap(STD_ANON_137._CF_minLength,
-   STD_ANON_137._CF_maxLength)
+STD_ANON_137._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_137._InitializeFacetMap(STD_ANON_137._CF_maxLength,
+   STD_ANON_137._CF_minLength)
 _module_typeBindings.STD_ANON_137 = STD_ANON_137
 
 # Atomic simple type: [anonymous]
@@ -2336,10 +2336,10 @@ class STD_ANON_138 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1850, 16)
     _Documentation = None
-STD_ANON_138._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_138._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(20))
-STD_ANON_138._InitializeFacetMap(STD_ANON_138._CF_minLength,
-   STD_ANON_138._CF_maxLength)
+STD_ANON_138._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_138._InitializeFacetMap(STD_ANON_138._CF_maxLength,
+   STD_ANON_138._CF_minLength)
 _module_typeBindings.STD_ANON_138 = STD_ANON_138
 
 # Atomic simple type: [anonymous]
@@ -2350,10 +2350,10 @@ class STD_ANON_139 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1859, 16)
     _Documentation = None
-STD_ANON_139._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_139._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_139._InitializeFacetMap(STD_ANON_139._CF_minLength,
-   STD_ANON_139._CF_maxLength)
+STD_ANON_139._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_139._InitializeFacetMap(STD_ANON_139._CF_maxLength,
+   STD_ANON_139._CF_minLength)
 _module_typeBindings.STD_ANON_139 = STD_ANON_139
 
 # Atomic simple type: [anonymous]
@@ -2364,10 +2364,10 @@ class STD_ANON_140 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1873, 16)
     _Documentation = None
-STD_ANON_140._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_140._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_140._InitializeFacetMap(STD_ANON_140._CF_minLength,
-   STD_ANON_140._CF_maxLength)
+STD_ANON_140._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_140._InitializeFacetMap(STD_ANON_140._CF_maxLength,
+   STD_ANON_140._CF_minLength)
 _module_typeBindings.STD_ANON_140 = STD_ANON_140
 
 # Atomic simple type: [anonymous]
@@ -2378,10 +2378,10 @@ class STD_ANON_141 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1891, 16)
     _Documentation = None
-STD_ANON_141._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_141._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(19))
-STD_ANON_141._InitializeFacetMap(STD_ANON_141._CF_minLength,
-   STD_ANON_141._CF_maxLength)
+STD_ANON_141._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_141._InitializeFacetMap(STD_ANON_141._CF_maxLength,
+   STD_ANON_141._CF_minLength)
 _module_typeBindings.STD_ANON_141 = STD_ANON_141
 
 # Atomic simple type: [anonymous]
@@ -2392,10 +2392,10 @@ class STD_ANON_142 (pyxb.binding.datatypes.string):
     _ExpandedName = None
     _XSDLocation = pyxb.utils.utility.Location('/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd', 1900, 16)
     _Documentation = None
-STD_ANON_142._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
 STD_ANON_142._CF_maxLength = pyxb.binding.facets.CF_maxLength(value=pyxb.binding.datatypes.nonNegativeInteger(100))
-STD_ANON_142._InitializeFacetMap(STD_ANON_142._CF_minLength,
-   STD_ANON_142._CF_maxLength)
+STD_ANON_142._CF_minLength = pyxb.binding.facets.CF_minLength(value=pyxb.binding.datatypes.nonNegativeInteger(1))
+STD_ANON_142._InitializeFacetMap(STD_ANON_142._CF_maxLength,
+   STD_ANON_142._CF_minLength)
 _module_typeBindings.STD_ANON_142 = STD_ANON_142
 
 # Complex type {http://payfac.vantivcnp.com/api/merchant/onboard}legalEntityCreateRequest with content type ELEMENT_ONLY

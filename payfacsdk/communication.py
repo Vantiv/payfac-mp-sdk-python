@@ -22,7 +22,7 @@ HTTP_ERROR_MESSAGE = "Error with Https Request, Please Check Proxy and Url confi
 
 def http_get_retrieval_request(url_suffix, response_type, config=conf):
     url = getattr(config, 'url')
-    print("url -> "+url+"\n")
+    # print("url -> "+url+"\n")
     request_url = url + url_suffix
     # request_url = "https://www.testvantivcnp.com/sandbox/payfac" + url_suffix
 
@@ -119,9 +119,6 @@ def validate_response(http_response, config=conf):
         raise utils.PayfacWebError(http_response, str(http_response.status_code))
 
 
-
-
-
 def neuter_xml(xml_string):
     xml_string = re.sub(r"<token>.*</token>", "<token>****</token>", xml_string)
     xml_string = re.sub(r"<cardNumberLast4>.*</cardNumberLast4>", "<cardNumberLast4>****</cardNumberLast4>", xml_string)
@@ -132,3 +129,5 @@ def print_to_console(prefix_message, xml_string, config=conf):
         if config.neuter_xml:
             xml_string = neuter_xml(xml_string)
         print(prefix_message, xml_string)
+
+

@@ -23,7 +23,7 @@ class Configuration(object):
 
     def __init__(self, conf_dict=dict()):
 
-        print("config file path -> "+self._CONFIG_FILE_PATH)
+        # print("config file path -> "+self._CONFIG_FILE_PATH)
 
         attr_dict = {
             'merchant_id': '',
@@ -44,10 +44,10 @@ class Configuration(object):
         try:
             with open(self._CONFIG_FILE_PATH, 'r') as config_file:
                 config_json = json.load(config_file)
-                print ("overriding config values here \n")
+                # print ("overriding config values here \n")
                 for ke in attr_dict:
                     if ke in config_json and config_json[ke]:
-                        print(ke + "\t" + config_json[ke])
+                        # print(ke + "\t" + config_json[ke])
                         setattr(self, ke, config_json[ke])
         except:
             # If get any exception just pass.
@@ -98,7 +98,7 @@ def obj_to_xml(obj):
 
 
 def generate_response(http_response, response_type, return_format='dict'):
-    print((http_response.text).encode('utf-8').strip())
+    # print((http_response.text).encode('utf-8').strip())
     return convert_to_format(http_response.text, response_type, return_format)
 
 
