@@ -21,7 +21,9 @@ HTTP_ERROR_MESSAGE = "Error with Https Request, Please Check Proxy and Url confi
 
 
 def http_get_retrieval_request(url_suffix, response_type, config=conf):
-    request_url = config.url + url_suffix
+    url = getattr(config, 'url')
+    print("url -> "+url+"\n")
+    request_url = url + url_suffix
     # request_url = "https://www.testvantivcnp.com/sandbox/payfac" + url_suffix
 
     try:

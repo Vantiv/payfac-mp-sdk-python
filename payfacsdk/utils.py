@@ -20,14 +20,15 @@ class Configuration(object):
         if 'PAYFAC_MP_SDK_CONFIG' in os.environ else os.path.join(os.path.expanduser("~"), ".payfac_mp_sdk.conf")
 
     def __init__(self, conf_dict=dict()):
+        print("config file path ->"+self._CONFIG_FILE_PATH)
         attr_dict = {
-            'username': '',
-            'password': '',
             'merchant_id': '',
-            'url': '',
-            'proxy': '',
-            'print_xml': False,
             'neuter_xml': False,
+            'password': '',
+            'print_xml': False,
+            'proxy': '',
+            'url': 'https://www.testvantivcnp.com/sandbox/payfac',
+            'username': ''
         }
 
         # set default values
@@ -38,18 +39,20 @@ class Configuration(object):
         try:
             with open(self._CONFIG_FILE_PATH, 'r') as config_file:
                 config_json = json.load(config_file)
-                for k in attr_dict:
-                    if k in config_json and config_json[k]:
-                        setattr(self, k, config_json[k])
+                print ("overriding config values here \n")
+                for ke in attr_dict:
+                    if ke in config_json and config_json[ke]:
+                        print(ke + "\t" + config_json[ke])
+                        setattr(self, ke, config_json[ke])
         except:
             # If get any exception just pass.
             pass
 
         # override values by args
         if conf_dict:
-            for k in conf_dict:
-                if k in attr_dict:
-                    setattr(self, k, conf_dict[k])
+            for key in conf_dict:
+                if key in attr_dict:
+                    setattr(self, key, conf_dict[key])
                 # else:
                 #     raise payfacError('"%s" is NOT an attribute of conf' % k)
 
