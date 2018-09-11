@@ -27,7 +27,7 @@ script:
   - nosetests --with-coverage --with-xunit --verbosity=3 $BUILD_DIR/test/unit $BUILD_DIR/test/functional
 
 
-  deploy:
+deploy:
     provider: releases
     api_key: $GITHUB_TOKEN
     file_glob: true
@@ -35,7 +35,6 @@ script:
     skip_cleanup: true
     on:
       tags: true
-
 
 after_success:
   #  - codecov
