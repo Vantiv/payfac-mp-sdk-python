@@ -104,3 +104,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+# generated file
+/payfacsdk/fileds_payfac.py
