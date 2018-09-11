@@ -24,7 +24,8 @@ script:
   - echo $BUILD_DIR
   - echo $PAYFAC_MP_SDK_CONFIG
   - cat $PAYFAC_MP_SDK_CONFIG
-  - coverage run testsimple.py
+#   - coverage run testsimple.py
+  - nosetests --with-coverage --with-xunit --verbosity=3 $BUILD_DIR/test/unit
 
 
   # deploy:
