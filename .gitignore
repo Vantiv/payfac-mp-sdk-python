@@ -108,3 +108,6 @@ venv.bak/
 
 # generated file
 /payfacsdk/fileds_payfac.py
+
+# sample tests
+testsimple.py

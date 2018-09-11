@@ -58,7 +58,12 @@ class TestCommunication(unittest.TestCase):
     def test_validate_response_with_PayfacWebError(self):
         self.assertRaises(utils.PayfacWebError, communication.http_get_retrieval_request, "/legalentity", "legalEntityRetrievalResponse")
 
+    def test_validate_response_with_PayfacWebError_generateErrorResponse(self):
+        self.assertRaises(utils.PayfacWebError, communication.http_get_retrieval_request, "/legalentity/10002930000000000000000000000000000", "legalEntityRetrievalResponse")
+
 
     def test_validate_response_with_PayfacError(self):
         self.assertRaises(utils.PayfacError, communication.validate_response, None)
+
+
 
