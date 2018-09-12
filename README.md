@@ -33,7 +33,7 @@ These instructions will help you get started with using the SDK.
 
 #### Using pip 
 ```
-pip install Cnppayfac-mpSdk
+pip install PayFacMpSdk
 ```
 
 #### Without Pip
@@ -51,7 +51,7 @@ python setup.py install
 
 2. setup configurations
 ```
-payfac-mp_sdk_setup
+payfac_mp_sdk_setup
 ```
 
 ### Configuration
@@ -66,28 +66,30 @@ from __future__ import print_function, unicode_literals
 
 from payfacMpSdk import *
 
-# Initial Configuration object. If you have saved configuration in '.vantiv_payfac-mp_sdk.conf' at system environment
-# variable: payfac-mp_SDK_CONFIG or user home directory, the saved configuration will be automatically load.
+# Initial Configuration object. If you have saved configuration in '.payfac_mp_sdk.conf' at system environment
+# variable: PAYFAC_MP_SDK_CONFIG or user home directory, the saved configuration will be automatically load.
 conf = utils.Configuration()
 
 # Configuration need following attributes for payfac-mp requests:
 # user = ''
 # password = ''
 # merchantId = ''
-# url = 'https://www.testvantivcnp.com/sandbox/communicator/online'
+# url = 'https://www.testvantivcnp.com/sandbox/payfac'
 # proxy = ''
 
-# Retrieving information about a payfac-mp by caseId:
-response = payfac-mp_retrieval.get_payfac-mp_by_case_id(xxxx)
-response = payfac-mp_retrieval.get_payfac-mps_by_date("2018-01-01)
+# Retrieving information about a payfac-mp by legalEntityId:
+response = payfac_legalEntiy.get_by_legalEntityId(xxxx)
+response = payfac_agreement.get_by_legalEntityId("1000293")
 
 # Update payfac-mp case
-payfac-mp_update.represent_case(xxxx, "Note on activity: represented case!")
-payfac-mp_update.assign_case_to_user(xxxx, "userId", "Note on activity: assigned case to user!")
+legalEntityPutRequest = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><legalEntityUpdateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><address><streetAddress1>LE Street Address 1</streetAddress1><streetAddress2>LE Street Address 2</streetAddress2><city>LE City</city><stateProvince>MA</stateProvince><postalCode>01730</postalCode><countryCode>USA</countryCode></address><contactPhone>9785550101</contactPhone><doingBusinessAs>Other Name Co.</doingBusinessAs><annualCreditCardSalesVolume>10000000</annualCreditCardSalesVolume><hasAcceptedCreditCards>true</hasAcceptedCreditCards><principal><principalId>9</principalId><title>CEO</title><emailAddress>jdoe@mail.net</emailAddress><contactPhone>9785551234</contactPhone><address><streetAddress1>p street address 1</streetAddress1><streetAddress2>p street address 2</streetAddress2><city>Boston</city><stateProvince>MA</stateProvince><postalCode>01890</postalCode><countryCode>USA</countryCode></address><backgroundCheckFields><firstName>p first</firstName><lastName>p last</lastName><ssn>123459876</ssn><dateOfBirth>1980-10-12</dateOfBirth><driversLicense>892327409832</driversLicense><driversLicenseState>MA</driversLicenseState></backgroundCheckFields></principal><backgroundCheckFields><legalEntityName>Company Name</legalEntityName><legalEntityType>INDIVIDUAL_SOLE_PROPRIETORSHIP</legalEntityType><taxId>123456789</taxId></backgroundCheckFields><legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType><yearsInBusiness>10</yearsInBusiness></legalEntityUpdateRequest>'
 
-# Upload and manage documents to support payfac-mp case
-payfac-mp_docuemnt.upload_document(xxxx, "invoice.pdf")
-response = payfac-mp_docuemnt.list_documents(xxxx)
+response = payfac_legalEntiy.put_by_legalEntityId("1000293", legalEntityPutRequest )
+
+# Post a new payfac-mp case
+agreementPostRequest = '<legalEntityAgreementCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><legalEntityAgreement><legalEntityAgreementType>MERCHANT_AGREEMENT</legalEntityAgreementType><agreementVersion>agreementVersion1</agreementVersion><userFullName>userFullName</userFullName><userSystemName>systemUserName</userSystemName><userIPAddress>196.198.100.100</userIPAddress><manuallyEntered>false</manuallyEntered><acceptanceDateTime>2017-02-11T12:00:00-06:00</acceptanceDateTime></legalEntityAgreement></legalEntityAgreementCreateRequest>'
+
+response = payfac_agreement.post_by_legalEntity("21003", agreementPostRequest)
 
 ```
 
@@ -108,7 +110,7 @@ See also the list of [contributors](https://github.com/vantiv/payfac-mp-sdk-pyth
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/Vantiv/payfac-mp-sdk-python/blob/13.x/LICENSE.md) file for details
 
 ## Examples
-More examples can be found in [Functional and Unit Tests](https://github.com/Vantiv/payfac-mp-sdk-python/tree/13.x/src/test/java/com/mp/sdk)
+More examples can be found in [Functional and Unit Tests](https://github.com/Vantiv/payfac-mp-sdk-python/tree/13.x/test/functional)
 
 ## Support
 Please contact [Vantiv eCommerce](https://developer.vantiv.com/community/ecommerce) to receive valid merchant credentials in order to run tests successfully or if you require assistance in any way.  Support can also be reached at sdksupport@Vantiv.com
