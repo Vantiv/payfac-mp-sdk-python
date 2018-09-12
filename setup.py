@@ -18,7 +18,7 @@ setup(
     author='Worldpay',
     author_email='SDKSupport@vantiv.com',
     url='https://developer.vantiv.com/community/ecommerce',
-    packages=['payfacsdk', 'scripts'],
+    packages=['payfacMPSdk', 'scripts'],
     install_requires=[
         'PyXB==1.2.5',
         'paramiko>=1.14.0',

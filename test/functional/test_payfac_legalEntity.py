@@ -1,5 +1,5 @@
 import unittest
-from payfacsdk import payfac_legalEntity
+from payfacMPSdk import payfac_legalEntity
 
 
 class TestLegalEntity(unittest.TestCase):

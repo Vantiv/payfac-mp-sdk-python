@@ -11,7 +11,7 @@ import six
 package_root = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 sys.path.insert(0, package_root)
 
-from payfacsdk import utils
+from payfacMPSdk import utils
 
 
 def ask_user():
@@ -20,8 +20,8 @@ def ask_user():
         'password',
         'merchant_id',
         'proxy',
-        'print_xml',
-        'neuter_xml'
+        'printXml',
+        'neuterXml'
     ]
     attr_dict = {
         'username': '',
@@ -29,16 +29,16 @@ def ask_user():
         'merchant_id': '',
         'url': '',
         'proxy': '',
-        'print_xml': 'n',
-        'neuter_xml': 'n'
+        'printXml': 'n',
+        'neuterXml': 'n'
     }
     attr_valid_dict = {
 
-        'neuter_xml': {
+        'neuterXml': {
             'y': True,
             'n': False,
         },
-        'print_xml': {
+        'printXml': {
             'y': True,
             'n': False,
         }
@@ -48,8 +48,8 @@ def ask_user():
         'password': 'Please input your presenter password: ',
         'merchant_id': 'Please input your merchantId: ',
         'proxy': 'If you want to using https proxy, please input your proxy server address. Must start with "https://"',
-        'print_xml': 'Do you want to print xml in console? y for Yes, n for No.',
-        'neuter_xml': 'Do you want to hide sensitive data in printed xml? y for Yes, n for No.'
+        'printXml': 'Do you want to print xml in console? y for Yes, n for No.',
+        'neuterXml': 'Do you want to hide sensitive data in printed xml? y for Yes, n for No.'
     }
     print(CC.bpurple('"Welcome to the Merchant Provisioner PayFac Python SDK"'))
     print('''    Please enter values for the following settings

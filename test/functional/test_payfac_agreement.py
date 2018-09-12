@@ -1,5 +1,5 @@
 import unittest
-from payfacsdk import payfac_agreement
+from payfacMPSdk import payfac_agreement
 
 
 class TestAgreement(unittest.TestCase):

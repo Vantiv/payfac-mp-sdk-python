@@ -1,12 +1,12 @@
 import unittest
 import mock
 from collections import OrderedDict
-from payfacsdk import payfac_agreement
+from payfacMPSdk import payfac_agreement
 
 
 class TestAgreement(unittest.TestCase):
 
-    @mock.patch('payfacsdk.communication.http_get_retrieval_request')
+    @mock.patch('payfacMPSdk.communication.http_get_retrieval_request')
     def test_get_by_legalEntityId(self, mock_http_get_retrieval_request):
         mock_http_get_retrieval_request.return_value = OrderedDict(
             [(u'@xmlns', u'http://payfac.vantivcnp.com/api/merchant/onboard'), (u'legalEntityId', u'1000293'),
@@ -22,7 +22,7 @@ class TestAgreement(unittest.TestCase):
         self.assertEquals("1000293", response["legalEntityId"])
         self.assertEquals("5163993725", response["transactionId"])
 
-    @mock.patch('payfacsdk.communication.http_post_request')
+    @mock.patch('payfacMPSdk.communication.http_post_request')
     def test_post_by_legalEntity(self, mock_http_post_request):
         agreementPostRequest = '<legalEntityAgreementCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><legalEntityAgreement><legalEntityAgreementType>MERCHANT_AGREEMENT</legalEntityAgreementType><agreementVersion>agreementVersion1</agreementVersion><userFullName>userFullName</userFullName><userSystemName>systemUserName</userSystemName><userIPAddress>196.198.100.100</userIPAddress><manuallyEntered>false</manuallyEntered><acceptanceDateTime>2017-02-11T12:00:00-06:00</acceptanceDateTime></legalEntityAgreement></legalEntityAgreementCreateRequest>'
         mock_http_post_request.return_value = OrderedDict(

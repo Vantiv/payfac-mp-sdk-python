@@ -1,5 +1,5 @@
 import unittest
-from payfacsdk import payfac_principal
+from payfacMPSdk import payfac_principal
 
 
 class TestPrincipal(unittest.TestCase):

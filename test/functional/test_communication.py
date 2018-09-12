@@ -2,7 +2,7 @@
 import unittest
 import mock
 from collections import OrderedDict
-from payfacsdk import communication, utils
+from payfacMPSdk import communication, utils
 from requests.auth import HTTPBasicAuth
 import requests
 

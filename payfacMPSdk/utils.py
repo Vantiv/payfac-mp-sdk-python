@@ -2,7 +2,7 @@ import os
 import json
 import pyxb
 import xmltodict
-from payfacsdk import fields_payfac
+from payfacMPSdk import fields_payfac
 
 class Configuration(object):
     """Setup Configuration variables.
@@ -27,11 +27,10 @@ class Configuration(object):
 
         attr_dict = {
             'merchant_id': '',
-            'neuter_xml': False,
+            'neuterXml': False,
             'password': '',
-            'print_xml': False,
+            'printXml': False,
             'proxy': '',
-            #'url': 'https://www.testvantivcnp.com/sandbox/payfac',
             'url': '',
             'username': ''
         }

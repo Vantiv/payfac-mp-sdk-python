@@ -1,12 +1,12 @@
 import unittest
 import mock
 from collections import OrderedDict
-from payfacsdk import payfac_mcc
+from payfacMPSdk import payfac_mcc
 
 
 class TestMCC(unittest.TestCase):
 
-    @mock.patch('payfacsdk.communication.http_get_retrieval_request')
+    @mock.patch('payfacMPSdk.communication.http_get_retrieval_request')
     def test_get_mcc(self, mock_http_get_retrieval_request):
         mock_http_get_retrieval_request.return_value = \
             OrderedDict([(u'@xmlns', u'http://payfac.vantivcnp.com/api/merchant/onboard'),

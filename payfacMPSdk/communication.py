@@ -8,7 +8,7 @@ import traceback
 
 from requests.auth import HTTPBasicAuth
 
-from payfacsdk import (utils)
+from payfacMPSdk import (utils)
 
 conf = utils.Configuration()
 
@@ -125,8 +125,8 @@ def neuter_xml(xml_string):
     return xml_string
 
 def print_to_console(prefix_message, xml_string, config=conf):
-    if config.print_xml:
-        if config.neuter_xml:
+    if config.printXml:
+        if config.neuterXml:
             xml_string = neuter_xml(xml_string)
         print(prefix_message, xml_string)
 

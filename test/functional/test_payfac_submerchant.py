@@ -1,5 +1,5 @@
 import unittest
-from payfacsdk import payfac_submerchant
+from payfacMPSdk import payfac_submerchant
 
 
 class TestSubMerchant(unittest.TestCase):

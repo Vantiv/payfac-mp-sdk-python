@@ -1,6 +1,6 @@
 import random
 import unittest
-from payfacsdk import communication, utils
+from payfacMPSdk import communication, utils
 
 
 class TestCertification(unittest.TestCase):

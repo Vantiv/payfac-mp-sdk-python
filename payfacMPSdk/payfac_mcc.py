@@ -1,6 +1,6 @@
 from __future__ import absolute_import, print_function, unicode_literals
 
-from payfacsdk import communication
+from payfacMPSdk import communication
 
 SERVICE_ROUTE = "/mcc"
 
