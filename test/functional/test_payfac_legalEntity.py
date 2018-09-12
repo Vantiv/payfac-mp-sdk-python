@@ -1,6 +1,4 @@
 import unittest
-import mock
-from collections import OrderedDict
 from payfacsdk import payfac_legalEntity
 
 
