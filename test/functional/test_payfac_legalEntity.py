@@ -1,6 +1,5 @@
 import unittest
-from payfacMPSdk import payfac_legalEntity, generatedClass
-from collections import OrderedDict
+from payfacMPSdk import payfac_legalEntity,generatedClass
 from dateutil.parser import parse
 
 class TestLegalEntity(unittest.TestCase):

@@ -1,5 +1,5 @@
 import unittest
-from payfacMPSdk import payfac_agreement, generatedClass
+from payfacMPSdk import payfac_agreement,generatedClass
 from dateutil.parser import parse
 
 class TestAgreement(unittest.TestCase):

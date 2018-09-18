@@ -1,7 +1,5 @@
 import unittest
-from payfacMPSdk import payfac_submerchant, generatedClass
-from collections import OrderedDict
-
+from payfacMPSdk import payfac_submerchant,generatedClass
 
 
 class TestSubMerchant(unittest.TestCase):

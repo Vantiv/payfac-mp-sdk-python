@@ -1,0 +1,4 @@
+[run]
+omit = */generatedClass.py
+[report]
+omit = */generatedClass.py

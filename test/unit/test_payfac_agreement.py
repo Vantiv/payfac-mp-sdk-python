@@ -1,7 +1,7 @@
 import unittest
 import mock
 from collections import OrderedDict
-from payfacMPSdk import payfac_agreement,generatedClass
+from payfacMPSdk import payfac_agreement, generatedClass
 from dateutil.parser import parse
 
 
