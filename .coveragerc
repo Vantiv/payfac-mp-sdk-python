@@ -1,4 +1,6 @@
 [run]
-omit = */generatedClass.py
+omit = */generatedClass.py\
+       test/*
 [report]
-omit = */generatedClass.py
+omit = */generatedClass.py\
+       test/*
