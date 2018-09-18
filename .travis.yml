@@ -25,8 +25,9 @@ script:
   - echo $BUILD_DIR
   - echo $PAYFAC_MP_SDK_CONFIG
   - cat $PAYFAC_MP_SDK_CONFIG
-  - coverage run --source $BUILD_DIR/test/unit/* $BUILD_DIR/test/functional/*
-  - coverage report --omit $BUILD_DIR/payfacMPSdk/generatedClass.py
+  - nosetests  $BUILD_DIR/test/unit $BUILD_DIR/test/functional -v --with-coverage
+  - coverage report --omit $BUILD_DIR/payfacMPSdk/generatedClass.py $BUILD_DIR/test/unit/* $BUILD_DIR/test/functional/*
+
 
 deploy:
     provider: releases
@@ -38,5 +39,3 @@ deploy:
       tags: true
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-  
