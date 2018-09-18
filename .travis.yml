@@ -16,6 +16,7 @@ env:
    - MP_CONFIG_DIR=$BUILD_DIR
    - PAYFAC_MP_SDK_CONFIG=$MP_CONFIG_DIR/.payfac_mp_sdk.conf
 install:
+   - pip install coverage
    - pip install codecov
    - python setup.py install
    - python $BUILD_DIR/tools/generate.py
@@ -24,9 +25,8 @@ script:
   - echo $BUILD_DIR
   - echo $PAYFAC_MP_SDK_CONFIG
   - cat $PAYFAC_MP_SDK_CONFIG
-#   - nosetests --with-coverage --with-xunit --verbosity=3 $BUILD_DIR/test/unit $BUILD_DIR/test/functional
-  - nosetests  $BUILD_DIR/test/unit $BUILD_DIR/test/functional -v --with-coverage
-
+  - coverage run $BUILD_DIR/test/unit/* $BUILD_DIR/test/functional/*
+  - coverage report --omit $BUILD_DIR/payfacMPSdk/generatedClass.py
 
 deploy:
     provider: releases
@@ -38,6 +38,5 @@ deploy:
       tags: true
 
 after_success:
-  #  - codecov
-  - bash <(curl -s https://codecov.io/bash)
-
+  - codecov
+  
