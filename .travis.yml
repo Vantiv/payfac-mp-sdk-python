@@ -26,9 +26,7 @@ script:
   - echo $PAYFAC_MP_SDK_CONFIG
   - cat $PAYFAC_MP_SDK_CONFIG
   - nosetests  $BUILD_DIR/test/unit $BUILD_DIR/test/functional -v --with-coverage
-  - coverage report --omit $BUILD_DIR/payfacMPSdk/generatedClass.py $BUILD_DIR/test/unit/* $BUILD_DIR/test/functional/*
-
-
+ 
 deploy:
     provider: releases
     api_key: $GITHUB_TOKEN
