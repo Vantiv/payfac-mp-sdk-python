@@ -65,6 +65,7 @@ List of configuration parameters along with their values can be found [here](htt
 from __future__ import print_function, unicode_literals
 
 from payfacMpSdk import *
+from dateutil.parser import parse
 
 # Initial Configuration object. If you have saved configuration in '.payfac_mp_sdk.conf' at system environment
 # variable: PAYFAC_MP_SDK_CONFIG or user home directory, the saved configuration will be automatically load.
@@ -81,15 +82,61 @@ conf = utils.Configuration()
 response = payfac_legalEntiy.get_by_legalEntityId(xxxx)
 response = payfac_agreement.get_by_legalEntityId("1000293")
 
-# Update payfac-mp case
-legalEntityPutRequest = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><legalEntityUpdateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><address><streetAddress1>LE Street Address 1</streetAddress1><streetAddress2>LE Street Address 2</streetAddress2><city>LE City</city><stateProvince>MA</stateProvince><postalCode>01730</postalCode><countryCode>USA</countryCode></address><contactPhone>9785550101</contactPhone><doingBusinessAs>Other Name Co.</doingBusinessAs><annualCreditCardSalesVolume>10000000</annualCreditCardSalesVolume><hasAcceptedCreditCards>true</hasAcceptedCreditCards><principal><principalId>9</principalId><title>CEO</title><emailAddress>jdoe@mail.net</emailAddress><contactPhone>9785551234</contactPhone><address><streetAddress1>p street address 1</streetAddress1><streetAddress2>p street address 2</streetAddress2><city>Boston</city><stateProvince>MA</stateProvince><postalCode>01890</postalCode><countryCode>USA</countryCode></address><backgroundCheckFields><firstName>p first</firstName><lastName>p last</lastName><ssn>123459876</ssn><dateOfBirth>1980-10-12</dateOfBirth><driversLicense>892327409832</driversLicense><driversLicenseState>MA</driversLicenseState></backgroundCheckFields></principal><backgroundCheckFields><legalEntityName>Company Name</legalEntityName><legalEntityType>INDIVIDUAL_SOLE_PROPRIETORSHIP</legalEntityType><taxId>123456789</taxId></backgroundCheckFields><legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType><yearsInBusiness>10</yearsInBusiness></legalEntityUpdateRequest>'
-
-response = payfac_legalEntiy.put_by_legalEntityId("1000293", legalEntityPutRequest )
 
 # Post a new payfac-mp case
-agreementPostRequest = '<legalEntityAgreementCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><legalEntityAgreement><legalEntityAgreementType>MERCHANT_AGREEMENT</legalEntityAgreementType><agreementVersion>agreementVersion1</agreementVersion><userFullName>userFullName</userFullName><userSystemName>systemUserName</userSystemName><userIPAddress>196.198.100.100</userIPAddress><manuallyEntered>false</manuallyEntered><acceptanceDateTime>2017-02-11T12:00:00-06:00</acceptanceDateTime></legalEntityAgreement></legalEntityAgreementCreateRequest>'
+legalEntityAgreementCreateRequest = generatedClass.legalEntityAgreementCreateRequest.factory()
+legalEntityAgreement = generatedClass.legalEntityAgreement.factory()
+legalEntityAgreement.set_legalEntityAgreementType("MERCHANT_AGREEMENT")
+legalEntityAgreement.set_agreementVersion("agreementVersion1")
+legalEntityAgreement.set_userFullName("userFullName")
+legalEntityAgreement.set_userSystemName("systemUserName")
+legalEntityAgreement.set_userIPAddress("196.198.100.100")
+legalEntityAgreement.set_manuallyEntered("false")
+legalEntityAgreement.set_acceptanceDateTime(parse("2017-02-11T12:00:00-06:00"))
+legalEntityAgreementCreateRequest.set_legalEntityAgreement(legalEntityAgreement)
 
-response = payfac_agreement.post_by_legalEntity("21003", agreementPostRequest)
+response = payfac_agreement.post_by_legalEntityId("21003",legalEntityAgreementCreateRequest)
+
+
+# Update payfac-mp case
+
+subMerchantUpdateRequest = generatedClass.subMerchantUpdateRequest.factory()
+subMerchantUpdateRequest.set_amexMid("1234567890")
+subMerchantUpdateRequest.set_discoverConveyedMid("123456789012345")
+subMerchantUpdateRequest.set_url("http://merchantUrl")
+subMerchantUpdateRequest.set_customerServiceNumber("8407809000")
+subMerchantUpdateRequest.set_hardCodedBillingDescriptor("Descriptor")
+subMerchantUpdateRequest.set_maxTransactionAmount(8400)
+subMerchantUpdateRequest.set_bankRoutingNumber("840123124")
+subMerchantUpdateRequest.set_bankAccountNumber("84012312415")
+subMerchantUpdateRequest.set_pspMerchantId("785412365")
+subMerchantUpdateRequest.set_purchaseCurrency("USD")
+address = generatedClass.addressUpdatable.factory()
+address.set_streetAddress1("Street Address 1")
+address.set_streetAddress2("Street Address 2")
+address.set_city("City")
+address.set_stateProvince("MA")
+address.set_postalCode("01970")
+subMerchantUpdateRequest.set_address(address)
+primaryContact = generatedClass.subMerchantPrimaryContactUpdatable.factory()
+primaryContact.set_firstName("John")
+primaryContact.set_lastName("Doe")
+primaryContact.set_phone("978555222")
+subMerchantUpdateRequest.set_primaryContact(primaryContact)
+fraud = generatedClass.subMerchantFraudFeature.factory()
+fraud.set_enabled("true")
+subMerchantUpdateRequest.set_fraud(fraud)
+amexAcquired = generatedClass.subMerchantAmexAcquiredFeature.factory()
+amexAcquired.set_enabled("true")
+subMerchantUpdateRequest.set_amexAcquired(amexAcquired)
+eCheck = generatedClass.subMerchantECheckFeature.factory()
+eCheck.set_eCheckBillingDescriptor("978555222")
+eCheck.set_enabled("true")
+subMerchantUpdateRequest.set_eCheck(eCheck)
+
+response = payfac_submerchant.put_by_subMerchantId("2018","123456", subMerchantUpdateRequest)
+
+
 
 ```
 
