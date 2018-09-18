@@ -1,8 +1,5 @@
 import os
 import json
-import sys
-
-import pyxb
 import xmlschema
 
 my_schema = xmlschema.XMLSchema(
