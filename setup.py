@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 import sys
-
-import sys
 from setuptools import setup
 
 # Require Python 2.7.9 or higher or Python 3.4 or higher
@@ -26,6 +24,7 @@ setup(
         'xmlschema>=1.0.3',
         'generateDS>=2.29.24',
         'unittest2>=1.1.0',
+        'python-dateutil>=2.7.3',
         'mock', 'lxml'
     ],
     license='MIT',
