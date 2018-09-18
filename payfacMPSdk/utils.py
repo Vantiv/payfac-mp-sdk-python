@@ -1,9 +1,12 @@
 import os
 import json
-import pyxb
-import xmltodict
-from payfacMPSdk import fields_payfac
+import sys
 
+import pyxb
+import xmlschema
+
+my_schema = xmlschema.XMLSchema(
+    '/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd')
 class Configuration(object):
     """Setup Configuration variables.
 
@@ -96,28 +99,22 @@ def obj_to_xml(obj):
     return xml
 
 
-def generate_response(http_response, response_type, return_format='dict'):
-    # print((http_response.text).encode('utf-8').strip())
-    return convert_to_format(http_response.text, response_type, return_format)
+def generate_response(http_response, return_format='dict'):
+    return convert_to_format(http_response.text, return_format)
 
 
-def convert_to_format(http_response, response_type, return_format='dict'):
+def convert_to_format(http_response, return_format='dict'):
     return_format = return_format.lower()
     if return_format == 'xml':
         response_xml = http_response.text
         return response_xml
-    elif return_format == 'object':
-        return convert_to_obj(http_response)
     else:
-        return convert_to_dict(http_response, response_type)
+        return convert_to_dict(http_response)
 
 
-def convert_to_obj(xml_response):
-    return fields_payfac.CreateFromDocument(xml_response)
-
-
-def convert_to_dict(xml_response, response_type):
-    response_dict = xmltodict.parse(xml_response)[response_type]
+def convert_to_dict(xml_response):
+    if(not (my_schema.is_valid(xml_response.encode('utf-8')))): raise PayfacSchemaError("Input is not compatible with schema")
+    response_dict = my_schema.to_dict(xml_response.encode('utf-8'))
     if response_dict['@xmlns'] != "":
         _create_lists(response_dict)
         return response_dict
@@ -145,7 +142,7 @@ def _create_list(element_key, container):
 
 
 def generate_error_response(http_response, return_format='dict'):
-    return convert_to_format(http_response.text, "errorResponse", return_format)
+    return convert_to_format(http_response.text, "errorResponse")
 
 class PayfacError(Exception):
 
@@ -158,3 +155,7 @@ class PayfacWebError(Exception):
         self.message = message
         self.code = code
         self.error_list = error_list
+
+class PayfacSchemaError(Exception):
+    def __init__(self,message):
+        self.message = message

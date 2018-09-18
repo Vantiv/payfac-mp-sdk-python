@@ -12,14 +12,14 @@ xsd_name = 'merchant-onboard-api-v%s.xsd' % version
 
 # xsd_name = 'merchant-onboard-api-v13.xsd'
 print('Generate module fields using pyxb')
-xsd_abs_path =  os.path.join(package_root, "schema", xsd_name)
+xsd_abs_path = os.path.join(package_root, "schema", xsd_name)
 print(xsd_abs_path)
-os.system('pyxbgen --schema-location %s --module fields_payfac' %xsd_abs_path)
+ns = "xmlns:\"http://payfac.vantivcnp.com/api/merchant/onboard\""
+# os.system('pyxbgen --schema-location %s --module fields_payfac' %xsd_abs_path)
+os.system('generateDS.py --namespacedef=%s -o generatedClass.py %s' %(ns,xsd_abs_path))
 
-print('Copy fields_payfac.py to package')
-gen_field_py_abs_path = os.path.join(package_root, 'tools', 'fields_payfac.py')
-target_field_py_abs_path = os.path.join(package_root, 'payfacMPSdk', 'fields_payfac.py')
+print('Copy generatedClass.py and to package')
+gen_field_py_abs_path = os.path.join(package_root, 'tools', 'generatedClass.py')
+target_field_py_abs_path = os.path.join(package_root, 'payfacMPSdk', 'generatedClass.py')
 os.system('mv %s %s' % (gen_field_py_abs_path, target_field_py_abs_path))
-
-
 

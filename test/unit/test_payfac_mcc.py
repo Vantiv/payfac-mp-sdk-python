@@ -14,6 +14,6 @@ class TestMCC(unittest.TestCase):
                          (u'approvedMccs', OrderedDict([(u'approvedMcc', ['5967', '5970'])]))])
         response = payfac_mcc.get_mcc()
         expected_url_suffix = "/mcc"
-        mock_http_get_retrieval_request.assert_called_with(expected_url_suffix, mock.ANY)
+        mock_http_get_retrieval_request.assert_called_with(expected_url_suffix)
         self.assertEquals("5967", response["approvedMccs"]["approvedMcc"][0])
         self.assertEquals("5970", response["approvedMccs"]["approvedMcc"][1])

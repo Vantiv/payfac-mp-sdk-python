@@ -12,4 +12,4 @@ SERVICE_ROUTE = "/mcc"
 
 
 def get_mcc():
-    return communication.http_get_retrieval_request(SERVICE_ROUTE, "approvedMccResponse")
+    return communication.http_get_retrieval_request(SERVICE_ROUTE)

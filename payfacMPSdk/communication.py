@@ -20,7 +20,7 @@ PAYFAC_API_HEADERS = {"Accept": PAYFAC_CONTENT_TYPE,
 HTTP_ERROR_MESSAGE = "Error with Https Request, Please Check Proxy and Url configuration"
 
 
-def http_get_retrieval_request(url_suffix, response_type, config=conf):
+def http_get_retrieval_request(url_suffix, config=conf):
     url = getattr(config, 'url')
     # print("url -> "+url+"\n")
     request_url = url + url_suffix
@@ -37,10 +37,10 @@ def http_get_retrieval_request(url_suffix, response_type, config=conf):
     print_to_console("\nGET request to:", request_url, config)
     validate_response(http_response)
     print_to_console("\nResponse :", http_response.text, config)
-    return utils.generate_response(http_response,response_type)
+    return utils.generate_response(http_response)
 
 
-def http_post_request(url_suffix, request_xml, response_type, config=conf):
+def http_post_request(url_suffix, request_xml, config=conf):
     request_url = config.url + url_suffix
     try:
         http_response = requests.post(request_url,
@@ -53,10 +53,9 @@ def http_post_request(url_suffix, request_xml, response_type, config=conf):
     print_to_console("\nPOST request to:", request_url, config)
     validate_response(http_response)
     print_to_console("\nResponse :", http_response.text, config)
-    return utils.generate_response(http_response,response_type)
+    return utils.generate_response(http_response)
 
-
-def http_put_request(url_suffix, request_xml, response_type, config=conf):
+def http_put_request(url_suffix, request_xml, config=conf):
     request_url = config.url + url_suffix;
     try:
         http_response = requests.put(request_url, headers=PAYFAC_API_HEADERS,
@@ -69,10 +68,10 @@ def http_put_request(url_suffix, request_xml, response_type, config=conf):
     print_to_console("\nRequest :", request_xml, config)
     validate_response(http_response)
     print_to_console("\nResponse :", http_response.text, config)
-    return utils.generate_response(http_response, response_type)
+    return utils.generate_response(http_response)
 
 
-def http_delete_request(url_suffix,response_type,config=conf):
+def http_delete_request(url_suffix,config=conf):
     request_url = config.url + url_suffix
 
     try:
@@ -84,7 +83,7 @@ def http_delete_request(url_suffix,response_type,config=conf):
     print_to_console("\nDELETE request to:", request_url, config)
     validate_response(http_response)
     print_to_console("\nResponse :", http_response.text, config)
-    return utils.generate_response(http_response,response_type)
+    return utils.generate_response(http_response)
 
 
 

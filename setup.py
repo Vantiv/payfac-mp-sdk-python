@@ -20,13 +20,13 @@ setup(
     url='https://developer.vantiv.com/community/ecommerce',
     packages=['payfacMPSdk', 'scripts'],
     install_requires=[
-        'PyXB==1.2.5',
         'paramiko>=1.14.0',
         'requests>=2.13.0',
         'six>=1.10.0',
-        'xmltodict>=0.10.2',
+        'xmlschema>=1.0.3',
+        'generateDS>=2.29.24',
         'unittest2>=1.1.0',
-        'mock'
+        'mock', 'lxml'
     ],
     license='MIT',
     classifiers=[

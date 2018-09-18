@@ -1,6 +1,7 @@
 import unittest
-from payfacMPSdk import payfac_legalEntity
-
+from payfacMPSdk import payfac_legalEntity, generatedClass
+from collections import OrderedDict
+from dateutil.parser import parse
 
 class TestLegalEntity(unittest.TestCase):
 
@@ -10,18 +11,92 @@ class TestLegalEntity(unittest.TestCase):
         self.assertEquals("123456789",response["taxId"])
         self.assertIsNotNone(response["transactionId"])
 
+
     def test_put_by_legalEntityId(self):
-        legalEntityPutRequest = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><legalEntityUpdateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><address><streetAddress1>LE Street Address 1</streetAddress1><streetAddress2>LE Street Address 2</streetAddress2><city>LE City</city><stateProvince>MA</stateProvince><postalCode>01730</postalCode><countryCode>USA</countryCode></address><contactPhone>9785550101</contactPhone><doingBusinessAs>Other Name Co.</doingBusinessAs><annualCreditCardSalesVolume>10000000</annualCreditCardSalesVolume><hasAcceptedCreditCards>true</hasAcceptedCreditCards><principal><principalId>9</principalId><title>CEO</title><emailAddress>jdoe@mail.net</emailAddress><contactPhone>9785551234</contactPhone><address><streetAddress1>p street address 1</streetAddress1><streetAddress2>p street address 2</streetAddress2><city>Boston</city><stateProvince>MA</stateProvince><postalCode>01890</postalCode><countryCode>USA</countryCode></address><backgroundCheckFields><firstName>p first</firstName><lastName>p last</lastName><ssn>123459876</ssn><dateOfBirth>1980-10-12</dateOfBirth><driversLicense>892327409832</driversLicense><driversLicenseState>MA</driversLicenseState></backgroundCheckFields></principal><backgroundCheckFields><legalEntityName>Company Name</legalEntityName><legalEntityType>INDIVIDUAL_SOLE_PROPRIETORSHIP</legalEntityType><taxId>123456789</taxId></backgroundCheckFields><legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType><yearsInBusiness>10</yearsInBusiness></legalEntityUpdateRequest>'
-        response = payfac_legalEntity.put_by_legalEntityId("1000293", legalEntityPutRequest)
+        legalEntityUpdateRequest = generatedClass.legalEntityUpdateRequest.factory()
+        address = generatedClass.address.factory()
+        address.set_streetAddress1("LE Street Address 1")
+        address.set_streetAddress2("LE Street Address 2")
+        address.set_city("LE City")
+        address.set_stateProvince("MA")
+        address.set_postalCode("01730")
+        address.set_countryCode("USA")
+
+        legalEntityUpdateRequest.set_address(address)
+        legalEntityUpdateRequest.set_contactPhone("9785550101")
+        legalEntityUpdateRequest.set_doingBusinessAs("Other Name Co.")
+        legalEntityUpdateRequest.set_annualCreditCardSalesVolume(10000000)
+        legalEntityUpdateRequest.set_hasAcceptedCreditCards("true")
+
+        principal = generatedClass.legalEntityPrincipalUpdatable.factory()
+        principal.set_principalId(9)
+        principal.set_title("CEO")
+        principal.set_emailAddress("jdoe@mail.net")
+        principal.set_contactPhone("9785551234")
+        principal.set_address(address)
+
+        backgroundCheckField = generatedClass.principalBackgroundCheckFields.factory()
+        backgroundCheckField.set_firstName("p first")
+        backgroundCheckField.set_lastName("p last")
+        backgroundCheckField.set_ssn("123459876")
+        backgroundCheckField.set_dateOfBirth(parse("1980-10-12T12:00:00-06:00"))
+        backgroundCheckField.set_driversLicense("892327409832")
+        backgroundCheckField.set_driversLicenseState("MA")
+        principal.set_backgroundCheckFields(backgroundCheckField)
+
+        legalEntityUpdateRequest.set_principal(principal)
+
+        backgroundCheckFields = generatedClass.legalEntityBackgroundCheckFields.factory()
+        backgroundCheckFields.set_legalEntityName("Company Name")
+        backgroundCheckFields.set_legalEntityType("INDIVIDUAL_SOLE_PROPRIETORSHIP")
+        backgroundCheckFields.set_taxId("123456789")
+        legalEntityUpdateRequest.set_backgroundCheckFields(backgroundCheckFields)
+        legalEntityUpdateRequest.set_legalEntityOwnershipType("PUBLIC")
+        legalEntityUpdateRequest.set_yearsInBusiness("10")
+
+        response = payfac_legalEntity.put_by_legalEntityId("1000293", legalEntityUpdateRequest)
+
         self.assertEquals("1000293", response["legalEntityId"])
         self.assertIsNotNone(response["transactionId"])
-        self.assertEquals("10", response["responseCode"])
+        self.assertEquals(10, response["responseCode"])
         self.assertEquals("Approved", response["responseDescription"])
 
     def test_post_by_legalEntity(self):
-        legalEntityPostRequest = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><legalEntityCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><legalEntityName>Legal Entity Name</legalEntityName><legalEntityType>CORPORATION</legalEntityType><legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType><doingBusinessAs>Alternate Business Name</doingBusinessAs><taxId>123456789</taxId><contactPhone>7817659800</contactPhone><annualCreditCardSalesVolume>80000000</annualCreditCardSalesVolume><hasAcceptedCreditCards>true</hasAcceptedCreditCards><address><streetAddress1>Street Address 1</streetAddress1><streetAddress2>Street Address 2</streetAddress2><city>City</city><stateProvince>MA</stateProvince><postalCode>01730</postalCode><countryCode>USA</countryCode></address><principal><title>Chief Financial Officer</title><firstName>p first</firstName><lastName>p last</lastName><emailAddress>emailAddress</emailAddress><ssn>123459876</ssn><contactPhone>7817659800</contactPhone><dateOfBirth>1980-10-12</dateOfBirth><driversLicense>892327409832</driversLicense><driversLicenseState>MA</driversLicenseState><address><streetAddress1>p street address 1</streetAddress1><streetAddress2>p street address 2</streetAddress2><city>Boston</city><stateProvince>MA</stateProvince><postalCode>01890</postalCode><countryCode>USA</countryCode></address><stakePercent>33</stakePercent></principal><yearsInBusiness>12</yearsInBusiness></legalEntityCreateRequest>'
-        response = payfac_legalEntity.post_by_legalEntity(legalEntityPostRequest)
+        legalEntityCreateRequest = generatedClass.legalEntityCreateRequest.factory()
+
+        legalEntityCreateRequest.set_legalEntityName("Legal Entity Name")
+        legalEntityCreateRequest.set_legalEntityType("CORPORATION")
+        legalEntityCreateRequest.set_legalEntityOwnershipType("PUBLIC")
+        legalEntityCreateRequest.set_doingBusinessAs("Alternate Business Name")
+        legalEntityCreateRequest.set_taxId("123456789")
+        legalEntityCreateRequest.set_contactPhone("7817659800")
+        legalEntityCreateRequest.set_annualCreditCardSalesVolume("80000000")
+        legalEntityCreateRequest.set_hasAcceptedCreditCards("true")
+        address = generatedClass.address.factory()
+        address.set_streetAddress1("Street Address 1")
+        address.set_streetAddress2("Street Address 2")
+        address.set_city("City")
+        address.set_stateProvince("MA")
+        address.set_postalCode("01730")
+        address.set_countryCode("USA")
+        legalEntityCreateRequest.set_address(address)
+        principal = generatedClass.legalEntityPrincipal.factory()
+        principal.set_title("Chief Financial Officer")
+        principal.set_firstName("p first")
+        principal.set_lastName("p last")
+        principal.set_emailAddress("emailAddress")
+        principal.set_ssn("123459876")
+        principal.set_contactPhone("7817659800")
+        principal.set_dateOfBirth(parse("1980-10-11T12:00:00-06:00"))
+        principal.set_driversLicense("892327409832")
+        principal.set_driversLicenseState("MA")
+        principal.set_address(address)
+        principal.set_stakePercent(33)
+        legalEntityCreateRequest.set_principal(principal)
+        legalEntityCreateRequest.set_yearsInBusiness("12")
+
+        response = payfac_legalEntity.post_by_legalEntity(legalEntityCreateRequest)
         self.assertIsNotNone(response["legalEntityId"])
         self.assertIsNotNone(response["transactionId"])
-        self.assertEquals("10", response["responseCode"])
+        self.assertEquals(10, response["responseCode"])
         self.assertEquals("Approved", response["responseDescription"])

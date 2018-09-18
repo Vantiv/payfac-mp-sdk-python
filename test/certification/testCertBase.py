@@ -10,7 +10,6 @@ class TestCertification(unittest.TestCase):
     conf.__setattr__("username", "")
     conf.__setattr__("password","")
 
-
     legalEntityPostRequest1 = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>' \
                               '<legalEntityCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard">' \
                               '<legalEntityName>Legal Entity Name</legalEntityName>' \
@@ -172,8 +171,6 @@ class TestCertification(unittest.TestCase):
 
 
 
-
-
     #==========================================================================================
     #                             Legalentity certification Tests
     #==========================================================================================
@@ -185,7 +182,7 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
         self.assertEquals("10",response["responseCode"])
         self.assertEquals("Approved", response["responseDescription"])
 
@@ -196,7 +193,7 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "912 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
         self.assertEquals("20",response["responseCode"])
 
 
@@ -207,11 +204,11 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest2 = response["legalEntityId"]
         expected_url_suffix2 = expected_url_suffix + "/" + legalEntityIdFromTest2
-        response2 = communication.http_get_retrieval_request(expected_url_suffix2,"legalEntityRetrievalResponse",self.conf)
+        response2 = communication.http_get_retrieval_request(expected_url_suffix2,self.conf)
 
 
     # wait a minimum of two hours after submitting test #2
@@ -221,11 +218,11 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest2 = response["legalEntityId"]
         expected_url_suffix2 = expected_url_suffix + "/" + legalEntityIdFromTest2
-        response2 = communication.http_get_retrieval_request(expected_url_suffix2,"legalEntityRetrievalResponse",self.conf)
+        response2 = communication.http_get_retrieval_request(expected_url_suffix2,self.conf)
 
         self.assertEquals("10",response2["responseCode"])
         self.assertEquals("Approved",response2["responseDescription"])
@@ -237,7 +234,7 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "914 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
         self.assertEquals("10",response["responseCode"])
         self.assertEquals("Approved", response["responseDescription"])
 
@@ -247,13 +244,13 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest1 = response["legalEntityId"]
         expected_url_suffix2 = expected_url_suffix + "/" + legalEntityIdFromTest1
         taxId = random.randint(100000000, 999999999)
         legalEntityPutRequest = self.legalEntityPutRequest1 +str(taxId) + self.legalEntityPutRequest2
-        response2 = communication.http_put_request(expected_url_suffix2,legalEntityPutRequest,"legalEntityResponse",self.conf)
+        response2 = communication.http_put_request(expected_url_suffix2,legalEntityPutRequest,self.conf)
 
         self.assertEquals("10",response2["responseCode"])
         self.assertEquals("Approved", response2["responseDescription"])
@@ -263,7 +260,7 @@ class TestCertification(unittest.TestCase):
         expected_url_suffix = "/legalentity/0"
         taxId = random.randint(100000000, 999999999)
         legalEntityPutRequest = self.legalEntityPutRequest1 +str(taxId) + self.legalEntityPutRequest2
-        self.assertRaises(utils.PayfacWebError,communication.http_put_request,expected_url_suffix,legalEntityPutRequest,"legalEntityResponse",self.conf)
+        self.assertRaises(utils.PayfacWebError,communication.http_put_request,expected_url_suffix,legalEntityPutRequest,self.conf)
 
 
     def test2and6(self):
@@ -272,17 +269,17 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "912 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest2 = response["legalEntityId"]
         expected_url_suffix2 = expected_url_suffix + "/" + legalEntityIdFromTest2
-        response2 = communication.http_get_retrieval_request(expected_url_suffix2,"legalEntityRetrievalResponse",self.conf)
+        response2 = communication.http_get_retrieval_request(expected_url_suffix2,self.conf)
         self.assertEquals("20",response2["responseCode"])
 
 
     def test7(self):
         expected_url_suffix = "/legalentity/0"
-        self.assertRaises(utils.PayfacWebError,communication.http_get_retrieval_request,expected_url_suffix,"legalEntityRetrievalResponse",self.conf)
+        self.assertRaises(utils.PayfacWebError,communication.http_get_retrieval_request,expected_url_suffix,self.conf)
 
 
     #==========================================================================================
@@ -296,21 +293,21 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest1 = response["legalEntityId"]
 
         pspMerchantId = random.randint(100,999)
         submerchant_post_request = self.submerchant_post_request1 + str(pspMerchantId) + self.submerchant_post_request2
         expected_url_suffix2 = expected_url_suffix + "/" + legalEntityIdFromTest1 + "/submerchant"
-        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,"subMerchantCreateResponse",self.conf)
+        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,self.conf)
 
 
     def test9(self):
         pspMerchantId = random.randint(100, 999)
         submerchant_post_request = self.submerchant_post_request1 + str(pspMerchantId) + self.submerchant_post_request2
         expected_url_suffix = "/legalentity/0/submerchant"
-        self.assertRaises(utils.PayfacWebError,communication.http_post_request,expected_url_suffix, submerchant_post_request ,"subMerchantCreateResponse",self.conf)
+        self.assertRaises(utils.PayfacWebError,communication.http_post_request,expected_url_suffix, submerchant_post_request ,self.conf)
 
     def test2and10(self):
         legalEntityType = "INDIVIDUAL_SOLE_PROPRIETORSHIP"
@@ -318,13 +315,13 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "912 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest2 = response["legalEntityId"]
         pspMerchantId = random.randint(100, 999)
         submerchant_post_request = self.submerchant_post_request1 + str(pspMerchantId) + self.submerchant_post_request2
         expected_url_suffix = "/legalentity/"+legalEntityIdFromTest2+ "/submerchant"
-        self.assertRaises(utils.PayfacWebError,communication.http_post_request,expected_url_suffix, submerchant_post_request ,"subMerchantCreateResponse",self.conf)
+        self.assertRaises(utils.PayfacWebError,communication.http_post_request,expected_url_suffix, submerchant_post_request ,self.conf)
 
     def test1and8and11(self):
         legalEntityType = "INDIVIDUAL_SOLE_PROPRIETORSHIP"
@@ -332,20 +329,20 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest1 = response["legalEntityId"]
 
         pspMerchantId = random.randint(100,999)
         submerchant_post_request = self.submerchant_post_request1 + str(pspMerchantId) + self.submerchant_post_request2
         expected_url_suffix2 = expected_url_suffix + "/" + legalEntityIdFromTest1 + "/submerchant"
-        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,"subMerchantCreateResponse",self.conf)
+        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,self.conf)
 
         merchantIdFromTest8 = response2["subMerchantId"]
         pspMerchantId = random.randint(100, 999)
         submerchant_put_request = self.submerchant_put_request1 + str(pspMerchantId) + self.submerchant_put_request2
         expected_url_suffix3 = "/legalentity/" + legalEntityIdFromTest1 + "/submerchant/" + merchantIdFromTest8
-        response3 = communication.http_put_request(expected_url_suffix3,submerchant_put_request,"response",self.conf)
+        response3 = communication.http_put_request(expected_url_suffix3,submerchant_put_request,self.conf)
 
 
 
@@ -355,20 +352,20 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest1 = response["legalEntityId"]
 
         pspMerchantId = random.randint(100,999)
         submerchant_post_request = self.submerchant_post_request1 + str(pspMerchantId) + self.submerchant_post_request2
         expected_url_suffix2 = expected_url_suffix + "/" + legalEntityIdFromTest1 + "/submerchant"
-        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,"subMerchantCreateResponse",self.conf)
+        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,self.conf)
 
         merchantIdFromTest8 = response2["subMerchantId"]
         pspMerchantId = random.randint(100, 999)
         submerchant_put_request = self.submerchant_put_request1 + str(pspMerchantId) + self.submerchant_put_request2
         expected_url_suffix3 = "/legalentity/0/submerchant/" + merchantIdFromTest8
-        self.assertRaises(utils.PayfacWebError,communication.http_put_request,expected_url_suffix3,submerchant_put_request,"response",self.conf)
+        self.assertRaises(utils.PayfacWebError,communication.http_put_request,expected_url_suffix3,submerchant_put_request,self.conf)
 
 
     def test1adn13(self):
@@ -377,14 +374,14 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest1 = response["legalEntityId"]
 
         pspMerchantId = random.randint(100, 999)
         submerchant_put_request = self.submerchant_put_request1 + str(pspMerchantId) + self.submerchant_put_request2
         expected_url_suffix3 = "/legalentity/"+legalEntityIdFromTest1+"/submerchant/0"
-        self.assertRaises(utils.PayfacWebError,communication.http_put_request,expected_url_suffix3,submerchant_put_request,"response",self.conf)
+        self.assertRaises(utils.PayfacWebError,communication.http_put_request,expected_url_suffix3,submerchant_put_request,self.conf)
 
 
 
@@ -394,18 +391,18 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest1 = response["legalEntityId"]
 
         pspMerchantId = random.randint(100,999)
         submerchant_post_request = self.submerchant_post_request1 + str(pspMerchantId) + self.submerchant_post_request2
         expected_url_suffix2 = expected_url_suffix + "/" + legalEntityIdFromTest1 + "/submerchant"
-        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,"subMerchantCreateResponse",self.conf)
+        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,self.conf)
 
         subMerchantId = response2["subMerchantId"]
         expected_url_suffix3 = expected_url_suffix2 + "/" + subMerchantId
-        response3 = communication.http_get_retrieval_request(expected_url_suffix3,"subMerchantRetrievalResponse",self.conf)
+        response3 = communication.http_get_retrieval_request(expected_url_suffix3,self.conf)
 
 
     def test1and8and15(self):
@@ -414,18 +411,18 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest1 = response["legalEntityId"]
 
         pspMerchantId = random.randint(100,999)
         submerchant_post_request = self.submerchant_post_request1 + str(pspMerchantId) + self.submerchant_post_request2
         expected_url_suffix2 = expected_url_suffix + "/" + legalEntityIdFromTest1 + "/submerchant"
-        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,"subMerchantCreateResponse",self.conf)
+        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,self.conf)
 
         subMerchantId = response2["subMerchantId"]
         expected_url_suffix3 ="/legalentity/0/submerchant/"+ subMerchantId
-        self.assertRaises(utils.PayfacWebError, communication.http_get_retrieval_request, expected_url_suffix3, "subMerchantRetrievalResponse", self.conf)
+        self.assertRaises(utils.PayfacWebError, communication.http_get_retrieval_request, expected_url_suffix3, self.conf)
 
 
     def test1and8and16(self):
@@ -434,15 +431,15 @@ class TestCertification(unittest.TestCase):
         streetAddress1 = "900 Chelmsford St"
         legalEntityPostRequest = self.legalEntityPostRequest1 + legalEntityType + self.legalEntityPostRequest2 + str(taxId) + self.legalEntityPostRequest3 + streetAddress1 + self.legalEntityPostRequest4
         expected_url_suffix = "/legalentity"
-        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,"legalEntityCreateResponse",self.conf)
+        response = communication.http_post_request(expected_url_suffix,legalEntityPostRequest,self.conf)
 
         legalEntityIdFromTest1 = response["legalEntityId"]
 
         pspMerchantId = random.randint(100,999)
         submerchant_post_request = self.submerchant_post_request1 + str(pspMerchantId) + self.submerchant_post_request2
         expected_url_suffix2 = expected_url_suffix + "/" + legalEntityIdFromTest1 + "/submerchant"
-        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,"subMerchantCreateResponse",self.conf)
+        response2 = communication.http_post_request(expected_url_suffix2, submerchant_post_request ,self.conf)
 
         subMerchantId = response2["subMerchantId"]
         expected_url_suffix3 = expected_url_suffix2 + "/0"
-        self.assertRaises(utils.PayfacWebError, communication.http_get_retrieval_request, expected_url_suffix3, "subMerchantRetrievalResponse", self.conf)
+        self.assertRaises(utils.PayfacWebError, communication.http_get_retrieval_request, expected_url_suffix3, self.conf)
