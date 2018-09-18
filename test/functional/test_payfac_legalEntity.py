@@ -1,5 +1,5 @@
 import unittest
-from payfacMPSdk import payfac_legalEntity,generatedClass
+from payfacMPSdk import payfac_legalEntity, generatedClass, utils
 from dateutil.parser import parse
 
 class TestLegalEntity(unittest.TestCase):
@@ -60,6 +60,16 @@ class TestLegalEntity(unittest.TestCase):
         self.assertEquals(10, response["responseCode"])
         self.assertEquals("Approved", response["responseDescription"])
 
+        principal2 = generatedClass.legalEntityPrincipalUpdatable.factory()
+        principal2.set_title("CEO")
+        principal2.set_emailAddress("jdoe@mail.net")
+        principal2.set_contactPhone("9785551234")
+        principal2.set_address(address)
+
+        legalEntityUpdateRequest.set_principal(principal2)
+        self.assertRaises(utils.PayfacSchemaError, payfac_legalEntity.put_by_legalEntityId, "1000293",legalEntityUpdateRequest)
+
+
     def test_post_by_legalEntity(self):
         legalEntityCreateRequest = generatedClass.legalEntityCreateRequest.factory()
 
@@ -99,3 +109,9 @@ class TestLegalEntity(unittest.TestCase):
         self.assertIsNotNone(response["transactionId"])
         self.assertEquals(10, response["responseCode"])
         self.assertEquals("Approved", response["responseDescription"])
+
+        address2 = generatedClass.address.factory()
+        address.set_streetAddress1("Street Address 1")
+        address.set_streetAddress2("Street Address 2")
+        legalEntityCreateRequest.set_address(address2)
+        self.assertRaises(utils.PayfacSchemaError, payfac_legalEntity.post_by_legalEntity, legalEntityCreateRequest)

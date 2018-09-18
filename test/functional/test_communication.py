@@ -61,5 +61,3 @@ class TestCommunication(unittest.TestCase):
     def test_validate_response_with_PayfacError(self):
         self.assertRaises(utils.PayfacError, communication.validate_response, None)
 
-
-

@@ -79,40 +79,9 @@ class Configuration(object):
             json.dump(vars(self), config_file)
         return self._CONFIG_FILE_PATH
 
-def obj_to_xml(obj):
-    """Convert object to xml string without namespaces
 
-    Args:
-        obj: Object
-
-    Returns:
-        Xml string
-
-    Raises:
-        pyxb.ValidationError
-    """
-    # TODO convert object to xml without default namespace gracefully.
-    try:
-
-        xml = obj.toxml('utf-8')
-    except pyxb.ValidationError as e:
-        raise PayfacError(e.details())
-    xml = xml.replace(b'ns1:', b'')
-    xml = xml.replace(b':ns1', b'')
-    return xml
-
-
-def generate_response(http_response, return_format='dict'):
-    return convert_to_format(http_response.text, return_format)
-
-
-def convert_to_format(http_response, return_format='dict'):
-    return_format = return_format.lower()
-    if return_format == 'xml':
-        response_xml = http_response.text
-        return response_xml
-    else:
-        return convert_to_dict(http_response)
+def generate_response(http_response):
+    return convert_to_dict(http_response.text)
 
 
 def convert_to_dict(xml_response):
@@ -145,7 +114,7 @@ def _create_list(element_key, container):
 
 
 def generate_error_response(http_response, return_format='dict'):
-    return convert_to_format(http_response.text, "errorResponse")
+    return convert_to_dict(http_response.text)
 
 class PayfacError(Exception):
 

@@ -1,5 +1,5 @@
 import unittest
-from payfacMPSdk import payfac_submerchant,generatedClass
+from payfacMPSdk import payfac_submerchant, generatedClass, utils
 
 
 class TestSubMerchant(unittest.TestCase):
@@ -105,3 +105,6 @@ class TestSubMerchant(unittest.TestCase):
         self.assertIsNotNone(response["subMerchantId"])
         self.assertIsNotNone(response["transactionId"])
         self.assertIsNotNone(response["merchantIdentString"])
+
+        subMerchantCreateRequest2 = generatedClass.subMerchantCreateRequest.factory()
+        self.assertRaises(utils.PayfacSchemaError, payfac_submerchant.post_by_legalEntity, "2018", subMerchantCreateRequest2)

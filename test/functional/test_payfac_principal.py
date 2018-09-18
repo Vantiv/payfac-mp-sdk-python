@@ -1,5 +1,5 @@
 import unittest
-from payfacMPSdk import payfac_principal,generatedClass
+from payfacMPSdk import payfac_principal, generatedClass, utils
 from dateutil.parser import parse
 
 class TestPrincipal(unittest.TestCase):
@@ -27,6 +27,16 @@ class TestPrincipal(unittest.TestCase):
         response = payfac_principal.post_by_legalEntity("21003", legalEntityPrincipalCreateRequest)
         self.assertIsNotNone(response['transactionId'])
         self.assertEquals("21003", response["legalEntityId"])
+
+        principal2 = generatedClass.legalEntityPrincipal.factory()
+        principal2.set_title("Mr.")
+        principal2.set_firstName("First")
+        principal2.set_lastName("Last")
+        principal2.set_emailAddress("abc@gamil.com")
+        principal2.set_ssn("123450015")
+        principal2.set_dateOfBirth(parse("1980-10-12T12:00:00-06:00"))
+        legalEntityPrincipalCreateRequest.set_principal(principal2)
+        self.assertRaises(utils.PayfacSchemaError, payfac_principal.post_by_legalEntity, "21003", legalEntityPrincipalCreateRequest)
 
     def test_delete_by_legalEntityId(self):
         response = payfac_principal.delete_by_legalEntityId("21003", "9")
