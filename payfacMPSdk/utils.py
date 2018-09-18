@@ -1,9 +1,15 @@
 import os
 import json
 import xmlschema
+import sys
 
-my_schema = xmlschema.XMLSchema(
-    '/usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd')
+package_root = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+sys.path.insert(0, package_root)
+version = u'13'
+xsd_name = 'merchant-onboard-api-v%s.xsd' % version
+xsd_abs_path = os.path.join(package_root, "schema", xsd_name)
+my_schema = xmlschema.XMLSchema(xsd_abs_path)
+
 class Configuration(object):
     """Setup Configuration variables.
 
@@ -15,7 +21,7 @@ class Configuration(object):
         proxy (Str): Https proxy server address. Must start with "https://"
         print_xml (Str): Whether print request and response xml
     """
-    VERSION = u'13'
+    VERSION = version
     if 'PAYFAC_MP_SDK_CONFIG' in os.environ:
         _CONFIG_FILE_PATH = os.path.join(os.environ['PAYFAC_MP_SDK_CONFIG'])
     else:

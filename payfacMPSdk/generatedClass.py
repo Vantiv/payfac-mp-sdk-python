@@ -2,17 +2,18 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Fri Sep 14 14:19:10 2018 by generateDS.py version 2.29.24.
+# Generated Tue Sep 18 10:42:33 2018 by generateDS.py version 2.29.24.
 # Python 2.7.14 (default, Sep 11 2018, 11:39:53)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-23)]
 #
 # Command line options:
+#   ('--namespacedef', 'xmlns:http://payfac.vantivcnp.com/api/merchant/onboard')
 #   ('-o', 'generatedClass.py')
 #
 # Command line arguments:
 #   /usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd
 #
 # Command line:
-#   /usr/local/litle-home/cchang/git/payfac-mp-sdk-python/env27/bin/generateDS.py -o "generatedClass.py" /usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd
+#   /usr/local/litle-home/cchang/git/payfac-mp-sdk-python/env27/bin/generateDS.py --namespacedef="xmlns:http://payfac.vantivcnp.com/api/merchant/onboard" -o "generatedClass.py" /usr/local/litle-home/cchang/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd
 #
 # Current working directory (os.getcwd()):
 #   tools
@@ -9841,7 +9842,7 @@ def parse(inFileName, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:tns="http://payfac.vantivcnp.com/api/merchant/onboard"',
+            namespacedef_='xmlns:http://payfac.vantivcnp.com/api/merchant/onboard',
             pretty_print=True)
     return rootObj
 
@@ -9892,7 +9893,7 @@ def parseString(inString, silence=False):
         sys.stdout.write('<?xml version="1.0" ?>\n')
         rootObj.export(
             sys.stdout, 0, name_=rootTag,
-            namespacedef_='xmlns:tns="http://payfac.vantivcnp.com/api/merchant/onboard"')
+            namespacedef_='xmlns:http://payfac.vantivcnp.com/api/merchant/onboard')
     return rootObj
 
 

@@ -1,0 +1,29 @@
+<tns:subMerchantUpdateRequest xmlns:tns="http://payfac.vantivcnp.com/api/merchant/onboard">
+    <tns:amexMid>1234567890</tns:amexMid>
+    <tns:discoverConveyedMid>123456789012345</tns:discoverConveyedMid>
+    <tns:url>http://merchantUrl</tns:url>
+    <tns:customerServiceNumber>8407809000</tns:customerServiceNumber>
+    <tns:hardCodedBillingDescriptor>Descriptor</tns:hardCodedBillingDescriptor>
+    <tns:maxTransactionAmount>8400</tns:maxTransactionAmount>
+    <tns:bankRoutingNumber>840123124</tns:bankRoutingNumber>
+    <tns:bankAccountNumber>84012312415</tns:bankAccountNumber>
+    <tns:pspMerchantId>785412365</tns:pspMerchantId>
+    <tns:purchaseCurrency>USD</tns:purchaseCurrency>
+    <tns:address xmlns:tns="http://payfac.vantivcnp.com/api/merchant/onboard">
+        <tns:streetAddress1>Street Address 1</tns:streetAddress1>
+        <tns:streetAddress2>Street Address 2</tns:streetAddress2>
+        <tns:city>City</tns:city>
+        <tns:stateProvince>MA</tns:stateProvince>
+        <tns:postalCode>01970</tns:postalCode>
+    </tns:address>
+    <tns:primaryContact xmlns:tns="http://payfac.vantivcnp.com/api/merchant/onboard">
+        <tns:firstName>John</tns:firstName>
+        <tns:lastName>Doe</tns:lastName>
+        <tns:phone>978555222</tns:phone>
+    </tns:primaryContact>
+    <tns:fraud xmlns:tns="http://payfac.vantivcnp.com/api/merchant/onboard" enabled="true"/>
+    <tns:amexAcquired xmlns:tns="http://payfac.vantivcnp.com/api/merchant/onboard" enabled="true"/>
+    <tns:eCheck xmlns:tns="http://payfac.vantivcnp.com/api/merchant/onboard" enabled="true">
+        <tns:eCheckBillingDescriptor>978555222</tns:eCheckBillingDescriptor>
+    </tns:eCheck>
+</tns:subMerchantUpdateRequest>
