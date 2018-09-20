@@ -23,11 +23,11 @@ xsd_abs_path = os.path.join(package_root, "schema", xsd_name)
 my_schema = xmlschema.XMLSchema(xsd_abs_path)
 xml_path =  os.path.join(package_root, "payfacMPSdk")
 
-def post_by_legalEntity(legalEntityId, legalEntityAgreementCreateRequest):
+def post_by_legalEntity(legalEntityId, legalEntityPrincipalCreateRequest):
 
     xmlFile = open(xml_path + "/testXML", "w+")
     xmlFile.truncate(0)
-    legalEntityAgreementCreateRequest.export(xmlFile, 0)
+    legalEntityPrincipalCreateRequest.export(xmlFile, 0)
     xmlFile.close()
     xmlFile = open(xml_path + "/testXML", "r")
     request = xmlFile.read()

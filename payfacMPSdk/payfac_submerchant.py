@@ -26,11 +26,11 @@ def get_by_subMerchantId(legalEntityId, subMerchantId):
     url_suffix = SERVICE_ROUTE1  + legalEntityId + SERVICE_ROUTE2 +"/"+ subMerchantId
     return communication.http_get_retrieval_request(url_suffix)
 
-def post_by_legalEntity(legalEntityId,legalEntityAgreementCreateRequest):
+def post_by_legalEntity(legalEntityId,subMerchantCreateRequest):
 
     xmlFile = open(xml_path + "/testXML", "w+")
     xmlFile.truncate(0)
-    legalEntityAgreementCreateRequest.export(xmlFile, 0)
+    subMerchantCreateRequest.export(xmlFile, 0)
     xmlFile.close()
     xmlFile = open(xml_path + "/testXML", "r")
     request = xmlFile.read()
