@@ -79,11 +79,13 @@ conf = utils.Configuration()
 # proxy = ''
 
 # Retrieving information about a payfac-mp by legalEntityId:
+
 response = payfac_legalEntiy.get_by_legalEntityId(xxxx)
 response = payfac_agreement.get_by_legalEntityId("1000293")
 
 
 # Post a new payfac-mp case
+
 legalEntityAgreementCreateRequest = generatedClass.legalEntityAgreementCreateRequest.factory()
 legalEntityAgreement = generatedClass.legalEntityAgreement.factory()
 legalEntityAgreement.set_legalEntityAgreementType("MERCHANT_AGREEMENT")
