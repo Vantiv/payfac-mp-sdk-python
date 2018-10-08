@@ -26,15 +26,6 @@ script:
   - echo $PAYFAC_MP_SDK_CONFIG
   - cat $PAYFAC_MP_SDK_CONFIG
   - nosetests  $BUILD_DIR/test/unit $BUILD_DIR/test/functional -v --with-coverage
- 
-deploy:
-    provider: releases
-    api_key: $GITHUB_TOKEN
-    file_glob: true
-    file: build/kit/dist/*
-    skip_cleanup: true
-    on:
-      tags: true
 
 after_success:
      - bash <(curl -s https://codecov.io/bash)
