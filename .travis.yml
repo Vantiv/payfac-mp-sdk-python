@@ -28,6 +28,8 @@ deploy:
   - provider: pypi
     user: $pypi_user
     password: $pypi_pass
+    on:
+     tags: true
   - provider: releases
     api_key: $GITHUB_TOKEN
     skip_cleanup: true
