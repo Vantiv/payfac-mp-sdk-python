@@ -7,9 +7,6 @@ notifications:
       - sdksupport@vantiv.com
     on_success: always
     on_failure: always
-
-
-
 env:
  global:
    - BUILD_DIR=`pwd`
@@ -26,6 +23,16 @@ script:
   - echo $PAYFAC_MP_SDK_CONFIG
   - cat $PAYFAC_MP_SDK_CONFIG
   - nosetests  $BUILD_DIR/test/unit $BUILD_DIR/test/functional -v --with-coverage
+  
+deploy:
+  - provider: pypi
+    user: $pypi_user
+    password: $pypi_pass
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    skip_cleanup: true
+    on:
+     tags: true
 
 after_success:
      - bash <(curl -s https://codecov.io/bash)
