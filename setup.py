@@ -20,7 +20,7 @@ setup(
     package_data={'schema': ['*.xsd']},
     install_requires=[
         'paramiko>=1.14.0',
-        'requests>=2.13.0',
+        'requests>=2.21.0 ',
         'six>=1.10.0',
         'xmlschema>=1.0.3, <=1.0.18',
         'generateDS>=2.29.24',
