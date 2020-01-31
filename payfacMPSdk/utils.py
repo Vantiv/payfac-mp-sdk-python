@@ -23,8 +23,10 @@ class Configuration(object):
     """
     VERSION = version
     if 'PAYFAC_MP_SDK_CONFIG' in os.environ:
+        print "CONFIG FROM ENV VARIABLE HIT"
         _CONFIG_FILE_PATH = os.path.join(os.environ['PAYFAC_MP_SDK_CONFIG'])
     else:
+        "CONFIG FILE FROM ENV NOT HIT"
         _CONFIG_FILE_PATH = os.path.join(os.path.expanduser("~"), ".payfac_mp_sdk.conf")
 
     def __init__(self, conf_dict=dict()):
