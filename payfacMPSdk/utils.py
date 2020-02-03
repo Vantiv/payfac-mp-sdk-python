@@ -1,12 +1,15 @@
 import os
 import json
 import xmlschema
+#import pkg_resources
 import sys
 
 package_root = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 sys.path.insert(0, package_root)
 version = u'13'
 xsd_name = 'merchant-onboard-api-v%s.xsd' % version
+#my_data = pkg_resources.resource_string('payfacMPSdk.schema', xsd_name)
+#print my_data
 xsd_abs_path = os.path.join(package_root, "schema", xsd_name)
 my_schema = xmlschema.XMLSchema(xsd_abs_path)
 
@@ -38,10 +41,8 @@ class Configuration(object):
             'printXml': False,
             'proxy': '',
             'url': '',
-            'username': ''
-        }
+            'username': ''}
 
-        # set default values
         for k in attr_dict:
             setattr(self, k, attr_dict[k])
 
@@ -52,7 +53,7 @@ class Configuration(object):
                 # print ("overriding config values here \n")
                 for ke in attr_dict:
                     if ke in config_json and config_json[ke]:
-                        # print(ke + "\t" + config_json[ke])
+                        print(ke + "\t" + config_json[ke])
                         setattr(self, ke, config_json[ke])
         except:
             # If get any exception just pass.
@@ -65,6 +66,7 @@ class Configuration(object):
                     setattr(self, key, conf_dict[key])
                 # else:
                 #     raise payfacError('"%s" is NOT an attribute of conf' % k)
+
 
     def save(self):
         """Save Class Attributes to .payfac_mp_sdk.conf
