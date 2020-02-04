@@ -10,7 +10,7 @@ version = utils.Configuration().VERSION
 xsd_name = 'merchant-onboard-api-v%s.xsd' % version
 
 print('Generate module fields using pyxb')
-xsd_abs_path = os.path.join(package_root, "schema", xsd_name)
+xsd_abs_path = os.path.join(package_root, "payfacMPSdk/schema", xsd_name)
 print(xsd_abs_path)
 ns = "xmlns:\"http://payfac.vantivcnp.com/api/merchant/onboard\""
 os.system('generateDS.py --namespacedef=%s -o generatedClass.py %s' %(ns,xsd_abs_path))
