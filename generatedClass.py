@@ -2,21 +2,21 @@
 # -*- coding: utf-8 -*-
 
 #
-# Generated Tue Feb  4 13:23:19 2020 by generateDS.py version 2.35.11.
-# Python 3.8.0 (default, Nov 15 2019, 10:44:43)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-23)]
+# Generated Fri Jan 31 11:27:48 2020 by generateDS.py version 2.35.10.
+# Python 2.7.14 (default, Jan 30 2020, 07:45:43)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-23)]
 #
 # Command line options:
 #   ('--namespacedef', 'xmlns:http://payfac.vantivcnp.com/api/merchant/onboard')
 #   ('-o', 'generatedClass.py')
 #
 # Command line arguments:
-#   /usr/local/litle-home/aviano/git/payfac-mp-sdk-python/payfacMPSdk/schema/merchant-onboard-api-v13.xsd
+#   /usr/local/litle-home/aviano/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd
 #
 # Command line:
-#   /usr/local/litle-home/aviano/git/payfac-mp-sdk-python/venv/bin/generateDS.py --namespacedef="xmlns:http://payfac.vantivcnp.com/api/merchant/onboard" -o "generatedClass.py" /usr/local/litle-home/aviano/git/payfac-mp-sdk-python/payfacMPSdk/schema/merchant-onboard-api-v13.xsd
+#   /usr/local/litle-home/aviano/git/payfac-mp-sdk-python/env27/bin/generateDS.py --namespacedef="xmlns:http://payfac.vantivcnp.com/api/merchant/onboard" -o "generatedClass.py" /usr/local/litle-home/aviano/git/payfac-mp-sdk-python/schema/merchant-onboard-api-v13.xsd
 #
 # Current working directory (os.getcwd()):
-#   tools
+#   payfac-mp-sdk-python
 #
 
 from six.moves import zip_longest
@@ -1266,7 +1266,7 @@ class legalEntityCreateRequest(GeneratedsSuper):
                 self.gds_collector_.add_message('Value "%s" does not match xsd pattern restrictions: %s' % (encode_str_2_3(value), self.validate_legalEntityNameType_patterns_, ))
                 result = False
         return result
-    validate_legalEntityNameType_patterns_ = [['^([\x00-\x7f]*)$']]
+    validate_legalEntityNameType_patterns_ = [[u'^([\x00-\x7f]*)$']]
     def validate_legalEntityType(self, value):
         result = True
         # Validate type legalEntityType, a restriction on xs:string.
@@ -1369,7 +1369,7 @@ class legalEntityCreateRequest(GeneratedsSuper):
                 self.gds_collector_.add_message('Value "%s" does not match xsd pattern restrictions: %s' % (encode_str_2_3(value), self.validate_yearsInBusinessType_patterns_, ))
                 result = False
         return result
-    validate_yearsInBusinessType_patterns_ = [['^([0-9]{0,3})$']]
+    validate_yearsInBusinessType_patterns_ = [[u'^([0-9]{0,3})$']]
     def hasContent_(self):
         if (
             self.legalEntityName is not None or
@@ -6636,7 +6636,7 @@ class legalEntityUpdateRequest(GeneratedsSuper):
                 self.gds_collector_.add_message('Value "%s" does not match xsd pattern restrictions: %s' % (encode_str_2_3(value), self.validate_yearsInBusinessType33_patterns_, ))
                 result = False
         return result
-    validate_yearsInBusinessType33_patterns_ = [['^([0-9]{0,3})$']]
+    validate_yearsInBusinessType33_patterns_ = [[u'^([0-9]{0,3})$']]
     def hasContent_(self):
         if (
             self.address is not None or
@@ -7714,7 +7714,7 @@ class legalEntityBackgroundCheckFields(GeneratedsSuper):
                 self.gds_collector_.add_message('Value "%s" does not match xsd pattern restrictions: %s' % (encode_str_2_3(value), self.validate_legalEntityNameType49_patterns_, ))
                 result = False
         return result
-    validate_legalEntityNameType49_patterns_ = [['^([\x00-\x7f]*)$']]
+    validate_legalEntityNameType49_patterns_ = [[u'^([\x00-\x7f]*)$']]
     def validate_legalEntityType(self, value):
         result = True
         # Validate type legalEntityType, a restriction on xs:string.
@@ -11470,7 +11470,7 @@ class legalEntityAgreement(GeneratedsSuper):
                 self.gds_collector_.add_message('Value "%s" does not match xsd pattern restrictions: %s' % (encode_str_2_3(value), self.validate_userIPAddressType_patterns_, ))
                 result = False
         return result
-    validate_userIPAddressType_patterns_ = [['^(([a-zA-Z0-9.:])*)$']]
+    validate_userIPAddressType_patterns_ = [[u'^(([a-zA-Z0-9.:])*)$']]
     def hasContent_(self):
         if (
             self.legalEntityAgreementType is not None or
@@ -13305,7 +13305,7 @@ class legalEntityResponse(response):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = response
-    def __init__(self, transactionId=None, duplicate=None, legalEntityId=None, responseCode=None, responseDescription=None, originalLegalEntityId=None, originalLegalEntityStatus=None, backgroundCheckResults=None, extensiontype_=None, gds_collector_=None, **kwargs_):
+    def __init__(self, transactionId=None, duplicate=None, legalEntityId=None, responseCode=None, responseDescription=None, originallegalEntityId=None, originallegalEntityStatus=None, backgroundCheckResults=None, extensiontype_=None, gds_collector_=None, **kwargs_):
         self.gds_collector_ = gds_collector_
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
@@ -13322,12 +13322,12 @@ class legalEntityResponse(response):
         self.responseDescription = responseDescription
         self.validate_responseDescriptionType(self.responseDescription)
         self.responseDescription_nsprefix_ = None
-        self.originalLegalEntityId = originalLegalEntityId
-        self.validate_originalLegalEntityIdType(self.originalLegalEntityId)
-        self.originalLegalEntityId_nsprefix_ = None
-        self.originalLegalEntityStatus = originalLegalEntityStatus
-        self.validate_originalLegalEntityStatusType(self.originalLegalEntityStatus)
-        self.originalLegalEntityStatus_nsprefix_ = None
+        self.originallegalEntityId = originallegalEntityId
+        self.validate_originallegalEntityIdType(self.originallegalEntityId)
+        self.originallegalEntityId_nsprefix_ = None
+        self.originallegalEntityStatus = originallegalEntityStatus
+        self.validate_originallegalEntityStatusType(self.originallegalEntityStatus)
+        self.originallegalEntityStatus_nsprefix_ = None
         self.backgroundCheckResults = backgroundCheckResults
         self.backgroundCheckResults_nsprefix_ = None
         self.extensiontype_ = extensiontype_
@@ -13358,14 +13358,14 @@ class legalEntityResponse(response):
         return self.responseDescription
     def set_responseDescription(self, responseDescription):
         self.responseDescription = responseDescription
-    def get_originalLegalEntityId(self):
-        return self.originalLegalEntityId
-    def set_originalLegalEntityId(self, originalLegalEntityId):
-        self.originalLegalEntityId = originalLegalEntityId
-    def get_originalLegalEntityStatus(self):
-        return self.originalLegalEntityStatus
-    def set_originalLegalEntityStatus(self, originalLegalEntityStatus):
-        self.originalLegalEntityStatus = originalLegalEntityStatus
+    def get_originallegalEntityId(self):
+        return self.originallegalEntityId
+    def set_originallegalEntityId(self, originallegalEntityId):
+        self.originallegalEntityId = originallegalEntityId
+    def get_originallegalEntityStatus(self):
+        return self.originallegalEntityStatus
+    def set_originallegalEntityStatus(self, originallegalEntityStatus):
+        self.originallegalEntityStatus = originallegalEntityStatus
     def get_backgroundCheckResults(self):
         return self.backgroundCheckResults
     def set_backgroundCheckResults(self, backgroundCheckResults):
@@ -13410,9 +13410,9 @@ class legalEntityResponse(response):
                 self.gds_collector_.add_message('Value "%(value)s"%(lineno)s does not match xsd minLength restriction on responseDescriptionType' % {"value" : encode_str_2_3(value), "lineno": lineno} )
                 result = False
         return result
-    def validate_originalLegalEntityIdType(self, value):
+    def validate_originallegalEntityIdType(self, value):
         result = True
-        # Validate type originalLegalEntityIdType, a restriction on xs:string.
+        # Validate type originallegalEntityIdType, a restriction on xs:string.
         if value is not None and Validate_simpletypes_ and self.gds_collector_ is not None:
             if not isinstance(value, str):
                 lineno = self.gds_get_node_lineno_()
@@ -13420,16 +13420,16 @@ class legalEntityResponse(response):
                 return False
             if len(value) > 19:
                 lineno = self.gds_get_node_lineno_()
-                self.gds_collector_.add_message('Value "%(value)s"%(lineno)s does not match xsd maxLength restriction on originalLegalEntityIdType' % {"value" : encode_str_2_3(value), "lineno": lineno} )
+                self.gds_collector_.add_message('Value "%(value)s"%(lineno)s does not match xsd maxLength restriction on originallegalEntityIdType' % {"value" : encode_str_2_3(value), "lineno": lineno} )
                 result = False
             if len(value) < 1:
                 lineno = self.gds_get_node_lineno_()
-                self.gds_collector_.add_message('Value "%(value)s"%(lineno)s does not match xsd minLength restriction on originalLegalEntityIdType' % {"value" : encode_str_2_3(value), "lineno": lineno} )
+                self.gds_collector_.add_message('Value "%(value)s"%(lineno)s does not match xsd minLength restriction on originallegalEntityIdType' % {"value" : encode_str_2_3(value), "lineno": lineno} )
                 result = False
         return result
-    def validate_originalLegalEntityStatusType(self, value):
+    def validate_originallegalEntityStatusType(self, value):
         result = True
-        # Validate type originalLegalEntityStatusType, a restriction on xs:string.
+        # Validate type originallegalEntityStatusType, a restriction on xs:string.
         if value is not None and Validate_simpletypes_ and self.gds_collector_ is not None:
             if not isinstance(value, str):
                 lineno = self.gds_get_node_lineno_()
@@ -13437,11 +13437,11 @@ class legalEntityResponse(response):
                 return False
             if len(value) > 100:
                 lineno = self.gds_get_node_lineno_()
-                self.gds_collector_.add_message('Value "%(value)s"%(lineno)s does not match xsd maxLength restriction on originalLegalEntityStatusType' % {"value" : encode_str_2_3(value), "lineno": lineno} )
+                self.gds_collector_.add_message('Value "%(value)s"%(lineno)s does not match xsd maxLength restriction on originallegalEntityStatusType' % {"value" : encode_str_2_3(value), "lineno": lineno} )
                 result = False
             if len(value) < 1:
                 lineno = self.gds_get_node_lineno_()
-                self.gds_collector_.add_message('Value "%(value)s"%(lineno)s does not match xsd minLength restriction on originalLegalEntityStatusType' % {"value" : encode_str_2_3(value), "lineno": lineno} )
+                self.gds_collector_.add_message('Value "%(value)s"%(lineno)s does not match xsd minLength restriction on originallegalEntityStatusType' % {"value" : encode_str_2_3(value), "lineno": lineno} )
                 result = False
         return result
     def hasContent_(self):
@@ -13449,8 +13449,8 @@ class legalEntityResponse(response):
             self.legalEntityId is not None or
             self.responseCode is not None or
             self.responseDescription is not None or
-            self.originalLegalEntityId is not None or
-            self.originalLegalEntityStatus is not None or
+            self.originallegalEntityId is not None or
+            self.originallegalEntityStatus is not None or
             self.backgroundCheckResults is not None or
             super(legalEntityResponse, self).hasContent_()
         ):
@@ -13511,14 +13511,14 @@ class legalEntityResponse(response):
             namespaceprefix_ = self.responseDescription_nsprefix_ + ':' if (UseCapturedNS_ and self.responseDescription_nsprefix_) else ''
             showIndent(outfile, level, pretty_print)
             outfile.write('<%sresponseDescription>%s</%sresponseDescription>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.responseDescription), input_name='responseDescription')), namespaceprefix_ , eol_))
-        if self.originalLegalEntityId is not None:
-            namespaceprefix_ = self.originalLegalEntityId_nsprefix_ + ':' if (UseCapturedNS_ and self.originalLegalEntityId_nsprefix_) else ''
+        if self.originallegalEntityId is not None:
+            namespaceprefix_ = self.originallegalEntityId_nsprefix_ + ':' if (UseCapturedNS_ and self.originallegalEntityId_nsprefix_) else ''
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%soriginalLegalEntityId>%s</%soriginalLegalEntityId>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.originalLegalEntityId), input_name='originalLegalEntityId')), namespaceprefix_ , eol_))
-        if self.originalLegalEntityStatus is not None:
-            namespaceprefix_ = self.originalLegalEntityStatus_nsprefix_ + ':' if (UseCapturedNS_ and self.originalLegalEntityStatus_nsprefix_) else ''
+            outfile.write('<%soriginallegalEntityId>%s</%soriginallegalEntityId>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.originallegalEntityId), input_name='originallegalEntityId')), namespaceprefix_ , eol_))
+        if self.originallegalEntityStatus is not None:
+            namespaceprefix_ = self.originallegalEntityStatus_nsprefix_ + ':' if (UseCapturedNS_ and self.originallegalEntityStatus_nsprefix_) else ''
             showIndent(outfile, level, pretty_print)
-            outfile.write('<%soriginalLegalEntityStatus>%s</%soriginalLegalEntityStatus>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.originalLegalEntityStatus), input_name='originalLegalEntityStatus')), namespaceprefix_ , eol_))
+            outfile.write('<%soriginallegalEntityStatus>%s</%soriginallegalEntityStatus>%s' % (namespaceprefix_ , self.gds_encode(self.gds_format_string(quote_xml(self.originallegalEntityStatus), input_name='originallegalEntityStatus')), namespaceprefix_ , eol_))
         if self.backgroundCheckResults is not None:
             namespaceprefix_ = self.backgroundCheckResults_nsprefix_ + ':' if (UseCapturedNS_ and self.backgroundCheckResults_nsprefix_) else ''
             self.backgroundCheckResults.export(outfile, level, namespaceprefix_='tns:', namespacedef_='', name_='backgroundCheckResults', pretty_print=pretty_print)
@@ -13571,22 +13571,22 @@ class legalEntityResponse(response):
             self.responseDescription_nsprefix_ = child_.prefix
             # validate type responseDescriptionType
             self.validate_responseDescriptionType(self.responseDescription)
-        elif nodeName_ == 'originalLegalEntityId':
+        elif nodeName_ == 'originallegalEntityId':
             value_ = child_.text
-            value_ = self.gds_parse_string(value_, node, 'originalLegalEntityId')
-            value_ = self.gds_validate_string(value_, node, 'originalLegalEntityId')
-            self.originalLegalEntityId = value_
-            self.originalLegalEntityId_nsprefix_ = child_.prefix
-            # validate type originalLegalEntityIdType
-            self.validate_originalLegalEntityIdType(self.originalLegalEntityId)
-        elif nodeName_ == 'originalLegalEntityStatus':
+            value_ = self.gds_parse_string(value_, node, 'originallegalEntityId')
+            value_ = self.gds_validate_string(value_, node, 'originallegalEntityId')
+            self.originallegalEntityId = value_
+            self.originallegalEntityId_nsprefix_ = child_.prefix
+            # validate type originallegalEntityIdType
+            self.validate_originallegalEntityIdType(self.originallegalEntityId)
+        elif nodeName_ == 'originallegalEntityStatus':
             value_ = child_.text
-            value_ = self.gds_parse_string(value_, node, 'originalLegalEntityStatus')
-            value_ = self.gds_validate_string(value_, node, 'originalLegalEntityStatus')
-            self.originalLegalEntityStatus = value_
-            self.originalLegalEntityStatus_nsprefix_ = child_.prefix
-            # validate type originalLegalEntityStatusType
-            self.validate_originalLegalEntityStatusType(self.originalLegalEntityStatus)
+            value_ = self.gds_parse_string(value_, node, 'originallegalEntityStatus')
+            value_ = self.gds_validate_string(value_, node, 'originallegalEntityStatus')
+            self.originallegalEntityStatus = value_
+            self.originallegalEntityStatus_nsprefix_ = child_.prefix
+            # validate type originallegalEntityStatusType
+            self.validate_originallegalEntityStatusType(self.originallegalEntityStatus)
         elif nodeName_ == 'backgroundCheckResults':
             obj_ = backgroundCheckResults.factory(parent_object_=self)
             obj_.build(child_, gds_collector_=gds_collector_)
@@ -13600,13 +13600,13 @@ class legalEntityCreateResponse(legalEntityResponse):
     __hash__ = GeneratedsSuper.__hash__
     subclass = None
     superclass = legalEntityResponse
-    def __init__(self, transactionId=None, duplicate=None, legalEntityId=None, responseCode=None, responseDescription=None, originalLegalEntityId=None, originalLegalEntityStatus=None, backgroundCheckResults=None, principal=None, gds_collector_=None, **kwargs_):
+    def __init__(self, transactionId=None, duplicate=None, legalEntityId=None, responseCode=None, responseDescription=None, originallegalEntityId=None, originallegalEntityStatus=None, backgroundCheckResults=None, principal=None, gds_collector_=None, **kwargs_):
         self.gds_collector_ = gds_collector_
         self.gds_elementtree_node_ = None
         self.original_tagname_ = None
         self.parent_object_ = kwargs_.get('parent_object_')
         self.ns_prefix_ = None
-        super(legalEntityCreateResponse, self).__init__(transactionId, duplicate, legalEntityId, responseCode, responseDescription, originalLegalEntityId, originalLegalEntityStatus, backgroundCheckResults,  **kwargs_)
+        super(legalEntityCreateResponse, self).__init__(transactionId, duplicate, legalEntityId, responseCode, responseDescription, originallegalEntityId, originallegalEntityStatus, backgroundCheckResults,  **kwargs_)
         self.principal = principal
         self.principal_nsprefix_ = None
     def factory(*args_, **kwargs_):
