@@ -3,6 +3,7 @@ from __future__ import absolute_import, print_function, unicode_literals
 import xmlschema
 import os
 import sys
+import pkg_resources
 
 from payfacMPSdk import communication, utils
 
@@ -19,8 +20,8 @@ package_root = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 sys.path.insert(0, package_root)
 version = utils.Configuration().VERSION
 xsd_name = 'merchant-onboard-api-v%s.xsd' % version
-xsd_abs_path = os.path.join(package_root, "schema", xsd_name)
-my_schema = xmlschema.XMLSchema(xsd_abs_path)
+xsd_path = pkg_resources.resource_filename('payfacMPSdk', 'schema/' + xsd_name)
+my_schema = xmlschema.XMLSchema(xsd_path)
 xml_path =  os.path.join(package_root, "payfacMPSdk")
 
 def get_by_legalEntityId(legalEntityId):

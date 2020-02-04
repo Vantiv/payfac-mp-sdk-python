@@ -16,8 +16,8 @@ setup(
     author='Worldpay',
     author_email='SDKSupport@vantiv.com',
     url='https://developer.vantiv.com/community/ecommerce',
-    packages=['payfacMPSdk', 'scripts', 'schema'],
-    package_data={'schema': ['*.xsd']},
+    packages=['payfacMPSdk', 'payfacMPSdk.schema', 'scripts'],
+    package_data={'payfacMPSdk.schema': ['*.xsd']},
     install_requires=[
         'paramiko>=1.14.0',
         'requests>=2.21.0 ',
