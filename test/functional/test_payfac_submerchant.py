@@ -57,7 +57,7 @@ class TestSubMerchant(unittest.TestCase):
         subMerchantCreateRequest.set_url("http://merchantUrl")
         subMerchantCreateRequest.set_customerServiceNumber("8407809000")
         subMerchantCreateRequest.set_hardCodedBillingDescriptor("billing Descriptor")
-        subMerchantCreateRequest.set_maxTransactionAmount(840000l)
+        subMerchantCreateRequest.set_maxTransactionAmount(8400)
         subMerchantCreateRequest.set_purchaseCurrency("USD")
         subMerchantCreateRequest.set_merchantCategoryCode("5964")
         subMerchantCreateRequest.set_bankRoutingNumber("840123124")

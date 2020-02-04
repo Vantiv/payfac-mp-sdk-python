@@ -83,12 +83,18 @@ class Configuration(object):
 
 
 def generate_response(http_response):
-    return convert_to_dict(http_response.text)
+    response_text = http_response.text
+    #for python 2, must be encoded before passed to validation by xmlschema
+    if sys.version_info[0] < 3:
+        return convert_to_dict(response_text.encode('utf-8'))
+    #python 3 and above can be passed as text
+    else:
+        return convert_to_dict(response_text)
 
 
 def convert_to_dict(xml_response):
-    if(not (my_schema.is_valid(xml_response.encode('utf-8')))): raise PayfacSchemaError("Input is not compatible with schema")
-    response_dict = my_schema.to_dict(xml_response.encode('utf-8'))
+    if(not (my_schema.is_valid(xml_response))): raise PayfacSchemaError("Input is not compatible with schema")
+    response_dict = my_schema.to_dict(xml_response)
     if response_dict['@xmlns'] != "":
         _create_lists(response_dict)
         return response_dict

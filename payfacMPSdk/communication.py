@@ -41,7 +41,7 @@ def http_get_retrieval_request(url_suffix, config=conf):
 
 
 def http_post_request(url_suffix, request_xml, config=conf):
-    request_url = config.url + url_suffix
+    request_url = config.url.encode('utf-8') + url_suffix
     try:
         http_response = requests.post(request_url,
                                       headers=PAYFAC_API_HEADERS,
@@ -56,7 +56,7 @@ def http_post_request(url_suffix, request_xml, config=conf):
     return utils.generate_response(http_response)
 
 def http_put_request(url_suffix, request_xml, config=conf):
-    request_url = config.url + url_suffix;
+    request_url = config.url.encode('utf-8') + url_suffix;
     try:
         http_response = requests.put(request_url, headers=PAYFAC_API_HEADERS,
                                      auth=HTTPBasicAuth(config.username, config.password),
