@@ -26,6 +26,7 @@ setup(
         'generateDS>=2.29.24',
         'unittest2>=1.1.0',
         'python-dateutil>=2.7.3',
+        'setuptools',
         'mock', 'lxml'
     ],
     license='MIT',
