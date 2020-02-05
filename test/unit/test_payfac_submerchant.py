@@ -20,7 +20,7 @@ class TestSubmerchant(unittest.TestCase):
         subMerchantCreateRequest.set_url("http://merchantUrl")
         subMerchantCreateRequest.set_customerServiceNumber("8407809000")
         subMerchantCreateRequest.set_hardCodedBillingDescriptor("billing Descriptor")
-        subMerchantCreateRequest.set_maxTransactionAmount(840000l)
+        subMerchantCreateRequest.set_maxTransactionAmount(8400)
         subMerchantCreateRequest.set_purchaseCurrency("USD")
         subMerchantCreateRequest.set_merchantCategoryCode("5964")
         subMerchantCreateRequest.set_bankRoutingNumber("840123124")
@@ -65,7 +65,7 @@ class TestSubmerchant(unittest.TestCase):
         subMerchantCreateRequest.set_settlementCurrency("USD")
 
         payfac_submerchant.post_by_legalEntity("2018", subMerchantCreateRequest)
-        expected_url_suffix = "/legalentity/2018/submerchant"
+        expected_url_suffix = "/legalentity/2018/submerchant".encode('utf-8')
         mock_http_post_request.assert_called_with(expected_url_suffix, mock.ANY)
 
     @mock.patch('payfacMPSdk.communication.http_put_request')
@@ -105,5 +105,5 @@ class TestSubmerchant(unittest.TestCase):
         subMerchantUpdateRequest.set_eCheck(eCheck)
 
         payfac_submerchant.put_by_subMerchantId("2018", "123456", subMerchantUpdateRequest)
-        expected_url_suffix = "/legalentity/2018/submerchant/123456"
+        expected_url_suffix = "/legalentity/2018/submerchant/123456".encode('utf-8')
         mock_http_put_request.assert_called_with(expected_url_suffix, mock.ANY)

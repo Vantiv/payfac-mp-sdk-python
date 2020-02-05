@@ -51,7 +51,7 @@ class TestPrincipal(unittest.TestCase):
                      (u'responseDescription', u'Approved')])), (u'transactionId', u'8944566037')])
 
         response = payfac_principal.post_by_legalEntity("2018",legalEntityPrincipalCreateRequest)
-        expected_url_suffix = '/legalentity/2018/principal'
+        expected_url_suffix = '/legalentity/2018/principal'.encode('utf-8')
         mock_request.assert_called_with(expected_url_suffix,mock.ANY)
         self.assertEquals("2018",response['legalEntityId'])
         self.assertEquals("6",response["principal"]["principalId"])

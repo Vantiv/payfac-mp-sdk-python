@@ -40,6 +40,6 @@ class TestAgreement(unittest.TestCase):
             [(u'@xmlns', u'http://payfac.vantivcnp.com/api/merchant/onboard'), (u'transactionId', u'4978173558')])
 
         response = payfac_agreement.post_by_legalEntityId("21003",legalEntityAgreementCreateRequest)
-        expected_url_suffix = "/legalentity/21003/agreement"
+        expected_url_suffix = "/legalentity/21003/agreement".encode('utf-8')
         mock_http_post_request.assert_called_with(expected_url_suffix,mock.ANY)
         self.assertEquals("4978173558",response['transactionId'])
