@@ -5,6 +5,11 @@ import os
 import sys
 import pkg_resources
 
+if sys.version_info[0] < 3:
+    from StringIO import StringIO
+else:
+    from io import StringIO
+
 from payfacMPSdk import communication, utils
 
 SERVICE_ROUTE1 = "/legalentity/"
@@ -21,7 +26,6 @@ version = utils.Configuration().VERSION
 xsd_name = 'merchant-onboard-api-v%s.xsd' % version
 xsd_path = pkg_resources.resource_filename('payfacMPSdk', 'schema/' + xsd_name)
 my_schema = xmlschema.XMLSchema(xsd_path)
-xml_path =  os.path.join(package_root, "payfacMPSdk")
 
 def get_by_subMerchantId(legalEntityId, subMerchantId):
     url_suffix = SERVICE_ROUTE1  + legalEntityId + SERVICE_ROUTE2 +"/"+ subMerchantId
@@ -29,13 +33,9 @@ def get_by_subMerchantId(legalEntityId, subMerchantId):
 
 def post_by_legalEntity(legalEntityId,subMerchantCreateRequest):
 
-    xmlFile = open(xml_path + "/testXML", "w+")
-    xmlFile.truncate(0)
-    subMerchantCreateRequest.export(xmlFile, 0)
-    xmlFile.close()
-    xmlFile = open(xml_path + "/testXML", "r")
-    request = xmlFile.read()
-    xmlFile.close()
+    stringIO = StringIO()
+    subMerchantCreateRequest.export(stringIO, 0)
+    request = stringIO.getvalue()
     request = request.replace("tns:", "")
     request = request.replace(":tns", "")
     if my_schema.is_valid(request):
@@ -48,13 +48,9 @@ def post_by_legalEntity(legalEntityId,subMerchantCreateRequest):
 
 def put_by_subMerchantId(legalEntityId,subMerchantId, subMerchantUpdateRequest):
 
-    xmlFile = open(xml_path + "/testXML", "w+")
-    xmlFile.truncate(0)
-    subMerchantUpdateRequest.export(xmlFile, 0)
-    xmlFile.close()
-    xmlFile = open(xml_path + "/testXML", "r")
-    request = xmlFile.read()
-    xmlFile.close()
+    stringIO = StringIO()
+    subMerchantUpdateRequest.export(stringIO, 0)
+    request = stringIO.getvalue()
     if my_schema.is_valid(request):
         request = request.replace("tns:", "")
         request = request.replace(":tns", "")

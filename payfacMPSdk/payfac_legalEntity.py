@@ -3,6 +3,12 @@ import xmlschema
 import os
 import sys
 import pkg_resources
+
+if sys.version_info[0] < 3:
+    from StringIO import StringIO
+else:
+    from io import StringIO
+
 from payfacMPSdk import communication, utils
 
 SERVICE_ROUTE = "/legalentity"
@@ -19,7 +25,6 @@ version = utils.Configuration().VERSION
 xsd_name = 'merchant-onboard-api-v%s.xsd' % version
 xsd_path = pkg_resources.resource_filename('payfacMPSdk', 'schema/' + xsd_name)
 my_schema = xmlschema.XMLSchema(xsd_path)
-xml_path =  os.path.join(package_root, "payfacMPSdk")
 
 
 def get_by_legalEntityId(legalEntityId):
@@ -28,14 +33,9 @@ def get_by_legalEntityId(legalEntityId):
 
 
 def post_by_legalEntity(legalEntityCreateRequest):
-
-    xmlFile = open(xml_path+"/testXML", "w+")
-    xmlFile.truncate(0)
-    legalEntityCreateRequest.export(xmlFile, 0)
-    xmlFile.close()
-    xmlFile = open(xml_path+"/testXML", "r")
-    request = xmlFile.read()
-    xmlFile.close()
+    stringIO = StringIO()
+    legalEntityCreateRequest.export(stringIO, 0)
+    request = stringIO.getvalue()
     if my_schema.is_valid(request):
         request = request.replace("tns:", "")
         request = request.replace(":tns", "")
@@ -47,13 +47,9 @@ def post_by_legalEntity(legalEntityCreateRequest):
 def put_by_legalEntityId(legalEntityId,legalEntityUpdateRequest):
     url_suffix = (SERVICE_ROUTE + "/" + legalEntityId).encode('utf-8')
 
-    xmlFile = open(xml_path+"/testXML", "w+")
-    xmlFile.truncate(0)
-    legalEntityUpdateRequest.export(xmlFile, 0)
-    xmlFile.close()
-    xmlFile = open(xml_path+"/testXML", "r")
-    request = xmlFile.read()
-    xmlFile.close()
+    stringIO = StringIO()
+    legalEntityUpdateRequest.export(stringIO, 0)
+    request = stringIO.getvalue()
 
     if my_schema.is_valid(request):
         request = request.replace("tns:", "")
