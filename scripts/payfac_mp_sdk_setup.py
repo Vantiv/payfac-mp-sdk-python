@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
 from __future__ import absolute_import, division, print_function
-from builtins import input
+
+if sys.version_info[0] < 3:
+    from builtins import input
 
 import os
 import sys
