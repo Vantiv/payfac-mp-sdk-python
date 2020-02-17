@@ -5,6 +5,7 @@ import re
 
 import requests
 import traceback
+import sys
 
 from requests.auth import HTTPBasicAuth
 
@@ -119,6 +120,8 @@ def validate_response(http_response, config=conf):
 
 
 def neuter_xml(xml_string):
+    if sys.version_info[0] >= 3:
+        xml_string = str(xml_string)
     xml_string = re.sub(r"<token>.*</token>", "<token>****</token>", xml_string)
     xml_string = re.sub(r"<cardNumberLast4>.*</cardNumberLast4>", "<cardNumberLast4>****</cardNumberLast4>", xml_string)
     return xml_string
