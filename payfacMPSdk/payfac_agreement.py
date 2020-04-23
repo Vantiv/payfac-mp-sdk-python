@@ -10,7 +10,7 @@ if sys.version_info[0] < 3:
 else:
     from io import StringIO
 
-from payfacMPSdk import communication, utils, SdkVersion
+from payfacMPSdk import communication, utils, version as SdkVersion
 
 SERVICE_ROUTE1 = "/legalentity/"
 
