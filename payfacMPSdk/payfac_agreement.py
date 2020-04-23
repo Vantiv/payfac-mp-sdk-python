@@ -38,9 +38,9 @@ def post_by_legalEntityId(legalEntityId,legalEntityAgreementCreateRequest):
     stringIO = StringIO()
     legalEntityAgreementCreateRequest.export(stringIO, 0)
     request = stringIO.getvalue()
+    request = request.replace("tns:", "")
+    request = request.replace(":tns", "")
     if my_schema.is_valid(request):
-        request = request.replace("tns:", "")
-        request = request.replace(":tns", "")
         url_suffix = (SERVICE_ROUTE1 + legalEntityId + SERVICE_ROUTE2).encode('utf-8')
         return communication.http_post_request(url_suffix, request.encode('utf-8'))
     else:
