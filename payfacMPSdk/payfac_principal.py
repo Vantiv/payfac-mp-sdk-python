@@ -10,7 +10,7 @@ if sys.version_info[0] < 3:
 else:
     from io import StringIO
 
-from payfacMPSdk import communication, utils
+from payfacMPSdk import communication, utils, version
 
 SERVICE_ROUTE1 = "/legalentity/"
 
@@ -29,7 +29,8 @@ xsd_path = pkg_resources.resource_filename('payfacMPSdk', 'schema/' + xsd_name)
 my_schema = xmlschema.XMLSchema(xsd_path)
 
 def post_by_legalEntity(legalEntityId, legalEntityPrincipalCreateRequest):
-
+    legalEntityPrincipalCreateRequest.set_sdkVersion(version.RELEASE)
+    legalEntityPrincipalCreateRequest.set_language(version.LANGUAGE)
     stringIO = StringIO()
     legalEntityPrincipalCreateRequest.export(stringIO, 0)
     request = stringIO.getvalue()
