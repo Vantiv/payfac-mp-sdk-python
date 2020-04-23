@@ -326,6 +326,26 @@
                 </xs:simpleType>
             </xs:element>
 
+            <xs:element name="sdkVersion" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="60"/>
+                        <xs:pattern value="\p{IsBasicLatin}*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="language" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="60"/>
+                        <xs:pattern value="\p{IsBasicLatin}*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
         </xs:sequence>
     </xs:complexType>
 
@@ -584,6 +604,25 @@
     <xs:complexType name="legalEntityPrincipalCreateRequest">
         <xs:sequence>
             <xs:element name="principal" type="tns:legalEntityPrincipal" maxOccurs="1"/>
+            <xs:element name="sdkVersion" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="60"/>
+                        <xs:pattern value="\p{IsBasicLatin}*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="language" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="60"/>
+                        <xs:pattern value="\p{IsBasicLatin}*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 
@@ -1328,8 +1367,28 @@
                     </xs:restriction>
                 </xs:simpleType>
             </xs:element>
+            <xs:element name="sdkVersion" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="60"/>
+                        <xs:pattern value="\p{IsBasicLatin}*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="language" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="60"/>
+                        <xs:pattern value="\p{IsBasicLatin}*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
+
 
     <xs:complexType name="subMerchantFraudFeature">
         <xs:sequence/>
@@ -1732,6 +1791,25 @@
     <xs:complexType name="legalEntityAgreementCreateRequest">
         <xs:sequence>
             <xs:element name="legalEntityAgreement" type="tns:legalEntityAgreement" />
+            <xs:element name="sdkVersion" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="60"/>
+                        <xs:pattern value="\p{IsBasicLatin}*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="language" minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="60"/>
+                        <xs:pattern value="\p{IsBasicLatin}*"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
         </xs:sequence>
     </xs:complexType>
 

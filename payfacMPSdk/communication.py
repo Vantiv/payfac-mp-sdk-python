@@ -43,6 +43,7 @@ def http_get_retrieval_request(url_suffix, config=conf):
 
 def http_post_request(url_suffix, request_xml, config=conf):
     request_url = config.url.encode('utf-8') + url_suffix
+    print(config.url)
     try:
         http_response = requests.post(request_url,
                                       headers=PAYFAC_API_HEADERS,
