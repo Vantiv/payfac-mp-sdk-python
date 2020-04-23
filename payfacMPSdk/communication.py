@@ -13,7 +13,7 @@ from payfacMPSdk import (utils)
 
 conf = utils.Configuration()
 
-PAYFAC_CONTENT_TYPE = "application/com.vantivcnp.payfac-v13+xml"
+PAYFAC_CONTENT_TYPE = "application/com.vantivcnp.payfac-v13.1+xml"
 
 PAYFAC_API_HEADERS = {"Accept": PAYFAC_CONTENT_TYPE,
                           "Content-Type": PAYFAC_CONTENT_TYPE}
