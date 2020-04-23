@@ -36,6 +36,7 @@ def post_by_legalEntity(legalEntityCreateRequest):
     stringIO = StringIO()
     legalEntityCreateRequest.export(stringIO, 0)
     request = stringIO.getvalue()
+    print(request)
     if my_schema.is_valid(request):
         request = request.replace("tns:", "")
         request = request.replace(":tns", "")
