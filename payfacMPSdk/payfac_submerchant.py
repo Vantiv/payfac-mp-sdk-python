@@ -10,7 +10,7 @@ if sys.version_info[0] < 3:
 else:
     from io import StringIO
 
-from payfacMPSdk import communication, utils, version
+from payfacMPSdk import communication, utils, version as SdkVersion
 
 SERVICE_ROUTE1 = "/legalentity/"
 
@@ -32,8 +32,8 @@ def get_by_subMerchantId(legalEntityId, subMerchantId):
     return communication.http_get_retrieval_request(url_suffix)
 
 def post_by_legalEntity(legalEntityId,subMerchantCreateRequest):
-    subMerchantCreateRequest.set_sdkVersion(version.RELEASE)
-    subMerchantCreateRequest.set_language(version.LANGUAGE)
+    subMerchantCreateRequest.set_sdkVersion(SdkVersion.RELEASE)
+    subMerchantCreateRequest.set_language(SdkVersion.LANGUAGE)
     stringIO = StringIO()
     subMerchantCreateRequest.export(stringIO, 0)
     request = stringIO.getvalue()

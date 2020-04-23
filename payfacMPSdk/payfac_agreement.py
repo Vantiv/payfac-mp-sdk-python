@@ -10,7 +10,7 @@ if sys.version_info[0] < 3:
 else:
     from io import StringIO
 
-from payfacMPSdk import communication, utils, version
+from payfacMPSdk import communication, utils, SdkVersion
 
 SERVICE_ROUTE1 = "/legalentity/"
 
@@ -34,8 +34,8 @@ def get_by_legalEntityId(legalEntityId):
 
 
 def post_by_legalEntityId(legalEntityId,legalEntityAgreementCreateRequest):
-    legalEntityAgreementCreateRequest.set_sdkVersion(version.RELEASE)
-    legalEntityAgreementCreateRequest.set_language(version.LANGUAGE)
+    legalEntityAgreementCreateRequest.set_sdkVersion(SdkVersion.RELEASE)
+    legalEntityAgreementCreateRequest.set_language(SdkVersion.LANGUAGE)
     stringIO = StringIO()
     legalEntityAgreementCreateRequest.export(stringIO, 0)
     request = stringIO.getvalue()
