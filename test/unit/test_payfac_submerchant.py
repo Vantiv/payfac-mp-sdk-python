@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 import unittest
 import mock
 from payfacMPSdk import payfac_submerchant,generatedClass
