@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 import unittest
 import mock
+import sys
 from collections import OrderedDict
 from payfacMPSdk import payfac_principal,generatedClass
 from dateutil.parser import parse
@@ -45,6 +46,10 @@ class TestPrincipal(unittest.TestCase):
         legalEntityPrincipalCreateRequest.set_principal(principal)
 
         expected_request = '<legalEntityPrincipalCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><principal><title>Mr.</title><firstName>First</firstName><lastName>Last</lastName><emailAddress>abc@gamil.com</emailAddress><ssn>123450015</ssn><dateOfBirth>1980-10-12-06:00</dateOfBirth><address><streetAddress1>p2 street address 1</streetAddress1><streetAddress2>p2 street address 2</streetAddress2><city>Boston2</city><stateProvince>MA</stateProvince><postalCode>01892</postalCode><countryCode>USA</countryCode></address><stakePercent>31</stakePercent></principal><sdkVersion>13.1.0</sdkVersion><language>python</language></legalEntityPrincipalCreateRequest>'
+
+        #hack to get around differences between Python 2 and 3
+        if sys.version_info[0] >= 3:
+            expected_request = expected_request.encode('utf-8')
 
         mock_request.return_value = OrderedDict(
             [(u'@xmlns', u'http://payfac.vantivcnp.com/api/merchant/onboard'),

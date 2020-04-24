@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 import unittest
 import mock
+import sys
 from collections import OrderedDict
 from payfacMPSdk import payfac_legalEntity,generatedClass
 from dateutil.parser import parse
@@ -123,7 +124,12 @@ class TestLegalEntity(unittest.TestCase):
         
         #TODO: add regex
         expected_request = '<legalEntityCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><legalEntityName>Legal Entity Name</legalEntityName><legalEntityType>CORPORATION</legalEntityType><legalEntityOwnershipType>PUBLIC</legalEntityOwnershipType><doingBusinessAs>Alternate Business Name</doingBusinessAs><taxId>123456789</taxId><contactPhone>7817659800</contactPhone><annualCreditCardSalesVolume>80000000</annualCreditCardSalesVolume><hasAcceptedCreditCards>true</hasAcceptedCreditCards><address><streetAddress1>Street Address 1</streetAddress1><streetAddress2>Street Address 2</streetAddress2><city>City</city><stateProvince>MA</stateProvince><postalCode>01730</postalCode><countryCode>USA</countryCode></address><principal><title>Chief Financial Officer</title><firstName>p first</firstName><lastName>p last</lastName><emailAddress>emailAddress</emailAddress><ssn>123459876</ssn><contactPhone>7817659800</contactPhone><dateOfBirth>1980-10-11-06:00</dateOfBirth><driversLicense>892327409832</driversLicense><driversLicenseState>MA</driversLicenseState><address><streetAddress1>Street Address 1</streetAddress1><streetAddress2>Street Address 2</streetAddress2><city>City</city><stateProvince>MA</stateProvince><postalCode>01730</postalCode><countryCode>USA</countryCode></address><stakePercent>33</stakePercent></principal><yearsInBusiness>12</yearsInBusiness><sdkVersion>13.1.0</sdkVersion><language>python</language></legalEntityCreateRequest>'
+
+        #hack to get around differences between Python 2 and 3
+        if sys.version_info[0] >= 3:
+            expected_request = expected_request.encode('utf-8')
         response = payfac_legalEntity.post_by_legalEntity(legalEntityCreateRequest)
+
         expected_url_suffix = "/legalentity".encode('utf-8')
         mock_http_post_request.assert_called_with(expected_url_suffix, expected_request)
         self.assertEquals("19924", response["legalEntityId"])
