@@ -35,7 +35,7 @@ def post_by_legalEntity(legalEntityId,subMerchantCreateRequest):
     subMerchantCreateRequest.set_sdkVersion(SdkVersion.RELEASE)
     subMerchantCreateRequest.set_language(SdkVersion.LANGUAGE)
     stringIO = StringIO()
-    subMerchantCreateRequest.export(stringIO, 0)
+    subMerchantCreateRequest.export(stringIO, 0, pretty_print=False)
     request = stringIO.getvalue()
     request = request.replace("tns:", "")
     request = request.replace(":tns", "")

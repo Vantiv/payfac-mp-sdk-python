@@ -32,7 +32,7 @@ def post_by_legalEntity(legalEntityId, legalEntityPrincipalCreateRequest):
     legalEntityPrincipalCreateRequest.set_sdkVersion(SdkVersion.RELEASE)
     legalEntityPrincipalCreateRequest.set_language(SdkVersion.LANGUAGE)
     stringIO = StringIO()
-    legalEntityPrincipalCreateRequest.export(stringIO, 0)
+    legalEntityPrincipalCreateRequest.export(stringIO, 0, pretty_print=False)
     request = stringIO.getvalue()
     request = request.replace("tns:", "")
     request = request.replace(":tns", "")

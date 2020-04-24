@@ -36,7 +36,7 @@ def post_by_legalEntity(legalEntityCreateRequest):
     legalEntityCreateRequest.set_sdkVersion(SdkVersion.RELEASE)
     legalEntityCreateRequest.set_language(SdkVersion.LANGUAGE)
     stringIO = StringIO()
-    legalEntityCreateRequest.export(stringIO, 0)
+    legalEntityCreateRequest.export(stringIO, 0, pretty_print=False)
     request = stringIO.getvalue()
     request = request.replace("tns:", "")
     request = request.replace(":tns", "")

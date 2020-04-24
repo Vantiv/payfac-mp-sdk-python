@@ -36,10 +36,12 @@ class TestAgreement(unittest.TestCase):
         legalEntityAgreement.set_acceptanceDateTime(parse("2017-02-11T12:00:00-06:00"))
         legalEntityAgreementCreateRequest.set_legalEntityAgreement(legalEntityAgreement)
 
+        expected_request = u'<legalEntityAgreementCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><legalEntityAgreement><legalEntityAgreementType>MERCHANT_AGREEMENT</legalEntityAgreementType><agreementVersion>agreementVersion1</agreementVersion><userFullName>userFullName</userFullName><userSystemName>systemUserName</userSystemName><userIPAddress>196.198.100.100</userIPAddress><manuallyEntered>false</manuallyEntered><acceptanceDateTime>2017-02-11T12:00:00-06:00</acceptanceDateTime></legalEntityAgreement><sdkVersion>13.1.0</sdkVersion><language>python</language></legalEntityAgreementCreateRequest>'
+
         mock_http_post_request.return_value = OrderedDict(
             [(u'@xmlns', u'http://payfac.vantivcnp.com/api/merchant/onboard'), (u'transactionId', u'4978173558')])
 
         response = payfac_agreement.post_by_legalEntityId("21003",legalEntityAgreementCreateRequest)
         expected_url_suffix = "/legalentity/21003/agreement".encode('utf-8')
-        mock_http_post_request.assert_called_with(expected_url_suffix,mock.ANY)
+        mock_http_post_request.assert_called_with(expected_url_suffix, expected_request)
         self.assertEquals("4978173558",response['transactionId'])

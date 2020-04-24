@@ -43,6 +43,8 @@ class TestPrincipal(unittest.TestCase):
         principal.set_stakePercent(31)
         legalEntityPrincipalCreateRequest.set_principal(principal)
 
+        expected_request = u'<legalEntityPrincipalCreateRequest xmlns="http://payfac.vantivcnp.com/api/merchant/onboard"><principal><title>Mr.</title><firstName>First</firstName><lastName>Last</lastName><emailAddress>abc@gamil.com</emailAddress><ssn>123450015</ssn><dateOfBirth>1980-10-12-06:00</dateOfBirth><address><streetAddress1>p2 street address 1</streetAddress1><streetAddress2>p2 street address 2</streetAddress2><city>Boston2</city><stateProvince>MA</stateProvince><postalCode>01892</postalCode><countryCode>USA</countryCode></address><stakePercent>31</stakePercent></principal><sdkVersion>13.1.0</sdkVersion><language>python</language></legalEntityPrincipalCreateRequest>'
+
         mock_request.return_value = OrderedDict(
             [(u'@xmlns', u'http://payfac.vantivcnp.com/api/merchant/onboard'),
              (u'legalEntityId', u'2018'),
@@ -52,7 +54,7 @@ class TestPrincipal(unittest.TestCase):
 
         response = payfac_principal.post_by_legalEntity("2018",legalEntityPrincipalCreateRequest)
         expected_url_suffix = '/legalentity/2018/principal'.encode('utf-8')
-        mock_request.assert_called_with(expected_url_suffix,mock.ANY)
+        mock_request.assert_called_with(expected_url_suffix, expected_request)
         self.assertEquals("2018",response['legalEntityId'])
         self.assertEquals("6",response["principal"]["principalId"])
         self.assertEquals("10",response['principal']['responseCode'])
