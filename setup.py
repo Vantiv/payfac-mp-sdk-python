@@ -11,7 +11,7 @@ if (sys.version_info[:3] < (2, 7, 9)) or ((sys.version_info[0] == 3) and sys.ver
 
 setup(
     name='PayfacMpSDK',
-    version='13.0.0',
+    version='13.1.0',
     description='Worldpay payfac SDK',
     author='Worldpay',
     author_email='SDKSupport@vantiv.com',
