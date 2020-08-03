@@ -1,14 +1,16 @@
 import os
 import json
 import xmlschema
+import pkg_resources
 import sys
 
 package_root = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 sys.path.insert(0, package_root)
-version = u'13'
+version = u'13.1'
 xsd_name = 'merchant-onboard-api-v%s.xsd' % version
-xsd_abs_path = os.path.join(package_root, "schema", xsd_name)
-my_schema = xmlschema.XMLSchema(xsd_abs_path)
+#retrieve xsd file using package manager
+xsd_path = pkg_resources.resource_filename('payfacMPSdk', 'schema/' + xsd_name)
+my_schema = xmlschema.XMLSchema(xsd_path)
 
 class Configuration(object):
     """Setup Configuration variables.
@@ -27,6 +29,7 @@ class Configuration(object):
     else:
         _CONFIG_FILE_PATH = os.path.join(os.path.expanduser("~"), ".payfac_mp_sdk.conf")
 
+
     def __init__(self, conf_dict=dict()):
 
         # print("config file path -> "+self._CONFIG_FILE_PATH)
@@ -38,10 +41,8 @@ class Configuration(object):
             'printXml': False,
             'proxy': '',
             'url': '',
-            'username': ''
-        }
+            'username': ''}
 
-        # set default values
         for k in attr_dict:
             setattr(self, k, attr_dict[k])
 
@@ -52,7 +53,7 @@ class Configuration(object):
                 # print ("overriding config values here \n")
                 for ke in attr_dict:
                     if ke in config_json and config_json[ke]:
-                        # print(ke + "\t" + config_json[ke])
+                        #print(ke + "\t" + config_json[ke])
                         setattr(self, ke, config_json[ke])
         except:
             # If get any exception just pass.
@@ -65,6 +66,7 @@ class Configuration(object):
                     setattr(self, key, conf_dict[key])
                 # else:
                 #     raise payfacError('"%s" is NOT an attribute of conf' % k)
+
 
     def save(self):
         """Save Class Attributes to .payfac_mp_sdk.conf
@@ -81,12 +83,18 @@ class Configuration(object):
 
 
 def generate_response(http_response):
-    return convert_to_dict(http_response.text)
+    response_text = http_response.text
+    #for python 2, must be encoded before passed to validation by xmlschema
+    if sys.version_info[0] < 3:
+        return convert_to_dict(response_text.encode('utf-8'))
+    #python 3 and above can be passed as text
+    else:
+        return convert_to_dict(response_text)
 
 
 def convert_to_dict(xml_response):
-    if(not (my_schema.is_valid(xml_response.encode('utf-8')))): raise PayfacSchemaError("Input is not compatible with schema")
-    response_dict = my_schema.to_dict(xml_response.encode('utf-8'))
+    if(not (my_schema.is_valid(xml_response))): raise PayfacSchemaError("Input is not compatible with schema")
+    response_dict = my_schema.to_dict(xml_response)
     if response_dict['@xmlns'] != "":
         _create_lists(response_dict)
         return response_dict

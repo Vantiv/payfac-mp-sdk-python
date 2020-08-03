@@ -5,6 +5,7 @@ import re
 
 import requests
 import traceback
+import sys
 
 from requests.auth import HTTPBasicAuth
 
@@ -12,7 +13,7 @@ from payfacMPSdk import (utils)
 
 conf = utils.Configuration()
 
-PAYFAC_CONTENT_TYPE = "application/com.vantivcnp.payfac-v13+xml"
+PAYFAC_CONTENT_TYPE = "application/com.vantivcnp.payfac-v13.1+xml"
 
 PAYFAC_API_HEADERS = {"Accept": PAYFAC_CONTENT_TYPE,
                           "Content-Type": PAYFAC_CONTENT_TYPE}
@@ -41,7 +42,8 @@ def http_get_retrieval_request(url_suffix, config=conf):
 
 
 def http_post_request(url_suffix, request_xml, config=conf):
-    request_url = config.url + url_suffix
+    request_url = config.url.encode('utf-8') + url_suffix
+    print(config.url)
     try:
         http_response = requests.post(request_url,
                                       headers=PAYFAC_API_HEADERS,
@@ -56,7 +58,7 @@ def http_post_request(url_suffix, request_xml, config=conf):
     return utils.generate_response(http_response)
 
 def http_put_request(url_suffix, request_xml, config=conf):
-    request_url = config.url + url_suffix;
+    request_url = config.url.encode('utf-8') + url_suffix;
     try:
         http_response = requests.put(request_url, headers=PAYFAC_API_HEADERS,
                                      auth=HTTPBasicAuth(config.username, config.password),
@@ -119,6 +121,8 @@ def validate_response(http_response, config=conf):
 
 
 def neuter_xml(xml_string):
+    if sys.version_info[0] >= 3:
+        xml_string = str(xml_string)
     xml_string = re.sub(r"<token>.*</token>", "<token>****</token>", xml_string)
     xml_string = re.sub(r"<cardNumberLast4>.*</cardNumberLast4>", "<cardNumberLast4>****</cardNumberLast4>", xml_string)
     return xml_string

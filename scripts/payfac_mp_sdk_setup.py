@@ -2,6 +2,9 @@
 
 from __future__ import absolute_import, division, print_function
 
+if sys.version_info[0] < 3:
+    from builtins import input
+
 import os
 import sys
 import tempfile
@@ -61,7 +64,7 @@ def ask_user():
             if six.PY3:
                 x = input('')
             else:
-                x = raw_input('')
+                x = input('')
             if not x:
                 x = attr_dict[attr]
             if attr in attr_valid_dict:
@@ -96,14 +99,14 @@ def environmentConfig(attr_dict):
         print("Please choose an environment from the following list (example: 'prelive'): ");
         for env in Environment:
             print(env, Environment[env])
-        userInput = raw_input('')
+        userInput = input('')
         if (userInput in Environment) and (userInput != 'OTHER'):
             attr_dict['url'] = Environment[userInput]
             continueTakeInput = False
         elif (userInput == 'OTHER'):
             print(
                 "Please input the URL for online transactions (ex: https://www.testvantivcnp.com/sandbox/communicator/online): ");
-            userInput = raw_input('')
+            userInput = input('')
             attr_dict['url'] = userInput
             continueTakeInput = False
         else:
