@@ -8,7 +8,7 @@ if (sys.version_info[:3] < (2, 7, 9)) or ((sys.version_info[0] == 3) and sys.ver
   Python2 version 2.7.9 or later; or
   Python3 version 3.4 or later
 (You have %s.)''' % (sys.version,))
-ro
+
 setup(
     name='PayfacMpSDK',
     version='13.1.0',
