@@ -40,7 +40,7 @@ class Configuration(object):
             'password': '',
             'printXml': False,
             'proxy': '',
-            'url': '',
+            'url': 'https://www.testvantivcnp.com/sandbox/payfac',
             'username': ''}
 
         for k in attr_dict:
