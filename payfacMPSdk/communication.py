@@ -110,8 +110,11 @@ def validate_response(http_response, config=conf):
     # Check empty response
     if http_response is None:
         raise utils.PayfacError("There was an exception while fetching the response")
+    if http_response.headers._store.get('content-type') is not None:
+        content_type = http_response.headers._store['content-type'][1]
+    else:
+        content_type = ''
 
-    content_type = http_response.headers._store['content-type'][1]
     if (http_response.status_code != 200) & (http_response.status_code !=201):
         if PAYFAC_CONTENT_TYPE in content_type:
             error_response = utils.generate_error_response(http_response)
