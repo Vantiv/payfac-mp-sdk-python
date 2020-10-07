@@ -27,7 +27,8 @@ setup(
         'unittest2>=1.1.0',
         'python-dateutil>=2.7.3',
         'setuptools',
-        'mock', 'lxml'
+        'mock', 'lxml',
+        'wheel'
     ],
     license='MIT',
     classifiers=[
